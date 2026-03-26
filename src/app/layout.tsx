@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "derecho mercantil",
     "consulta legal gratuita",
   ],
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Bissu Abogados | Despacho Jurídico en Polanco, CDMX",
     description:
@@ -45,6 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={playfair.variable}>
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      </head>
       <body className="font-body antialiased">{children}</body>
     </html>
   );

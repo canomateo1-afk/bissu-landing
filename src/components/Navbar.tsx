@@ -13,6 +13,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const openCalendly = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as unknown as Record<string, any>;
+    if (typeof window !== 'undefined' && w.Calendly) {
+      w.Calendly.initPopupWidget({
+        url: 'https://calendly.com/bissuabogados-marketing/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=b4975a'
+      });
+    }
+  };
+
   const links = [
     { href: "#servicios", label: "Servicios" },
     { href: "#nosotros", label: "Nosotros" },
@@ -52,12 +62,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contacto"
+            <button
+              onClick={openCalendly}
               className="bg-brand-gold text-brand-black px-6 py-2.5 text-sm font-semibold tracking-wider uppercase hover:bg-brand-gold/90 transition-colors"
             >
               Agendar Consulta
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -104,13 +114,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contacto"
-              onClick={() => setMenuOpen(false)}
-              className="block mx-4 mt-2 bg-brand-gold text-brand-black px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-center hover:bg-brand-gold/90 transition-colors"
+            <button
+              onClick={() => { setMenuOpen(false); openCalendly(); }}
+              className="block w-[calc(100%-2rem)] mx-4 mt-2 bg-brand-gold text-brand-black px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-center hover:bg-brand-gold/90 transition-colors"
             >
               Agendar Consulta
-            </a>
+            </button>
           </div>
         )}
       </div>

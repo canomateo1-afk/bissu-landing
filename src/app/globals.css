@@ -39,3 +39,12 @@ body {
 .whatsapp-pulse {
   animation: pulse-green 2s infinite;
 }
+
+/* Gold pleca divider */
+.pleca-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #B4975A;
+  margin: 0 auto;
+  opacity: 0.4;
+}

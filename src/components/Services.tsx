@@ -1,3 +1,5 @@
+import FadeIn from "./FadeIn";
+
 const services = [
   {
     icon: "⚖️",
@@ -27,31 +29,34 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="bg-brand-black py-16 sm:py-24">
+    <section id="servicios" className="bg-brand-black py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            Nuestras Áreas de Práctica
-          </h2>
-          <div className="w-16 h-0.5 bg-brand-gold mx-auto" />
-        </div>
+        <FadeIn>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+              Nuestras Áreas de Práctica
+            </h2>
+            <div className="w-16 h-0.5 bg-brand-gold mx-auto" />
+          </div>
+        </FadeIn>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="bg-brand-dark p-8 sm:p-10 border border-white/5 hover:border-brand-gold/40 transition-all duration-300 group"
-            >
-              <span className="text-4xl mb-4 block">{service.icon}</span>
-              <h3 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+          {services.map((service, i) => (
+            <FadeIn key={service.title} delay={i * 100}>
+              <div
+                className="bg-brand-dark p-8 sm:p-10 border border-white/5 hover:border-brand-gold/40 active:border-brand-gold/40 active:scale-[0.98] focus-visible:outline focus-visible:outline-brand-gold transition-all duration-300 group"
+              >
+                <span className="text-4xl mb-4 block">{service.icon}</span>
+                <h3 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
