@@ -9,8 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brand: {
+          black: "#231F20",
+          gold: "#B4975A",
+          white: "#FFFFFF",
+          dark: "#1a1a1a",
+          gray: "#2a2a2a",
+        },
+      },
+      fontFamily: {
+        playfair: ["Playfair Display", "serif"],
+        body: ["system-ui", "Baskerville", "serif"],
       },
     },
   },
