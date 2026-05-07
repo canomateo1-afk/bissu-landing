@@ -1,116 +1,117 @@
-import Image from "next/image";
-
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Logo & Description */}
-          <div>
-            <Image
-              src="/images/logo.png"
-              alt="Bissu Abogados"
-              width={140}
-              height={44}
-              className="h-8 w-auto brightness-0 invert mb-4"
-            />
-            <p className="text-white/40 text-sm leading-relaxed">
-              Despacho jurídico con más de 25 años de experiencia en Polanco,
-              Ciudad de México.
+    <footer className="relative bg-ink-900 border-t border-bone-50/15">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 py-20 sm:py-24">
+        {/* Brand-correct massive wordmark — Bissu serif + ABOGADOS sans (per manual) */}
+        <div className="border-b border-bone-50/15 pb-16">
+          <div className="flex items-baseline gap-4 sm:gap-6">
+            <p className="font-display font-normal text-bone-50 text-[80px] sm:text-[180px] lg:text-[260px] xl:text-[320px] leading-[0.9] tracking-tightest">
+              Bissu<span className="text-gold-400">.</span>
             </p>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="font-playfair text-lg font-bold text-white mb-4">
-              Contacto
-            </h3>
-            <div className="space-y-3 text-sm text-white/60">
-              <p>
-                📍 Tennyson 97, Polanco IV Sección,
-                <br />
-                Miguel Hidalgo, 11550. CDMX
-              </p>
-              <p>
-                📞{" "}
-                <a
-                  href="tel:+525555451308"
-                  className="hover:text-brand-gold transition-colors"
-                >
-                  +52 55 5545 1308
-                </a>
-              </p>
-              <p>
-                ✉️{" "}
-                <a
-                  href="mailto:sbissu@bissuabogados.com"
-                  className="hover:text-brand-gold transition-colors"
-                >
-                  sbissu@bissuabogados.com
-                </a>
-              </p>
-              <p>
-                🌐{" "}
-                <a
-                  href="https://bissuabogados.com"
-                  className="hover:text-brand-gold transition-colors"
-                >
-                  bissuabogados.com
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h3 className="font-playfair text-lg font-bold text-white mb-4">
-              Síguenos
-            </h3>
-            <a
-              href="https://instagram.com/bissuabogados"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/60 hover:text-brand-gold transition-colors text-sm"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              @bissuabogados
-            </a>
-          </div>
-
-          {/* Google Maps */}
-          <div>
-            <h3 className="font-playfair text-lg font-bold text-white mb-4">
-              Ubicación
-            </h3>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661!2d-99.197!3d19.432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff5f5c0ed30d%3A0x0!2sTennyson%2097%2C%20Polanco%2C%20CDMX!5e0!3m2!1ses!2smx!4v1"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg border border-white/10 w-full"
-              title="Ubicación Bissu Abogados"
-            />
+            <p className="font-sans text-[12px] sm:text-[16px] tracking-[0.42em] uppercase text-bone-300 font-medium pb-2 sm:pb-6">
+              Abogados
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/5">
-          <p className="text-white/30 text-xs text-center leading-relaxed">
-            © 2026 Bissu Abogados. Todos los derechos reservados.
-          </p>
-          <p className="text-white/20 text-xs text-center mt-2 leading-relaxed max-w-2xl mx-auto">
-            La información contenida en este sitio web es de carácter
-            informativo y no constituye asesoría legal. Consulte a un
-            profesional para su caso particular.
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-12 mt-16">
+          <div className="col-span-12 lg:col-span-5">
+            <div className="flex gap-5">
+              <span className="pleca pleca-lg shrink-0 mt-1" aria-hidden />
+              <div>
+                <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-gold-600 font-medium mb-3">
+                  Filosofía
+                </p>
+                <p className="font-display italic text-bone-50 text-2xl sm:text-3xl leading-[1.3] max-w-md">
+                  Simplicity is the ultimate sophistication.
+                </p>
+                <p className="mt-3 font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium">
+                  — Leonardo da Vinci
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-6 sm:col-span-4 lg:col-span-3">
+            <div className="flex gap-4">
+              <span className="pleca pleca-md shrink-0 mt-1" aria-hidden />
+              <div>
+                <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium mb-3">
+                  Oficinas
+                </p>
+                <p className="font-body text-bone-50 text-[13px] leading-[1.75]">
+                  Av. Prado Norte 365, Int. 6
+                  <br />
+                  Lomas de Chapultepec V Sección
+                  <br />
+                  Miguel Hidalgo, 11000, CDMX
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-6 sm:col-span-4 lg:col-span-2">
+            <div className="flex gap-4">
+              <span className="pleca pleca-md shrink-0 mt-1" aria-hidden />
+              <div>
+                <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium mb-3">
+                  Contacto
+                </p>
+                <div className="space-y-1.5 font-body text-[13px]">
+                  <a
+                    href="tel:+525555451308"
+                    className="block text-bone-50 hover:text-gold-600 transition-colors"
+                  >
+                    +52 55 5545 1308
+                  </a>
+                  <a
+                    href="mailto:sbissu@bissuabogados.com"
+                    className="block text-bone-50 hover:text-gold-600 transition-colors break-all"
+                  >
+                    sbissu@bissuabogados.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-12 sm:col-span-4 lg:col-span-2">
+            <div className="flex gap-4">
+              <span className="pleca pleca-md shrink-0 mt-1" aria-hidden />
+              <div>
+                <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium mb-3">
+                  Síguenos
+                </p>
+                <div className="flex flex-col gap-1.5 font-sans text-[11px] tracking-[0.22em] uppercase font-medium">
+                  {[
+                    ["Instagram", "https://www.instagram.com/bissuabogados/"],
+                    ["Facebook", "https://www.facebook.com/BissuAbogados/"],
+                    [
+                      "LinkedIn",
+                      "https://www.linkedin.com/company/bissu-abogados-s-c-/",
+                    ],
+                    ["WhatsApp", "https://walink.co/727927"],
+                  ].map(([label, href]) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-bone-50 hover:text-gold-600 transition-colors"
+                    >
+                      {label} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-bone-50/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 font-sans text-[10px] tracking-[0.22em] uppercase text-bone-300 font-medium">
+          <p>© {new Date().getFullYear()} Bissu Abogados, S.C.</p>
+          <p>
+            Información de carácter informativo · No constituye asesoría legal
           </p>
         </div>
       </div>

@@ -1,31 +1,33 @@
+import TopMarquee from "@/components/TopMarquee";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import WhyUs from "@/components/WhyUs";
-import VideoSection from "@/components/VideoSection";
-import Services from "@/components/Services";
-import MidCTA from "@/components/MidCTA";
-import Testimonials from "@/components/Testimonials";
-import Calendly from "@/components/Calendly";
+import Firma from "@/components/Firma";
+import Proceso from "@/components/Proceso";
+import Abogados from "@/components/Abogados";
+import Areas from "@/components/Areas";
+import Casos from "@/components/Casos";
+import Clientes from "@/components/Clientes";
+import Reconocimientos from "@/components/Reconocimientos";
+import FAQ from "@/components/FAQ";
+import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-ink-900">
+      <TopMarquee />
       <Navbar />
       <Hero />
-      <Stats />
-      <div className="pleca-divider" />
-      <WhyUs />
-      <div className="pleca-divider" />
-      <VideoSection />
-      <div className="pleca-divider" />
-      <Services />
-      <MidCTA />
-      <div className="pleca-divider" />
-      <Testimonials />
-      <Calendly />
+      <Firma />
+      <Proceso />
+      <Abogados />
+      <Areas />
+      <Casos />
+      <Clientes />
+      <Reconocimientos />
+      <FAQ />
+      <Contacto />
       <Footer />
       <WhatsAppButton />
     </main>

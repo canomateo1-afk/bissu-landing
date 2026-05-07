@@ -6,45 +6,85 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
-  font-family: system-ui, Baskerville, serif;
-  background-color: #231F20;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #231F20;
 }
 
-/* Calendly container */
-.calendly-inline-widget {
-  min-width: 320px;
-  height: 700px;
-}
-
-/* Testimonials scroll */
-.testimonials-scroll {
+/* hide scrollbar utility */
+.no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.testimonials-scroll::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* WhatsApp pulse animation */
-@keyframes pulse-green {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-  }
+/* Brand auxiliary element: pleca vertical dorada (manual sect. 1.10) */
+.pleca {
+  display: inline-block;
+  width: 1.5px;
+  background-color: #B4975A;
 }
-.whatsapp-pulse {
-  animation: pulse-green 2s infinite;
+.pleca-sm {
+  height: 24px;
+}
+.pleca-md {
+  height: 40px;
+}
+.pleca-lg {
+  height: 64px;
 }
 
-/* Gold pleca divider */
-.pleca-divider {
-  width: 1px;
-  height: 40px;
-  background-color: #B4975A;
-  margin: 0 auto;
-  opacity: 0.4;
+/* Link underline animation */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform-origin: right center;
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform-origin: left center;
+  transform: scaleX(1);
+}
+
+/* Pause marquee on hover */
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* WhatsApp pulse */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse {
+  animation: pulse-green 2.4s infinite;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus ring (accessibility) */
+:focus-visible {
+  outline: 2px solid #B4975A;
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #B4975A;
+  outline-offset: 3px;
 }
