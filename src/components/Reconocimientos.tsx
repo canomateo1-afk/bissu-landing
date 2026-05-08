@@ -36,7 +36,7 @@ const consistencyYears = ["2024", "2023", "2022", "2021", "2020"];
 
 export default function Reconocimientos() {
   return (
-    <section id="reconocimientos" className="relative bg-ink-900 py-32 sm:py-44 lg:py-52">
+    <section id="reconocimientos" className="relative bg-ink-800 py-24 sm:py-32 lg:py-40">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
         <SectionLabel n="07" label="Reconocimientos" />
 

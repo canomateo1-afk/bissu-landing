@@ -1,0 +1,179 @@
+/* ============================================================
+   BISSU V2 — Modern SaaS aesthetic (Legora-inspired)
+   Type-led · Whitespace heavy · Sharp · Type as the hero
+   ============================================================ */
+
+.v2-root {
+  --v2-bg: #FAFAF7;
+  --v2-bg-elev: #FFFFFF;
+  --v2-bg-dark: #0F0E0D;
+  --v2-text: #0A0A0A;
+  --v2-text-muted: #5A5A5A;
+  --v2-text-subtle: #8E8E8E;
+  --v2-border: rgba(10, 10, 10, 0.10);
+  --v2-border-strong: rgba(10, 10, 10, 0.20);
+  --v2-accent: #B4975A;
+  --v2-accent-strong: #8C7339;
+  --v2-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  background: var(--v2-bg);
+  color: var(--v2-text);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.v2-root *::selection {
+  background: var(--v2-accent);
+  color: white;
+}
+
+/* Display serif accent — only for occasional flourish */
+.v2-display {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.04em;
+}
+
+/* Mono for stats */
+.v2-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum", "ss01";
+}
+
+/* Sharp, no border-radius default */
+.v2-card {
+  background: var(--v2-bg-elev);
+  border: 1px solid var(--v2-border);
+  transition: border-color 0.4s var(--v2-ease), transform 0.4s var(--v2-ease);
+}
+.v2-card:hover {
+  border-color: var(--v2-border-strong);
+}
+
+/* CTA button — primary */
+.v2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--v2-text);
+  color: white;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  transition: background 0.3s var(--v2-ease), transform 0.3s var(--v2-ease);
+  cursor: pointer;
+}
+.v2-btn:hover {
+  background: var(--v2-accent-strong);
+}
+.v2-btn-secondary {
+  background: transparent;
+  color: var(--v2-text);
+  border: 1px solid var(--v2-border-strong);
+}
+.v2-btn-secondary:hover {
+  background: var(--v2-text);
+  color: white;
+}
+.v2-btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--v2-ease);
+}
+.v2-btn:hover .v2-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Headline — modern editorial sans display */
+.v2-h1 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 7vw, 5.75rem);
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  color: var(--v2-text);
+}
+.v2-h1 em {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.v2-h2 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.v2-h2 em {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.v2-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v2-text-muted);
+}
+.v2-eyebrow-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--v2-accent);
+  margin-right: 0.6em;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+/* Big stat number */
+.v2-stat {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hairline divider */
+.v2-hairline {
+  height: 1px;
+  background: var(--v2-border);
+}
+
+/* Marquee */
+@keyframes v2-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.v2-marquee {
+  animation: v2-marquee 50s linear infinite;
+}
+
+/* Tab indicator */
+.v2-tab-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background: var(--v2-text);
+  transition: left 0.5s var(--v2-ease), width 0.5s var(--v2-ease);
+}
+
+/* Subtle scroll-reveal */
+.v2-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--v2-ease), transform 0.7s var(--v2-ease);
+}
+.v2-fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v2-fade { opacity: 1; transform: none; }
+  .v2-marquee { animation: none; }
+}

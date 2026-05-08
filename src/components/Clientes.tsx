@@ -22,7 +22,7 @@ const sectores = [
 export default function Clientes() {
   const marqueeList = [...sectores, ...sectores, ...sectores];
   return (
-    <section id="clientes" className="relative bg-ink-800 py-32 sm:py-44 lg:py-52 overflow-hidden">
+    <section id="clientes" className="relative bg-ink-900 py-24 sm:py-32 lg:py-40 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
         <SectionLabel n="06" label="Clientes" />
 

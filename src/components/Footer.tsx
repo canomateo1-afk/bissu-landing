@@ -1,3 +1,7 @@
+"use client";
+
+import { events } from "@/lib/analytics";
+
 export default function Footer() {
   return (
     <footer className="relative bg-ink-900 border-t border-bone-50/15">
@@ -20,13 +24,13 @@ export default function Footer() {
               <span className="pleca pleca-lg shrink-0 mt-1" aria-hidden />
               <div>
                 <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-gold-600 font-medium mb-3">
-                  Filosofía
+                  El despacho
                 </p>
-                <p className="font-display italic text-bone-50 text-2xl sm:text-3xl leading-[1.3] max-w-md">
-                  Simplicity is the ultimate sophistication.
+                <p className="font-display text-bone-50 text-2xl sm:text-3xl leading-[1.25] max-w-md balance">
+                  Asesoría jurídica de fondo para los asuntos complejos de México<span className="text-gold-400">.</span>
                 </p>
-                <p className="mt-3 font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium">
-                  — Leonardo da Vinci
+                <p className="mt-4 font-sans text-[10px] tracking-[0.32em] uppercase text-bone-300 font-medium">
+                  Bissu Abogados, S.C. · Est. 2017
                 </p>
               </div>
             </div>
@@ -60,12 +64,14 @@ export default function Footer() {
                 <div className="space-y-1.5 font-body text-[13px]">
                   <a
                     href="tel:+525555451308"
+                    onClick={() => events.phoneClick("footer", "+525555451308")}
                     className="block text-bone-50 hover:text-gold-600 transition-colors"
                   >
                     +52 55 5545 1308
                   </a>
                   <a
                     href="mailto:sbissu@bissuabogados.com"
+                    onClick={() => events.emailClick("footer")}
                     className="block text-bone-50 hover:text-gold-600 transition-colors break-all"
                   >
                     sbissu@bissuabogados.com
@@ -97,6 +103,13 @@ export default function Footer() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                        if (label === "WhatsApp") {
+                          events.whatsappClick("footer");
+                        } else {
+                          events.socialClick(String(label).toLowerCase(), "footer");
+                        }
+                      }}
                       className="text-bone-50 hover:text-gold-600 transition-colors"
                     >
                       {label} ↗

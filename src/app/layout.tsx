@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope, Libre_Baskerville } from "next/font/google";
 import Script from "next/script";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const display = Playfair_Display({
@@ -26,10 +27,21 @@ const body = Libre_Baskerville({
   style: ["normal", "italic"],
 });
 
+const SITE_URL = "https://bissuabogados.com";
+const SITE_NAME = "Bissu Abogados";
+const DESCRIPTION =
+  "Despacho jurídico especializado en litigio civil, comercial, concursal, familiar, constitucional y mecanismos alternativos de resolución de conflictos. Reconocidos por Best Lawyers in Mexico 2026 y Leaders League 2025.";
+
 export const metadata: Metadata = {
-  title: "Bissu Abogados — Despacho jurídico, Ciudad de México",
-  description:
-    "Despacho jurídico especializado en litigio civil, comercial, concursal, familiar, constitucional y mecanismos alternativos de resolución de conflictos. Reconocidos por Best Lawyers in Mexico y Leaders League.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Bissu Abogados — Despacho jurídico, Ciudad de México",
+    template: "%s | Bissu Abogados",
+  },
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Samuel Bissu Bazbaz" }],
+  generator: "Next.js",
   keywords: [
     "Bissu Abogados",
     "despacho jurídico CDMX",
@@ -39,70 +51,196 @@ export const metadata: Metadata = {
     "litigio concursal",
     "derecho familiar",
     "derecho constitucional",
-    "arbitraje",
-    "mediación",
+    "arbitraje internacional",
+    "concurso mercantil",
+    "amparo",
     "Best Lawyers Mexico",
   ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      "es-MX": "/",
+      "x-default": "/",
+    },
+  },
   icons: { icon: "/icon.svg" },
   openGraph: {
-    title: "Bissu Abogados — Despacho jurídico en CDMX",
-    description:
-      "Asesoría, consultoría y práctica jurídica en diversas áreas del ámbito legal en México.",
-    url: "https://bissuabogados.com",
-    siteName: "Bissu Abogados",
-    locale: "es_MX",
     type: "website",
+    locale: "es_MX",
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Bissu Abogados — Despacho jurídico en CDMX",
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/images/hero-1.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Oficinas Bissu Abogados — Polanco, CDMX",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bissu Abogados — Despacho jurídico en CDMX",
+    description: DESCRIPTION,
+    images: ["/images/hero-1.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    // google: "TODO — agregar GSC verification token",
+  },
+  other: {
+    "geo.region": "MX-CMX",
+    "geo.placename": "Ciudad de México",
+    "geo.position": "19.4326;-99.1332",
+    ICBM: "19.4326, -99.1332",
+  },
 };
 
-const legalServiceSchema = {
+const ORG_ID = `${SITE_URL}#organization`;
+const SITE_ID = `${SITE_URL}#website`;
+const FOUNDER_ID = `${SITE_URL}#samuel-bissu`;
+
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
-  name: "Bissu Abogados, S.C.",
-  description:
-    "Despacho jurídico especializado en litigio y mecanismos alternativos de resolución de conflictos.",
-  url: "https://bissuabogados.com",
-  telephone: "+52-55-5545-1308",
-  email: "sbissu@bissuabogados.com",
-  priceRange: "$$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Av. Prado Norte 365, Int. 6",
-    addressLocality: "Lomas de Chapultepec V Sección, Miguel Hidalgo",
-    postalCode: "11000",
-    addressRegion: "Ciudad de México",
-    addressCountry: "MX",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "19.4326",
-    longitude: "-99.1332",
-  },
-  areaServed: { "@type": "Country", name: "Mexico" },
-  founder: {
-    "@type": "Person",
-    name: "Samuel Bissu Bazbaz",
-    jobTitle: "Socio fundador y Director",
-  },
-  award: [
-    "The Best Lawyers in Mexico 2026",
-    "Leaders League 2025 — Resolución de Conflictos",
-    "Tops · Los Mejores Abogados en México 2025 — Diamante",
-  ],
-  serviceType: [
-    "Litigio Civil",
-    "Litigio Comercial, Mercantil y Corporativo",
-    "Litigio Concursal",
-    "Litigio Familiar",
-    "Litigio Constitucional",
-    "Mecanismos Alternativos de Solución de Controversias",
-  ],
-  sameAs: [
-    "https://www.instagram.com/bissuabogados/",
-    "https://www.facebook.com/BissuAbogados/",
-    "https://www.linkedin.com/company/bissu-abogados-s-c-/",
-    "https://www.bestlawyers.com/firms/bissu-abogados/99213/MX",
+  "@graph": [
+    {
+      "@type": ["Organization", "LegalService", "ProfessionalService"],
+      "@id": ORG_ID,
+      name: "Bissu Abogados, S.C.",
+      legalName: "Bissu Abogados, S.C.",
+      alternateName: "Bissu",
+      description:
+        "Despacho jurídico especializado en litigio y mecanismos alternativos de resolución de conflictos para empresas, instituciones e individuos en todo México.",
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.svg`,
+      image: `${SITE_URL}/images/hero-1.jpg`,
+      telephone: "+52-55-5545-1308",
+      email: "sbissu@bissuabogados.com",
+      foundingDate: "2017",
+      priceRange: "$$$",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Av. Prado Norte 365, Int. 6",
+        addressLocality: "Lomas de Chapultepec V Sección, Miguel Hidalgo",
+        postalCode: "11000",
+        addressRegion: "Ciudad de México",
+        addressCountry: "MX",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "19.4326",
+        longitude: "-99.1332",
+      },
+      areaServed: { "@type": "Country", name: "Mexico" },
+      founder: { "@id": FOUNDER_ID },
+      employee: [{ "@id": FOUNDER_ID }],
+      award: [
+        "The Best Lawyers in Mexico 2026",
+        "Leaders League 2025 — Resolución de Conflictos",
+        "Tops · Los Mejores Abogados en México 2025 — Diamante",
+      ],
+      knowsAbout: [
+        "Litigio Civil",
+        "Litigio Mercantil",
+        "Litigio Concursal",
+        "Litigio Familiar",
+        "Litigio Constitucional",
+        "Arbitraje Comercial Internacional",
+        "Mecanismos Alternativos de Solución de Controversias",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Áreas de práctica",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigio Civil" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigio Comercial, Mercantil y Corporativo" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigio Concursal" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigio Familiar" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Litigio Constitucional" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mecanismos Alternativos de Solución de Controversias" } },
+        ],
+      },
+      sameAs: [
+        "https://www.instagram.com/bissuabogados/",
+        "https://www.facebook.com/BissuAbogados/",
+        "https://www.linkedin.com/company/bissu-abogados-s-c-/",
+        "https://www.bestlawyers.com/firms/bissu-abogados/99213/MX",
+      ],
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", ".faq-answer", ".intro-paragraph"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": SITE_ID,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: "es-MX",
+      publisher: { "@id": ORG_ID },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/buscar?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": FOUNDER_ID,
+      name: "Samuel Bissu Bazbaz",
+      jobTitle: "Socio fundador y Director",
+      worksFor: { "@id": ORG_ID },
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Universidad Panamericana",
+          url: "https://www.up.edu.mx",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Universidad Iberoamericana",
+          url: "https://ibero.mx",
+        },
+      ],
+      knowsAbout: [
+        "Litigio mercantil",
+        "Concurso mercantil",
+        "Arbitraje internacional",
+        "Reestructura empresarial",
+        "Conflictos accionarios",
+        "Derecho corporativo mexicano",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/company/bissu-abogados-s-c-/",
+        "https://www.bestlawyers.com/firms/bissu-abogados/99213/MX",
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Inicio",
+          item: SITE_URL,
+        },
+      ],
+    },
   ],
 };
 
@@ -111,16 +249,17 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="es"
+      lang="es-MX"
       className={`${display.variable} ${sans.variable} ${body.variable}`}
     >
       <body className="font-sans antialiased bg-ink-900 text-bone-50 selection:bg-gold-400/35 selection:text-bone-100">
+        <Analytics />
         <Script
-          id="ld-legal-service"
+          id="ld-org-graph"
           type="application/ld+json"
           strategy="beforeInteractive"
         >
-          {JSON.stringify(legalServiceSchema)}
+          {JSON.stringify(organizationSchema)}
         </Script>
         {children}
       </body>

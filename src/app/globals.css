@@ -2,14 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   BISSU — Editorial premium, modern motion
+   ============================================================ */
+
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-elegant: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 html,
 body {
-  background-color: #FFFFFF;
+  background-color: #FBF8F1;
   color: #231F20;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt", "ss01";
+}
+
+body {
+  position: relative;
+}
+
+/* Grain texture overlay — atmospheric paper feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.137 0 0 0 0 0.122 0 0 0 0 0.125 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+main, nav, footer, section {
+  position: relative;
+  z-index: 2;
 }
 
 /* hide scrollbar utility */
@@ -21,23 +56,27 @@ body {
   display: none;
 }
 
-/* Brand auxiliary element: pleca vertical dorada (manual sect. 1.10) */
+/* ============================================================
+   Pleca — vertical gold mark (manual sect. 1.10)
+   ============================================================ */
 .pleca {
   display: inline-block;
   width: 1.5px;
-  background-color: #B4975A;
+  background: linear-gradient(to bottom, #B4975A 0%, #D4B97A 50%, #B4975A 100%);
 }
-.pleca-sm {
-  height: 24px;
-}
-.pleca-md {
-  height: 40px;
-}
-.pleca-lg {
-  height: 64px;
+.pleca-sm { height: 24px; }
+.pleca-md { height: 40px; }
+.pleca-lg { height: 64px; }
+
+/* Hairline horizontal divider with gold fade */
+.hairline-gold {
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(180, 151, 90, 0.4) 30%, rgba(180, 151, 90, 0.4) 70%, transparent 100%);
 }
 
-/* Link underline animation */
+/* ============================================================
+   Link underline — refined animation
+   ============================================================ */
 .link-underline {
   position: relative;
   display: inline-block;
@@ -52,19 +91,27 @@ body {
   background-color: currentColor;
   transform-origin: right center;
   transform: scaleX(0);
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s var(--ease-premium);
 }
 .link-underline:hover::after {
   transform-origin: left center;
   transform: scaleX(1);
 }
 
-/* Pause marquee on hover */
+/* ============================================================
+   Marquee with side fade mask
+   ============================================================ */
 .marquee-pause:hover .animate-marquee {
   animation-play-state: paused;
 }
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 4%, black 96%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 4%, black 96%, transparent 100%);
+}
 
-/* WhatsApp pulse */
+/* ============================================================
+   WhatsApp pulse
+   ============================================================ */
 @keyframes pulse-green {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
   50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
@@ -73,11 +120,205 @@ body {
   animation: pulse-green 2.4s infinite;
 }
 
+/* ============================================================
+   Editorial typography utilities
+   ============================================================ */
 .tabular {
   font-variant-numeric: tabular-nums;
 }
+.balance {
+  text-wrap: balance;
+}
+.pretty {
+  text-wrap: pretty;
+}
 
-/* Focus ring (accessibility) */
+/* ============================================================
+   Word reveal — kinetic typography
+   ============================================================ */
+@keyframes word-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(110%) skewY(2.5deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+  }
+}
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: baseline;
+  /* Padding to accommodate ascenders (accents on í/á) and descenders (j, p, f-italic),
+     counter-margin keeps layout identical */
+  padding: 0.2em 0.04em 0.32em 0.04em;
+  margin: -0.2em -0.04em -0.32em -0.04em;
+  line-height: inherit;
+}
+.word-rise {
+  display: inline-block;
+  animation: word-rise 1s var(--ease-premium) both;
+  will-change: transform, opacity;
+}
+
+/* Underline brush — italic accent on key words */
+@keyframes brush-in {
+  0% { transform: scaleX(0); transform-origin: left center; }
+  100% { transform: scaleX(1); transform-origin: left center; }
+}
+.brush-underline {
+  position: relative;
+  display: inline-block;
+}
+.brush-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.08em;
+  background: linear-gradient(to right, transparent 0%, #B4975A 8%, #C2A368 50%, #B4975A 92%, transparent 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: brush-in 1.4s var(--ease-premium) 1.2s both;
+}
+
+/* ============================================================
+   Image reveal — clip-path stagger
+   ============================================================ */
+@keyframes clip-reveal {
+  0% { clip-path: inset(0 100% 0 0); transform: scale(1.08); }
+  100% { clip-path: inset(0 0 0 0); transform: scale(1); }
+}
+.clip-reveal {
+  animation: clip-reveal 1.6s var(--ease-premium) both;
+  will-change: clip-path, transform;
+}
+
+/* Subtle parallax-style float */
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.drift {
+  animation: drift 6s ease-in-out infinite;
+}
+
+/* ============================================================
+   Magnetic CTA button — gradient sweep on hover
+   ============================================================ */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.45s var(--ease-spring), color 0.4s ease;
+}
+.btn-magnetic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, #231F20 0%, #231F20 50%, #B4975A 50%, #B4975A 100%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.7s var(--ease-premium);
+  z-index: -1;
+}
+.btn-magnetic:hover::before {
+  background-position: 0 0;
+}
+.btn-magnetic:hover {
+  color: #FBF8F1 !important;
+}
+.btn-magnetic-light::before {
+  background: linear-gradient(110deg, #FBF8F1 0%, #FBF8F1 50%, #B4975A 50%, #B4975A 100%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+}
+.btn-magnetic-light:hover {
+  color: #231F20 !important;
+}
+
+/* Arrow that drifts on hover */
+.arrow-drift {
+  display: inline-block;
+  transition: transform 0.45s var(--ease-premium);
+}
+.group:hover .arrow-drift {
+  transform: translateX(6px);
+}
+
+/* ============================================================
+   Scroll progress — gold hairline at the very top
+   ============================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1.5px;
+  background: linear-gradient(to right, #B4975A, #D4B97A, #B4975A);
+  z-index: 100;
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* ============================================================
+   Section reveal — fade-up with stagger
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease-premium), transform 0.9s var(--ease-premium);
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-fast {
+  transition-duration: 0.65s;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.5s var(--ease-premium), border-color 0.5s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Image hover zoom — for editorial photography */
+.img-frame {
+  overflow: hidden;
+  position: relative;
+}
+.img-frame img {
+  transition: transform 1.4s var(--ease-premium), filter 0.8s ease;
+}
+.img-frame:hover img {
+  transform: scale(1.05);
+}
+
+/* Gold sliver — diagonal accent stroke */
+.sliver-gold {
+  position: relative;
+}
+.sliver-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 1.5px;
+  background: #B4975A;
+}
+
+/* ============================================================
+   Focus ring — accessibility
+   ============================================================ */
 :focus-visible {
   outline: 2px solid #B4975A;
   outline-offset: 3px;
@@ -87,4 +328,28 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid #B4975A;
   outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(180, 151, 90, 0.32);
+  color: #231F20;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .word-rise,
+  .clip-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }

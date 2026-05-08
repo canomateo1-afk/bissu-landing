@@ -12,11 +12,11 @@ const config: Config = {
         // Brand-official palette (Manual de Uso): black #231F20, white, gold #B4975A
         // Light theme: white surfaces, brand-black text, gold accent.
         ink: {
-          900: "#FFFFFF", // page bg
-          800: "#FAF8F3", // alternating cream section (warm paper)
-          700: "#F2EEE3",
-          600: "#EAE3D2",
-          500: "#D9D0BB",
+          900: "#FBF8F1", // page bg — warm paper cream
+          800: "#EDE5D2", // alternating cream section (perceptibly deeper)
+          700: "#E0D4B7",
+          600: "#CFC09C",
+          500: "#B7A57F",
         },
         bone: {
           50: "#231F20", // primary text — brand BLACK from manual
@@ -52,6 +52,7 @@ const config: Config = {
         marquee: "marquee 60s linear infinite",
         "marquee-slow": "marquee 110s linear infinite",
         "fade-up": "fade-up 0.9s cubic-bezier(0.22,1,0.36,1) both",
+        "drift-slow": "drift 7s ease-in-out infinite",
       },
       keyframes: {
         marquee: {
@@ -62,6 +63,15 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        drift: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
+      },
+      transitionTimingFunction: {
+        premium: "cubic-bezier(0.22, 1, 0.36, 1)",
+        elegant: "cubic-bezier(0.65, 0, 0.35, 1)",
+        spring: "cubic-bezier(0.34, 1.56, 0.64, 1)",
       },
     },
   },

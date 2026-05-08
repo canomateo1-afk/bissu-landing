@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { events } from "@/lib/analytics";
 
 export default function WhatsAppButton() {
   const [show, setShow] = useState(false);
@@ -16,6 +17,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
+      onClick={() => events.whatsappClick("floating_button")}
       className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white flex items-center justify-center shadow-2xl transition-all duration-500 whatsapp-pulse ${
         show
           ? "opacity-100 translate-y-0"

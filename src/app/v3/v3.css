@@ -1,0 +1,265 @@
+/* ============================================================
+   BISSU V3 — Modern Editorial (sweet spot entre V1 y V2)
+   Photography-led · Serif headlines + sans body · Refined corners · Generous whitespace
+   ============================================================ */
+
+.v3-root {
+  --v3-bg: #FBF7EE;
+  --v3-bg-elev: #FFFFFF;
+  --v3-bg-deep: #F4EDDD;
+  --v3-bg-dark: #1A1714;
+  --v3-text: #1A1714;
+  --v3-text-muted: #5A4F45;
+  --v3-text-subtle: #948876;
+  --v3-border: rgba(26, 23, 20, 0.10);
+  --v3-border-strong: rgba(26, 23, 20, 0.18);
+  --v3-accent: #B4975A;
+  --v3-accent-soft: rgba(180, 151, 90, 0.12);
+  --v3-accent-strong: #8C7339;
+  --v3-radius: 4px;
+  --v3-radius-lg: 6px;
+  --v3-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  background: var(--v3-bg);
+  color: var(--v3-text);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: -0.005em;
+}
+
+.v3-root *::selection {
+  background: var(--v3-accent);
+  color: white;
+}
+
+/* Display — editorial serif retained for headlines */
+.v3-display {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Mono numerals */
+.v3-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum", "lnum";
+}
+
+/* Eyebrow label */
+.v3-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--v3-text-muted);
+  display: inline-flex;
+  align-items: center;
+}
+.v3-eyebrow-pleca::before {
+  content: "";
+  display: inline-block;
+  width: 1.5px;
+  height: 14px;
+  background: var(--v3-accent);
+  margin-right: 0.85em;
+}
+
+/* Headlines — serif editorial */
+.v3-h1 {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--v3-text);
+}
+.v3-h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--v3-text);
+}
+.v3-h2 {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.0;
+  letter-spacing: -0.022em;
+}
+.v3-h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Big stat — serif editorial */
+.v3-stat {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card — refined corners, breathing space */
+.v3-card {
+  background: var(--v3-bg-elev);
+  border: 1px solid var(--v3-border);
+  border-radius: var(--v3-radius-lg);
+  transition:
+    border-color 0.4s var(--v3-ease),
+    transform 0.4s var(--v3-ease),
+    box-shadow 0.5s var(--v3-ease);
+}
+.v3-card:hover {
+  border-color: var(--v3-border-strong);
+  box-shadow: 0 1px 0 rgba(180, 151, 90, 0.04), 0 8px 24px -16px rgba(26, 23, 20, 0.10);
+}
+
+/* Buttons — prominent, won't get lost */
+.v3-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--v3-text);
+  color: white;
+  padding: 1.05rem 1.85rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  border-radius: 9999px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.10) inset,
+    0 8px 24px -10px rgba(26, 23, 20, 0.45),
+    0 2px 6px -2px rgba(26, 23, 20, 0.25);
+  transition:
+    background 0.3s var(--v3-ease),
+    transform 0.3s var(--v3-ease),
+    box-shadow 0.3s var(--v3-ease);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+.v3-btn:hover {
+  background: var(--v3-accent-strong);
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.10) inset,
+    0 14px 32px -10px rgba(140, 115, 57, 0.50),
+    0 2px 6px -2px rgba(26, 23, 20, 0.30);
+}
+.v3-btn:active {
+  transform: translateY(0);
+}
+.v3-btn-secondary {
+  background: transparent;
+  color: var(--v3-text);
+  border: 1.5px solid var(--v3-border-strong);
+  box-shadow: none;
+}
+.v3-btn-secondary:hover {
+  background: var(--v3-text);
+  color: white;
+  border-color: var(--v3-text);
+  box-shadow:
+    0 8px 24px -10px rgba(26, 23, 20, 0.40),
+    0 2px 6px -2px rgba(26, 23, 20, 0.20);
+}
+/* Light variant — for use over dark/video backgrounds */
+.v3-btn-on-dark {
+  background: white;
+  color: var(--v3-text);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.04) inset,
+    0 10px 28px -8px rgba(0, 0, 0, 0.55),
+    0 2px 6px -2px rgba(0, 0, 0, 0.35);
+}
+.v3-btn-on-dark:hover {
+  background: var(--v3-accent);
+  color: white;
+  box-shadow:
+    0 14px 32px -8px rgba(180, 151, 90, 0.55),
+    0 2px 6px -2px rgba(26, 23, 20, 0.30);
+}
+.v3-btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--v3-ease);
+}
+.v3-btn:hover .v3-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Pleca refined */
+.v3-pleca {
+  display: inline-block;
+  width: 1.5px;
+  background: linear-gradient(to bottom, var(--v3-accent) 0%, rgba(180, 151, 90, 0.5) 100%);
+}
+
+/* Hairline divider */
+.v3-hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(180, 151, 90, 0.4) 30%,
+    rgba(180, 151, 90, 0.4) 70%,
+    transparent 100%
+  );
+}
+
+/* Marquee */
+@keyframes v3-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.v3-marquee {
+  animation: v3-marquee 50s linear infinite;
+}
+.v3-marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+}
+
+/* Tab indicator transition */
+.v3-tab-active {
+  position: relative;
+}
+
+/* Reveal */
+.v3-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.85s var(--v3-ease), transform 0.85s var(--v3-ease);
+}
+.v3-fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ken Burns — slow zoom/pan for hero media (fallback when video missing) */
+@keyframes v3-ken-burns {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.10) translate(-1.5%, -1%);
+  }
+}
+.v3-ken-burns {
+  animation: v3-ken-burns 18s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Video cover — same size as image */
+.v3-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3-fade { opacity: 1; transform: none; }
+  .v3-marquee { animation: none; }
+}

@@ -1,16 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { events } from "@/lib/analytics";
 
 const links = [
   { href: "#firma", label: "Firma" },
-  { href: "#proceso", label: "Proceso" },
-  { href: "#abogados", label: "Abogados" },
   { href: "#areas", label: "Áreas" },
   { href: "#casos", label: "Casos" },
-  { href: "#reconocimientos", label: "Reconocimientos" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#abogados", label: "Equipo" },
+  { href: "#recursos", label: "Recursos" },
 ];
 
 export default function Navbar() {
@@ -80,6 +78,7 @@ export default function Navbar() {
 
           <a
             href="#contacto"
+            onClick={() => events.ctaClick("navbar_desktop", "Agenda una cita")}
             className="hidden lg:inline-flex items-center gap-2.5 font-sans text-[11px] tracking-[0.22em] uppercase text-ink-900 bg-bone-50 hover:bg-bone-100 px-5 py-2.5 transition-colors font-medium"
           >
             Agenda una cita
@@ -116,7 +115,10 @@ export default function Navbar() {
             ))}
             <a
               href="#contacto"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                events.ctaClick("navbar_mobile_menu", "Agenda una cita");
+              }}
               className="block w-full mt-5 text-ink-900 bg-bone-50 py-3 font-sans text-[11px] tracking-[0.22em] uppercase text-center font-medium"
             >
               Agenda una cita →
