@@ -414,25 +414,27 @@ function V4Hero() {
       <div className="relative z-10 h-full max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12 flex items-center pt-24 pb-36 sm:pb-32 lg:pb-28">
         <div className="max-w-[820px]">
 
-          {/* H1 — keyword-first SEO trunk */}
+          {/* H1 — keyword-first SEO trunk, 3 balanced lines */}
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.45 }}
             className="v3-h1"
             style={{
-              fontSize: "clamp(2.5rem, 5.2vw, 4.75rem)",
-              lineHeight: "1.0",
+              fontSize: "clamp(2rem, 4.6vw, 4.25rem)",
+              lineHeight: "1.05",
               letterSpacing: "-0.025em",
               color: "#FFFFFF",
               textShadow: "0 2px 24px rgba(0,0,0,0.35)",
+              textWrap: "balance",
             }}
           >
-            Despacho de abogados en CDMX
-            <br />
-            especializado en{" "}
-            <em style={{ color: "#FFFFFF" }}>litigio y arbitraje</em>
-            <span style={{ color: "#D4B97A" }}>.</span>
+            <span className="block">Despacho de abogados</span>
+            <span className="block">en CDMX especializado en</span>
+            <span className="block">
+              <em style={{ color: "#FFFFFF" }}>litigio y arbitraje</em>
+              <span style={{ color: "#D4B97A" }}>.</span>
+            </span>
           </motion.h1>
 
           {/* Subhead */}
