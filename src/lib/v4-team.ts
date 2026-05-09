@@ -50,7 +50,6 @@ export const v4Team: V4TeamMember[] = [
     name: "Adolfo Julián Vargas Alvarado",
     role: "Socio Jr.",
     subtitle: "Litigio civil · Constitucional · Familiar",
-    // TODO: drop file at /public/images/team/adolfo.jpg
     photo: "/images/team/adolfo.jpg",
     bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados con especialización en derecho procesal constitucional. Trayectoria previa en el Poder Judicial Federal y firmas mexicanas de práctica civil y familiar.",
     quote:
