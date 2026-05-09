@@ -54,7 +54,7 @@ export const v4Team: V4TeamMember[] = [
     role: "Socio Jr.",
     subtitle: "Litigio civil · Constitucional · Familiar",
     photo: "/images/team/adolfo.jpg",
-    photoFocusY: "85%",
+    photoFocusY: "78%",
     bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados con especialización en derecho procesal constitucional. Trayectoria previa en el Poder Judicial Federal y firmas mexicanas de práctica civil y familiar.",
     quote:
       "El amparo no es solo un recurso técnico. Es la última herramienta del individuo frente al poder. Hay que escribirlo con esa seriedad.",
