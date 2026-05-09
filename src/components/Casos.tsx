@@ -95,7 +95,8 @@ export default function Casos() {
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
               <h2 className="font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] balance">
-                Resultados que <span className="italic">se cuentan en números</span>
+                Casos representativos de{" "}
+                <span className="italic">litigio y arbitraje</span>
                 <span className="text-gold-400">.</span>
               </h2>
             </Reveal>
@@ -126,7 +127,7 @@ export default function Casos() {
                 >
                   <Image
                     src={featured.image}
-                    alt={`${featured.area} — caso destacado`}
+                    alt={`${featured.area} — caso destacado de Bissu Abogados en México`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 60vw"
                     className="object-cover"
@@ -200,7 +201,7 @@ export default function Casos() {
                 >
                   <Image
                     src={c.image}
-                    alt={`${c.area} — atmosférica`}
+                    alt={`Caso de ${c.area} — Bissu Abogados, despacho jurídico en CDMX`}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"

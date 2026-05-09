@@ -19,8 +19,10 @@ export default function Contacto() {
         <SectionLabel n="09" label="Agenda tu consulta" />
 
         <Reveal>
-          <h2 className="mt-20 font-display font-normal text-bone-50 leading-[0.94] tracking-tightest text-[60px] sm:text-[100px] lg:text-[140px] balance">
-            Hablemos<span className="text-gold-400 italic">.</span>
+          <h2 className="mt-20 font-display font-normal text-bone-50 leading-[0.96] tracking-tightest text-[40px] sm:text-[64px] lg:text-[88px] balance">
+            Agenda una{" "}
+            <span className="italic">consulta con un abogado</span> en CDMX
+            <span className="text-gold-400">.</span>
           </h2>
         </Reveal>
 

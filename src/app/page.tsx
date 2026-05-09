@@ -28,7 +28,7 @@ export default function Home() {
       <Areas />
       <Casos />
       <MidCTA
-        headline="Tu caso merece un análisis serio"
+        headline="Tu caso merece abogados con un análisis serio"
         italicWord="serio"
         ctaLabel="Agenda consulta gratuita"
       />

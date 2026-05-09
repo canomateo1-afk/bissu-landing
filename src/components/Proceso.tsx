@@ -8,25 +8,25 @@ const steps = [
   {
     n: "01",
     duration: "Día 1",
-    title: "Consulta inicial",
+    title: "Consulta inicial gratuita",
     body: "Reunión gratuita de 20 min. Escuchamos tu caso, identificamos el área aplicable y decimos si Bissu es el equipo adecuado o no.",
   },
   {
     n: "02",
     duration: "Días 2 — 7",
-    title: "Análisis y estrategia",
+    title: "Análisis y dictamen jurídico",
     body: "Revisamos documentos, antecedentes y contraparte. Entregamos un dictamen escrito con escenarios, riesgos, plazos y honorarios.",
   },
   {
     n: "03",
     duration: "Variable",
-    title: "Ejecución",
+    title: "Ejecución del caso",
     body: "Asunción formal del caso. Trabajamos la estrategia acordada — un abogado titular es responsable directo y reporta avances periódicos.",
   },
   {
     n: "04",
     duration: "Cierre",
-    title: "Resolución",
+    title: "Resolución y cierre",
     body: "Sentencia, acuerdo o mecanismo alternativo. Cerramos con informe final y, si aplica, asesoramos en pasos posteriores.",
   },
 ];
@@ -79,8 +79,8 @@ export default function Proceso() {
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
               <h2 className="font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] balance">
-                Cuatro pasos.{" "}
-                <span className="italic">Cero ambigüedad</span>
+                Proceso de un caso de{" "}
+                <span className="italic">litigio y arbitraje</span>
                 <span className="text-gold-400">.</span>
               </h2>
             </Reveal>

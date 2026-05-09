@@ -71,8 +71,8 @@ export default function Comparacion() {
           <div className="col-span-12 lg:col-span-8">
             <Reveal>
               <h2 className="font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] balance">
-                Bissu vs un{" "}
-                <span className="italic">despacho tradicional</span>
+                Despacho boutique vs{" "}
+                <span className="italic">despacho jurídico tradicional</span>
                 <span className="text-gold-400">.</span>
               </h2>
             </Reveal>

@@ -11,7 +11,7 @@ const areas = [
     n: "01",
     title: "Litigio Civil",
     summary:
-      "Contratos, daños y perjuicios, derechos individuales, sentencias extranjeras.",
+      "Contratos, daños y perjuicios, derechos individuales y homologación de sentencias extranjeras en México.",
     items: [
       "Interpretación y cumplimiento de contratos",
       "Acciones colectivas",
@@ -23,9 +23,9 @@ const areas = [
   },
   {
     n: "02",
-    title: "Mercantil & Corporativo",
+    title: "Litigio Mercantil y Corporativo",
     summary:
-      "Sociedades, contratos mercantiles, conflictos accionarios, fideicomisos.",
+      "Sociedades, contratos mercantiles, conflictos accionarios y fideicomisos para empresas en México.",
     items: [
       "Contratos mercantiles",
       "Conflictos entre accionistas",
@@ -36,9 +36,9 @@ const areas = [
   },
   {
     n: "03",
-    title: "Concursal",
+    title: "Litigio Concursal y Concurso Mercantil",
     summary:
-      "Reestructuras, quiebras, convenios, recuperación de créditos.",
+      "Reestructuras empresariales, quiebras, convenios concursales y recuperación de créditos.",
     items: [
       "Concursos mercantiles y quiebras",
       "Convenios concursales",
@@ -49,9 +49,9 @@ const areas = [
   },
   {
     n: "04",
-    title: "Familiar",
+    title: "Derecho Familiar",
     summary:
-      "Divorcios, custodia, pensión, restitución internacional, sucesiones.",
+      "Divorcios, custodia compartida, pensión alimenticia, restitución internacional de menores y sucesiones.",
     items: [
       "Divorcios",
       "Patria potestad y custodia",
@@ -63,9 +63,9 @@ const areas = [
   },
   {
     n: "05",
-    title: "Constitucional",
+    title: "Litigio Constitucional y Amparo",
     summary:
-      "Amparo, acciones de inconstitucionalidad, controversias constitucionales.",
+      "Juicio de amparo, acciones de inconstitucionalidad y controversias constitucionales.",
     items: [
       "Juicio de amparo",
       "Acciones de inconstitucionalidad",
@@ -75,9 +75,9 @@ const areas = [
   },
   {
     n: "06",
-    title: "Arbitraje & MASC",
+    title: "Arbitraje Internacional y MASC",
     summary:
-      "Arbitraje internacional, mediación, conciliación, ejecución de laudos.",
+      "Arbitraje comercial internacional, mediación, conciliación y ejecución de laudos extranjeros.",
     items: [
       "Arbitraje como abogado o árbitro",
       "Ejecución y nulidad de laudos",
@@ -123,7 +123,8 @@ export default function Areas() {
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
               <h2 className="font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] balance">
-                Seis áreas, una <span className="italic">sola estrategia</span>
+                Áreas de{" "}
+                <span className="italic">práctica jurídica</span>
                 <span className="text-gold-400">.</span>
               </h2>
             </Reveal>
@@ -143,7 +144,7 @@ export default function Areas() {
               >
                 <Image
                   src="/images/hero-3.jpg"
-                  alt="Detalle — oficinas Bissu Abogados"
+                  alt="Áreas de práctica de Bissu Abogados — despacho de litigio en CDMX"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"

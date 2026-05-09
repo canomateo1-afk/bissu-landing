@@ -19,9 +19,9 @@ export default function Firma() {
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
               <h2 className="font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] balance">
-                Un despacho<br />
-                para los <span className="italic">asuntos complejos</span><br />
-                de México<span className="text-gold-400">.</span>
+                Despacho jurídico<br />
+                en <span className="italic">Polanco, CDMX</span>
+                <span className="text-gold-400">.</span>
               </h2>
             </Reveal>
           </div>
@@ -36,7 +36,7 @@ export default function Firma() {
               >
                 <Image
                   src="/images/hero-2.jpg"
-                  alt="Detalle editorial — interior Bissu Abogados"
+                  alt="Biblioteca de Bissu Abogados — despacho jurídico en Polanco, CDMX"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
@@ -78,7 +78,8 @@ export default function Firma() {
           <div className="col-span-12 lg:col-span-5 lg:col-start-1">
             <Reveal>
               <p className="font-body text-bone-50 text-[15px] sm:text-base leading-[1.75] mb-6 pretty">
-                Bissu Abogados, S.C. es un despacho especializado, con profunda
+                Bissu Abogados, S.C. es un despacho de abogados especializado
+                en litigio y arbitraje en Ciudad de México, con profunda
                 experiencia y conocimiento legal, fundado por abogados
                 preparados para enfrentar las necesidades complejas de nuestros
                 clientes.

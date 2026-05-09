@@ -43,7 +43,8 @@ export default function Abogados() {
 
         <FadeIn>
           <h2 className="mt-20 font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] max-w-5xl">
-            Atención directa con <span className="italic">abogados titulares</span>
+            Equipo de{" "}
+            <span className="italic">abogados titulares</span> en CDMX
             <span className="text-gold-400">.</span>
           </h2>
         </FadeIn>

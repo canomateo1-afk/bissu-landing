@@ -71,8 +71,8 @@ export default function FAQ() {
 
         <Reveal>
           <h2 className="mt-20 font-display font-normal text-bone-50 leading-[0.98] tracking-tightest text-[40px] sm:text-[60px] lg:text-[84px] max-w-4xl balance">
-            Lo que casi todos{" "}
-            <span className="italic">se preguntan</span>
+            Preguntas frecuentes sobre{" "}
+            <span className="italic">servicios jurídicos</span>
             <span className="text-gold-400">.</span>
           </h2>
         </Reveal>

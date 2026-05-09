@@ -130,20 +130,22 @@ export default function Hero() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-11">
             <motion.h1
-              className="font-display font-normal text-bone-50 leading-[0.94] tracking-tightest text-[52px] sm:text-[80px] md:text-[112px] lg:text-[144px] xl:text-[172px]"
+              className="font-display font-normal text-bone-50 leading-[0.94] tracking-tightest text-[40px] sm:text-[60px] md:text-[80px] lg:text-[104px] xl:text-[120px]"
               variants={wordContainerVariants}
               initial={reduce ? "show" : "hidden"}
               animate="show"
             >
-              <Word>Práctica</Word> <Word>jurídica</Word>
+              <Word>Despacho</Word> <Word>de</Word> <Word>abogados</Word>{" "}
+              <Word>en</Word> <Word>CDMX</Word>
               <br />
+              <Word>especializado</Word> <Word>en</Word>{" "}
               <span className="word-mask">
                 <motion.span
                   className="inline-block italic relative"
                   variants={wordVariants}
                   style={{ willChange: "transform, opacity" }}
                 >
-                  de fondo
+                  litigio y arbitraje
                   <motion.span
                     aria-hidden
                     className="absolute left-0 right-0 bottom-[0.06em] h-[0.08em] origin-left"
@@ -175,7 +177,7 @@ export default function Hero() {
               <span className="pleca pleca-lg shrink-0 mt-1.5" aria-hidden />
               <div className="max-w-xl">
                 <p className="font-body text-bone-50 text-[17px] sm:text-[19px] leading-[1.55] mb-6 balance">
-                  Despacho boutique en CDMX especializado en{" "}
+                  Despacho de abogados boutique en CDMX especializado en{" "}
                   <span className="text-bone-50">litigio complejo</span> y{" "}
                   <span className="text-bone-50">arbitraje internacional</span>{" "}
                   para empresas, instituciones e individuos en todo México.

@@ -30,12 +30,12 @@ const body = Libre_Baskerville({
 const SITE_URL = "https://bissuabogados.com";
 const SITE_NAME = "Bissu Abogados";
 const DESCRIPTION =
-  "Despacho jurídico especializado en litigio civil, comercial, concursal, familiar, constitucional y mecanismos alternativos de resolución de conflictos. Reconocidos por Best Lawyers in Mexico 2026 y Leaders League 2025.";
+  "Despacho de abogados en CDMX especializado en litigio civil, mercantil, concursal, familiar, constitucional y arbitraje internacional en México. Reconocidos por Best Lawyers in Mexico 2026 y Leaders League 2025. Consulta inicial gratuita.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bissu Abogados — Despacho jurídico, Ciudad de México",
+    default: "Bissu Abogados | Despacho de Litigio y Arbitraje en CDMX, México",
     template: "%s | Bissu Abogados",
   },
   description: DESCRIPTION,
@@ -44,17 +44,29 @@ export const metadata: Metadata = {
   generator: "Next.js",
   keywords: [
     "Bissu Abogados",
-    "despacho jurídico CDMX",
+    "despacho de abogados CDMX",
+    "despacho jurídico Ciudad de México",
     "abogados Polanco",
-    "litigio civil",
-    "litigio mercantil",
-    "litigio concursal",
-    "derecho familiar",
-    "derecho constitucional",
-    "arbitraje internacional",
-    "concurso mercantil",
-    "amparo",
-    "Best Lawyers Mexico",
+    "abogados Lomas de Chapultepec",
+    "abogados litigantes México",
+    "abogado civil CDMX",
+    "abogado mercantil CDMX",
+    "abogado corporativo Ciudad de México",
+    "abogado concurso mercantil México",
+    "abogado de quiebra",
+    "abogado familiar CDMX",
+    "abogado de divorcios CDMX",
+    "abogado custodia compartida",
+    "abogado pensión alimenticia",
+    "restitución internacional de menores",
+    "abogado de amparo CDMX",
+    "juicio de amparo México",
+    "arbitraje comercial internacional",
+    "arbitraje CCI México",
+    "mediación comercial México",
+    "Samuel Bissu",
+    "Best Lawyers Mexico 2026",
+    "Leaders League 2025",
   ],
   alternates: {
     canonical: "/",
@@ -69,20 +81,20 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "/",
     siteName: SITE_NAME,
-    title: "Bissu Abogados — Despacho jurídico en CDMX",
+    title: "Bissu Abogados | Despacho de Litigio y Arbitraje en CDMX",
     description: DESCRIPTION,
     images: [
       {
         url: "/images/hero-1.jpg",
         width: 1200,
         height: 800,
-        alt: "Oficinas Bissu Abogados — Polanco, CDMX",
+        alt: "Oficinas Bissu Abogados — despacho jurídico en Polanco, CDMX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bissu Abogados — Despacho jurídico en CDMX",
+    title: "Bissu Abogados | Despacho de Litigio y Arbitraje en CDMX",
     description: DESCRIPTION,
     images: ["/images/hero-1.jpg"],
   },
