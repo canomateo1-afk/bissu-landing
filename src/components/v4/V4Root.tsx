@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Script from "next/script";
 import { v4Team } from "@/lib/v4-team";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -23,6 +24,7 @@ export default function V4Root() {
       <V4Testimonials />
       <V4Quote />
       <V4Team />
+      <V4FAQ />
       <V4ConsultCard />
       <V4Footer />
     </div>
@@ -581,22 +583,22 @@ function V4Pillars() {
   const pillars = [
     {
       tag: "Diagnóstico",
-      title: "Dictamen escrito en 24 horas",
+      title: "Dictamen jurídico en 24 horas",
       body: "Análisis de fondo con escenarios, plazos y honorarios estimados. Antes de firmar nada.",
     },
     {
       tag: "Honorarios",
-      title: "Transparentes desde el día 1",
+      title: "Honorarios transparentes desde el día 1",
       body: "Tarifa fija, por hora o cuota litis. Sin sorpresas durante el proceso. Convenio firmado antes de empezar.",
     },
     {
       tag: "Atención",
-      title: "Directa con abogado titular",
+      title: "Atención directa con abogado titular",
       body: "Sin derivaciones a juniors. Un solo punto de contacto, reporte periódico, decisiones explicadas.",
     },
     {
       tag: "Selección",
-      title: "Solo casos que podemos ganar",
+      title: "Selección rigurosa de casos jurídicos",
       body: "Si no aportamos valor o no tenemos el expertise, te referenciamos sin costo. Tu tiempo importa.",
     },
   ];
@@ -652,60 +654,60 @@ function V4AreasTabbed() {
     {
       key: "civil",
       label: "Civil",
-      title: "Litigio Civil",
+      title: "Litigio Civil en México",
       tagline: "Cuando un contrato se rompe.",
       blurb:
-        "Conflictos entre particulares por incumplimiento de obligaciones, daños patrimoniales o lesión a derechos individuales. Análisis de fondo para reclamaciones civiles complejas con dictamen escrito antes de iniciar.",
+        "Abogado de litigio civil para conflictos entre particulares por incumplimiento de contratos, daños y perjuicios, daño moral, créditos, hipotecas, arrendamiento y homologación de sentencias extranjeras. Dictamen escrito antes de iniciar el proceso.",
       image:
         "/images/areas/civil.jpg",
     },
     {
       key: "mercantil",
       label: "Mercantil",
-      title: "Mercantil & Corporativo",
+      title: "Litigio Mercantil y Corporativo",
       tagline: "Sociedades, accionistas, contratos.",
       blurb:
-        "Conflictos entre accionistas, dilución, contratos mercantiles complejos, fideicomisos. Defensa rigurosa para empresas familiares y multinacionales con interlocutor único.",
+        "Abogado mercantil y corporativo en CDMX para conflictos entre accionistas, dilución accionaria, contratos mercantiles complejos, títulos y operaciones de crédito, fideicomisos, seguros y fianzas. Defensa rigurosa para empresas familiares y multinacionales.",
       image:
         "/images/areas/mercantil.jpg",
     },
     {
       key: "concursal",
       label: "Concursal",
-      title: "Concurso Mercantil & Reestructura",
+      title: "Litigio Concursal y Concurso Mercantil",
       tagline: "Operación que continúa, no se liquida.",
       blurb:
-        "Reestructura de deuda con acreedores, convenios concursales, recuperación de créditos, insolvencia transfronteriza. Casos representativos: 60% de quita aprobada manteniendo operación.",
+        "Abogado de concurso mercantil para reestructura empresarial, convenios concursales, recuperación de créditos, reconocimiento de créditos, quiebras e insolvencia transfronteriza. Caso representativo: 60% de quita aprobada manteniendo la operación.",
       image:
         "/images/areas/concursal.jpg",
     },
     {
       key: "familiar",
       label: "Familiar",
-      title: "Derecho Familiar",
+      title: "Derecho Familiar y Custodia",
       tagline: "Custodia internacional, sucesiones, divorcios.",
       blurb:
-        "Custodia compartida internacional, pensión alimenticia, divorcios contenciosos, restitución de menores bajo el Convenio de la Haya, sucesiones testamentarias e intestadas.",
+        "Abogado familiar en CDMX para divorcios contenciosos y voluntarios, patria potestad, custodia compartida internacional, pensión alimenticia, restitución internacional de menores bajo el Convenio de la Haya, y sucesiones testamentarias e intestadas.",
       image:
         "/images/areas/familiar.jpg",
     },
     {
       key: "constitucional",
       label: "Constitucional",
-      title: "Litigio Constitucional",
+      title: "Litigio Constitucional y Amparo",
       tagline: "Amparo cuando el Estado se equivoca.",
       blurb:
-        "Juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales, suspensión del acto reclamado para PYMEs y particulares.",
+        "Abogado de amparo en CDMX para juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales y suspensión del acto reclamado, dirigido a PYMEs, empresas y particulares afectados por actos de autoridad.",
       image:
         "/images/areas/constitucional.jpg",
     },
     {
       key: "arbitraje",
-      label: "Arbitraje & MASC",
-      title: "Arbitraje & MASC",
+      label: "Arbitraje",
+      title: "Arbitraje Internacional y MASC",
       tagline: "CCI, mediación, ejecución de laudos.",
       blurb:
-        "Arbitraje comercial internacional bajo Cámara de Comercio Internacional, ejecución y nulidad de laudos, mediación, conciliación, medidas cautelares para disputas cross-border.",
+        "Abogado de arbitraje comercial internacional bajo reglas de la Cámara de Comercio Internacional (CCI), ejecución y nulidad de laudos, reconocimiento de laudos extranjeros, mediación, conciliación y medidas cautelares para disputas cross-border.",
       image:
         "/images/areas/arbitraje.jpg",
     },
@@ -1154,19 +1156,19 @@ function V4CredentialsGrid() {
       faded: ["Amparo administrativo concedido"],
     },
     {
-      title: "Áreas de práctica",
+      title: "Áreas de práctica jurídica",
       subtitle: "Con dictamen escrito en 24 hs",
       count: "6 áreas activas",
       items: [
         "Litigio Civil",
-        "Mercantil & Corporativo",
-        "Concursal · Reestructura",
-        "Derecho Familiar",
+        "Litigio Mercantil y Corporativo",
+        "Litigio Concursal y Concurso Mercantil",
+        "Derecho Familiar y Custodia",
       ],
-      faded: ["Constitucional · Amparo", "Arbitraje & MASC"],
+      faded: ["Litigio Constitucional y Amparo", "Arbitraje Internacional y MASC"],
     },
     {
-      title: "Equipo titular",
+      title: "Equipo de abogados titulares",
       subtitle: "Atención sin derivaciones",
       count: "2 socios · responsables directos",
       items: [
@@ -1177,7 +1179,7 @@ function V4CredentialsGrid() {
       faded: ["Idiomas: Español · Inglés"],
     },
     {
-      title: "Cobertura",
+      title: "Cobertura del despacho jurídico",
       subtitle: "Operación nacional · CCI internacional",
       count: "República Mexicana",
       items: [
@@ -1560,6 +1562,133 @@ function V4Team() {
               </p>
             </motion.a>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ============================================================
+// FAQ — preguntas frecuentes con FAQPage schema (citation AI)
+// Respuestas 134-167 palabras self-contained
+// ============================================================
+function V4FAQ() {
+  const [open, setOpen] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      q: "¿Cuánto cuesta una primera consulta con Bissu Abogados?",
+      a: "La primera consulta en Bissu Abogados es gratuita y dura 20 minutos. Se realiza por videollamada o presencial en nuestras oficinas de Av. Prado Norte 365, Lomas de Chapultepec, Ciudad de México. En esa reunión hacemos tres cosas concretas. Primero, escuchamos tu caso sin interrumpir y registramos hechos, contraparte y plazos críticos. Segundo, identificamos qué área de práctica aplica entre las seis que atendemos: civil, mercantil y corporativo, concursal, familiar, constitucional o arbitraje y MASC. Tercero, te decimos honestamente si Bissu es el equipo adecuado o si te conviene una firma con perfil más específico. Si pasa lo segundo, te referenciamos sin costo. No iniciamos ningún cobro hasta firmar convenio escrito de honorarios. Después de la consulta, en 24 horas hábiles te entregamos un dictamen escrito con escenarios, plazos y honorarios estimados.",
+    },
+    {
+      q: "¿Cómo se cobran los honorarios en Bissu Abogados?",
+      a: "Los honorarios de Bissu se cobran bajo tres esquemas posibles, definidos antes de iniciar el caso: tarifa fija por entregable, tarifa por hora de trabajo, o cuota litis (porcentaje sobre el resultado obtenido). El esquema aplicable se determina según el área y la complejidad del asunto. Por ejemplo, una asesoría puntual o un contrato suelen ir por tarifa fija; un litigio de duración indefinida puede ir por hora; una reclamación civil con expectativa cuantificable puede ir por cuota litis. La propuesta económica detallada se entrega en el dictamen escrito posterior a la consulta inicial gratuita y nunca iniciamos trabajo sin convenio firmado y aceptación expresa de los honorarios. Para procesos largos, pactamos esquemas de pago en hitos del expediente o en plazos mensuales, todo formalizado en el mismo convenio. Sin sorpresas durante el proceso.",
+    },
+    {
+      q: "¿Cuánto tarda un caso típico de litigio en resolverse?",
+      a: "La duración de un caso depende del área jurídica y de la complejidad específica. Como referencia basada en casos representativos de Bissu desde 2017: un litigio civil ronda entre 18 y 30 meses; un concurso mercantil entre 12 y 24 meses; un caso familiar entre 6 y 18 meses; un amparo administrativo entre 8 y 14 meses; un arbitraje comercial internacional entre 14 y 24 meses. Estos son rangos típicos, no compromisos. La duración real depende de la carga de trabajo del juzgado, las tácticas dilatorias de la contraparte, la complejidad probatoria y los recursos que se interpongan. En el dictamen inicial te entregamos un estimado realista basado en los hechos concretos de tu caso, no en promedios genéricos. Te avisamos por escrito si el estimado cambia durante el proceso.",
+    },
+    {
+      q: "¿Bissu Abogados atiende casos fuera de Ciudad de México?",
+      a: "Sí. Bissu Abogados opera en todo el territorio mexicano, no solo en Ciudad de México. Nuestra sede física está en Lomas de Chapultepec, CDMX, pero la práctica jurídica se ejerce a nivel nacional. Cuando un caso requiere comparecencias presenciales en otros estados, lo coordinamos con la red de abogados corresponsales que sostenemos desde 2017, todos verificados por trayectoria y especialidad en jurisdicciones específicas. Los costos de comparecencias foráneas se transparentan antes y se incluyen en la propuesta económica inicial. Para arbitrajes internacionales, también representamos casos con sede fuera de México bajo reglas como la Cámara de Comercio Internacional (CCI). Si el caso es 100% remoto, podemos atender clientes ubicados en cualquier parte del mundo, siempre que la jurisdicción aplicable sea mexicana o admita representación cross-border.",
+    },
+    {
+      q: "¿Qué pasa si Bissu no es el despacho indicado para mi caso?",
+      a: "Si tu caso no es para Bissu, te lo decimos directamente en la consulta inicial gratuita. Esto pasa típicamente en tres escenarios. Primero, cuando el asunto requiere expertise muy específico fuera de las seis áreas que atendemos (por ejemplo, derecho fiscal especializado, derecho laboral colectivo o propiedad industrial). Segundo, cuando el asunto es de cuantía menor donde un despacho boutique como Bissu no aporta diferencial de valor. Tercero, cuando hay conflicto de interés con clientes existentes. En cualquiera de los tres casos, si conocemos un despacho mejor posicionado para tu asunto puntual, te referenciamos sin costo y sin compromiso. Preferimos no tomar un caso antes que entregarlo a alguien que no tiene el expertise específico — esa es la lógica de cómo seleccionamos casos desde 2017.",
+    },
+    {
+      q: "¿Mi caso será tratado de forma confidencial?",
+      a: "Sí. Toda información compartida con Bissu Abogados está protegida por el secreto profesional regulado en el artículo 36 del Código Penal Federal mexicano y el artículo 35 del Código Civil Federal, además de los códigos de ética del Colegio de Abogados. La protección rige desde el primer contacto, incluso en la consulta inicial gratuita y aunque finalmente no contrates nuestros servicios. En la práctica, esto significa: ningún miembro del equipo puede revelar hechos, documentos ni estrategias de tu caso fuera del despacho ni después de concluida la relación profesional; los archivos físicos y digitales se manejan con accesos restringidos al equipo asignado; y la descripción pública de cualquier caso (como en la sección de casos representativos del sitio) omite todos los elementos identificatorios. La confidencialidad es la base sobre la que construimos toda relación con clientes.",
+    },
+    {
+      q: "¿Bissu toma casos personales además de empresariales?",
+      a: "Sí. Bissu Abogados representa por igual a empresas e individuos. La distribución típica de la cartera es aproximadamente 60% empresarial (empresas familiares, multinacionales, instituciones, PYMEs) y 40% personas físicas (particulares de alto patrimonio y profesionales independientes). Las áreas que más aplican a casos personales son derecho familiar (divorcios, custodia compartida internacional, sucesiones, pensión alimenticia), litigio civil (daños y perjuicios, contratos personales) y litigio constitucional (juicio de amparo individual). Para casos personales aplicamos los mismos estándares que en casos corporativos: titular responsable directo, dictamen escrito antes de iniciar, comunicación periódica documentada y honorarios transparentes desde el día uno. La discreción es total — los asuntos personales suelen tener exposición patrimonial alta y ningún detalle del caso sale del despacho ni durante ni después del proceso.",
+    },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  return (
+    <section id="faq" className="py-24 sm:py-32 bg-[#FBF7EE]">
+      <Script
+        id="v4-faq-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+      >
+        {JSON.stringify(faqSchema)}
+      </Script>
+
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+          <p className="v3-eyebrow v3-eyebrow-pleca mb-5 inline-flex">
+            Preguntas frecuentes
+          </p>
+          <h2
+            className="v3-display leading-[1.0] tracking-[-0.025em]"
+            style={{ fontSize: "clamp(2.25rem, 5.5vw, 4rem)" }}
+          >
+            Preguntas frecuentes sobre{" "}
+            <em className="text-[#B4975A]">servicios jurídicos</em>
+            <span className="text-[#B4975A]">.</span>
+          </h2>
+          <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
+            Honorarios, plazos, cobertura, confidencialidad y proceso de
+            selección de casos del despacho.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto border-t border-[rgba(26,23,20,0.10)]">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div
+                key={i}
+                className="border-b border-[rgba(26,23,20,0.10)]"
+              >
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-baseline gap-5 py-6 sm:py-7 text-left group"
+                >
+                  <span className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium w-7 shrink-0 self-start mt-1.5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="flex-1 v3-display text-[20px] sm:text-[24px] leading-[1.25] text-[#1A1714] group-hover:text-[#8C7339] transition-colors">
+                    {f.q}
+                  </h3>
+                  <span
+                    className={`shrink-0 text-[#1A1714] group-hover:text-[#8C7339] text-2xl transition-transform duration-300 leading-none mt-1 ${
+                      isOpen ? "rotate-45" : ""
+                    }`}
+                    aria-hidden
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="pl-12 pr-4 pb-7 max-w-3xl">
+                      <p className="text-[14px] sm:text-[15px] leading-[1.75] text-[#1A1714]">
+                        {f.a}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
