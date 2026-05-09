@@ -412,23 +412,24 @@ function V4Hero() {
       <div className="relative z-10 h-full max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12 flex items-center pt-24 pb-36 sm:pb-32 lg:pb-28">
         <div className="max-w-[820px]">
 
-          {/* H1 — 2 sentences with italic accent */}
+          {/* H1 — keyword-first SEO trunk */}
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.45 }}
             className="v3-h1"
             style={{
-              fontSize: "clamp(2.75rem, 5.5vw, 5.25rem)",
+              fontSize: "clamp(2.5rem, 5.2vw, 4.75rem)",
               lineHeight: "1.0",
               letterSpacing: "-0.025em",
               color: "#FFFFFF",
               textShadow: "0 2px 24px rgba(0,0,0,0.35)",
             }}
           >
-            Dando resultados,
+            Despacho de abogados en CDMX
             <br />
-            <em style={{ color: "#FFFFFF" }}>en el menor tiempo posible</em>
+            especializado en{" "}
+            <em style={{ color: "#FFFFFF" }}>litigio y arbitraje</em>
             <span style={{ color: "#D4B97A" }}>.</span>
           </motion.h1>
 
@@ -440,8 +441,9 @@ function V4Hero() {
             className="mt-7 sm:mt-9 text-[16px] sm:text-[18px] leading-[1.6] text-white max-w-xl"
             style={{ textShadow: "0 1px 16px rgba(0,0,0,0.45)" }}
           >
-            Despacho boutique en CDMX. Dictamen escrito en 24 horas.
-            Honorarios transparentes — desde $0 hasta firmar convenio.
+            Despacho boutique en Polanco. Litigio civil, mercantil, concursal,
+            familiar, constitucional y arbitraje internacional. Dictamen
+            escrito en 24 horas. Honorarios transparentes desde el día 1.
           </motion.p>
 
           {/* Single primary CTA + trust microcopy */}
@@ -605,7 +607,8 @@ function V4Pillars() {
         <div className="max-w-3xl mb-14 sm:mb-20">
           <p className="v3-eyebrow v3-eyebrow-pleca mb-5">El método Bissu</p>
           <h2 className="v3-h2">
-            Cómo trabajamos cada caso, <em>punto por punto</em>
+            Proceso de un caso de{" "}
+            <em>litigio y arbitraje</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -723,9 +726,9 @@ function V4AreasTabbed() {
             className="v3-display leading-[1.0] tracking-[-0.025em]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
-            Cada caso.
+            Áreas de
             <br />
-            <em className="text-[#B4975A]">Cada área</em>
+            <em className="text-[#B4975A]">práctica jurídica</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.6] text-[#5A4F45] max-w-xl mx-auto">
@@ -895,7 +898,8 @@ function V4FeaturedCase() {
         <div className="max-w-3xl mb-14">
           <p className="v3-eyebrow v3-eyebrow-pleca mb-5">Caso representativo</p>
           <h2 className="v3-h2">
-            Un caso. <em>Un resultado verificable</em>
+            Casos representativos de{" "}
+            <em>litigio y arbitraje</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -972,7 +976,8 @@ function V4Comparison() {
             className="v3-display leading-[1.0] tracking-[-0.025em]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
-            <em className="text-[#B4975A]">No es el despacho</em> promedio
+            Despacho boutique vs{" "}
+            <em className="text-[#B4975A]">despacho jurídico tradicional</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -1199,7 +1204,8 @@ function V4CredentialsGrid() {
             className="v3-display leading-[1.0] tracking-[-0.025em]"
             style={{ fontSize: "clamp(2.25rem, 5.5vw, 4rem)" }}
           >
-            Verificable, <em className="text-[#B4975A]">no decorativo</em>
+            Reconocimientos a{" "}
+            <em className="text-[#B4975A]">Bissu Abogados en México</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -1363,7 +1369,8 @@ function V4Testimonials() {
         <div className="max-w-3xl mb-14">
           <p className="v3-eyebrow v3-eyebrow-pleca mb-5">Lo que dicen los clientes</p>
           <h2 className="v3-h2">
-            Testimonios <em>anonimizados, verificados</em>
+            Testimonios de clientes del{" "}
+            <em>despacho de abogados</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -1500,8 +1507,8 @@ function V4Team() {
             El equipo
           </p>
           <h2 className="v3-h2">
-            Atención directa con{" "}
-            <em className="text-[#B4975A]">socios titulares</em>
+            Equipo de{" "}
+            <em className="text-[#B4975A]">abogados titulares</em> en CDMX
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
@@ -1580,7 +1587,8 @@ function V4ConsultCard() {
           <div className="lg:col-span-5">
             <p className="v3-eyebrow v3-eyebrow-pleca mb-5">Agenda tu consulta</p>
             <h2 className="v3-h2 mb-8">
-              Hablemos de tu caso<span className="text-[#B4975A]">.</span>
+              Agenda una <em>consulta con un abogado</em> en CDMX
+              <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="text-[16px] leading-[1.65] text-[#5A4F45] max-w-md mb-10">
               La consulta inicial es gratuita y sin compromiso. Si Bissu no es
