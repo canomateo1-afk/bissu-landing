@@ -336,6 +336,79 @@ a:focus-visible {
   color: #231F20;
 }
 
+/* ============================================================
+   Editorial typographic features (font-variant)
+   ============================================================ */
+.smallcaps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+.oldstyle {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+.lining {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.swash {
+  font-variant-alternates: swash(default);
+}
+
+/* Drop cap — editorial intro paragraphs (Firma, Manifiesto) */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 5.5em;
+  line-height: 0.85;
+  margin: 0.05em 0.08em 0 0;
+  font-style: italic;
+  font-weight: 400;
+  color: #B4975A;
+}
+
+/* ============================================================
+   Glyph dividers — editorial section transitions
+   ============================================================ */
+.glyph-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 5rem 0;
+}
+.glyph-divider::before,
+.glyph-divider::after {
+  content: "";
+  flex: 0 0 4rem;
+  height: 1px;
+  background: rgba(35, 31, 32, 0.15);
+}
+.glyph-divider span {
+  font-family: var(--font-display);
+  color: #B4975A;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* ============================================================
+   Print styles — clientes legales imprimen casos
+   ============================================================ */
+@media print {
+  body::before { display: none !important; } /* grain off */
+  body { background: #FFFFFF !important; color: #000 !important; }
+  nav, footer, .no-print, [aria-hidden="true"] { display: none !important; }
+  .pleca, .hairline-gold { display: none !important; }
+  h1, h2, h3 { page-break-after: avoid; }
+  article, figure, blockquote { page-break-inside: avoid; }
+  a { color: #000; text-decoration: underline; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+    font-style: italic;
+  }
+  .word-mask, .word-rise { opacity: 1 !important; transform: none !important; }
+}
+
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
   *,

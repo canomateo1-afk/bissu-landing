@@ -47,6 +47,27 @@ const config: Config = {
       letterSpacing: {
         tightest: "-0.025em",
         tightestest: "-0.04em",
+        // Editorial sans uppercase microscale (also expressible via tracking-[0.06em] etc.)
+        "ui-tight": "0.06em",
+        "ui-snug": "0.12em",
+        "ui-base": "0.16em",
+      },
+      // Semantic typography scale — prefer over arbitrary text-[Npx] in new code.
+      // Names: text-display-{hero,h2,h2-xl,card,counter}, text-body-{intro,default,card,micro}, text-ui-{cta,label,meta,micro}
+      fontSize: {
+        "display-hero":    ["clamp(40px, 6.5vw, 120px)", { lineHeight: "0.94", letterSpacing: "-0.025em" }],
+        "display-h2":      ["clamp(40px, 5vw,    84px)", { lineHeight: "0.98", letterSpacing: "-0.025em" }],
+        "display-h2-xl":   ["clamp(60px, 8vw,   140px)", { lineHeight: "0.94", letterSpacing: "-0.025em" }],
+        "display-card":    ["clamp(22px, 2vw,    26px)", { lineHeight: "1.15" }],
+        "display-counter": ["clamp(44px, 9vw,   140px)", { lineHeight: "1.0",  letterSpacing: "-0.025em" }],
+        "body-intro":      ["clamp(17px, 1.4vw,  19px)", { lineHeight: "1.55" }],
+        "body-default":    ["15px", { lineHeight: "1.7" }],
+        "body-card":       ["13px", { lineHeight: "1.7" }],
+        "body-micro":      ["12px", { lineHeight: "1.65" }],
+        "ui-cta":          ["11px", { lineHeight: "1",   letterSpacing: "0.22em" }],
+        "ui-label":        ["11px", { lineHeight: "1.4", letterSpacing: "0.22em" }],
+        "ui-meta":         ["10px", { lineHeight: "1.4", letterSpacing: "0.32em" }],
+        "ui-micro":        ["9px",  { lineHeight: "1.4", letterSpacing: "0.22em" }],
       },
       animation: {
         marquee: "marquee 60s linear infinite",
