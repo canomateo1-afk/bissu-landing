@@ -96,7 +96,10 @@ function Header({ member }: Props) {
                 priority
                 quality={90}
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                style={{ filter: "saturate(0.92) contrast(1.05)" }}
+                style={{
+                  filter: "saturate(0.92) contrast(1.05)",
+                  objectPosition: `50% ${member.photoFocusY ?? "50%"}`,
+                }}
               />
             </div>
           </motion.div>

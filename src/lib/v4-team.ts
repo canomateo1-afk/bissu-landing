@@ -4,6 +4,8 @@ export type V4TeamMember = {
   role: string;
   subtitle: string;
   photo: string;
+  /** Vertical crop position for the photo (object-position Y). Tune so face lands at same height across members. Default "50%". */
+  photoFocusY?: string;
   bio: string;
   quote: string;
   practiceAreas: { area: string; year: string }[];
@@ -21,6 +23,7 @@ export const v4Team: V4TeamMember[] = [
     role: "Socio fundador y Director",
     subtitle: "Litigio de fondo · Reestructura · Arbitraje",
     photo: "/images/team/samuel.jpg",
+    photoFocusY: "50%",
     bio: "Samuel Bissu Bazbaz es socio fundador de Bissu Abogados, S.C., despacho boutique en Ciudad de México especializado en litigio mercantil, concursal y arbitraje internacional. Reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
     quote:
       "Un caso jurídico no se resuelve con volumen ni con jerga. Se resuelve con análisis de fondo, criterio y un titular que responde por su trabajo.",
@@ -51,6 +54,7 @@ export const v4Team: V4TeamMember[] = [
     role: "Socio Jr.",
     subtitle: "Litigio civil · Constitucional · Familiar",
     photo: "/images/team/adolfo.jpg",
+    photoFocusY: "85%",
     bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados con especialización en derecho procesal constitucional. Trayectoria previa en el Poder Judicial Federal y firmas mexicanas de práctica civil y familiar.",
     quote:
       "El amparo no es solo un recurso técnico. Es la última herramienta del individuo frente al poder. Hay que escribirlo con esa seriedad.",

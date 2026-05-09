@@ -1541,7 +1541,10 @@ function V4Team() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   sizes="(max-width: 640px) 100vw, 350px"
-                  style={{ filter: "saturate(0.9) contrast(1.04)" }}
+                  style={{
+                    filter: "saturate(0.9) contrast(1.04)",
+                    objectPosition: `50% ${m.photoFocusY ?? "50%"}`,
+                  }}
                 />
                 {/* Hover overlay with "Ver perfil" link */}
                 <div className="absolute inset-0 flex items-end justify-center pb-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
