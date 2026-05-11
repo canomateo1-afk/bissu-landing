@@ -92,12 +92,6 @@ function MemberNav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href="mailto:sbissu@bissuabogados.com"
-            className="hidden sm:inline-flex text-[13px] font-medium text-[#1A1714] hover:text-[#8C7339] transition-colors"
-          >
-            Correo
-          </a>
           <a href="/#cta" className="v3-btn">
             Agenda consulta
             <span className="v3-btn-arrow">→</span>
