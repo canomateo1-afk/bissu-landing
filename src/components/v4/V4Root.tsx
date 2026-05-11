@@ -459,63 +459,63 @@ function V4AreasTabbed() {
   const areas = [
     {
       key: "civil",
+      slug: "litigio-civil",
       label: "Civil",
       title: "Litigio Civil en México",
       tagline: "Cuando un contrato se rompe.",
       blurb:
         "Abogado de litigio civil para conflictos entre particulares por incumplimiento de contratos, daños y perjuicios, daño moral, créditos, hipotecas, arrendamiento y homologación de sentencias extranjeras. Dictamen escrito antes de iniciar el proceso.",
-      image:
-        "/images/areas/civil.jpg",
+      image: "/images/areas/civil.jpg",
     },
     {
       key: "mercantil",
+      slug: "litigio-mercantil",
       label: "Mercantil",
       title: "Litigio Mercantil y Corporativo",
       tagline: "Sociedades, accionistas, contratos.",
       blurb:
         "Abogado mercantil y corporativo en CDMX para conflictos entre accionistas, dilución accionaria, contratos mercantiles complejos, títulos y operaciones de crédito, fideicomisos, seguros y fianzas. Defensa rigurosa para empresas familiares y multinacionales.",
-      image:
-        "/images/areas/mercantil.jpg",
+      image: "/images/areas/mercantil.jpg",
     },
     {
       key: "concursal",
+      slug: "litigio-concursal",
       label: "Concursal",
       title: "Litigio Concursal y Concurso Mercantil",
       tagline: "Operación que continúa, no se liquida.",
       blurb:
         "Abogado de concurso mercantil para reestructura empresarial, convenios concursales, recuperación de créditos, reconocimiento de créditos, quiebras e insolvencia transfronteriza. Caso representativo: 60% de quita aprobada manteniendo la operación.",
-      image:
-        "/images/areas/concursal.jpg",
+      image: "/images/areas/concursal.jpg",
     },
     {
       key: "familiar",
+      slug: "litigio-familiar",
       label: "Familiar",
       title: "Derecho Familiar y Custodia",
       tagline: "Custodia internacional, sucesiones, divorcios.",
       blurb:
         "Abogado familiar en CDMX para divorcios contenciosos y voluntarios, patria potestad, custodia compartida internacional, pensión alimenticia, restitución internacional de menores bajo el Convenio de la Haya, y sucesiones testamentarias e intestadas.",
-      image:
-        "/images/areas/familiar.jpg",
+      image: "/images/areas/familiar.jpg",
     },
     {
       key: "constitucional",
+      slug: "litigio-constitucional",
       label: "Constitucional",
       title: "Litigio Constitucional y Amparo",
       tagline: "Amparo cuando el Estado se equivoca.",
       blurb:
         "Abogado de amparo en CDMX para juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales y suspensión del acto reclamado, dirigido a PYMEs, empresas y particulares afectados por actos de autoridad.",
-      image:
-        "/images/areas/constitucional.jpg",
+      image: "/images/areas/constitucional.jpg",
     },
     {
       key: "arbitraje",
+      slug: "arbitraje-y-masc",
       label: "Arbitraje",
       title: "Arbitraje Internacional y MASC",
       tagline: "CCI, mediación, ejecución de laudos.",
       blurb:
         "Abogado de arbitraje comercial internacional bajo reglas de la Cámara de Comercio Internacional (CCI), ejecución y nulidad de laudos, reconocimiento de laudos extranjeros, mediación, conciliación y medidas cautelares para disputas cross-border.",
-      image:
-        "/images/areas/arbitraje.jpg",
+      image: "/images/areas/arbitraje.jpg",
     },
   ];
 
@@ -678,12 +678,23 @@ function V4AreasTabbed() {
             <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] mb-6">
               {areas[active].blurb}
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <a
+                href={`/v4/areas/${areas[active].slug}`}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[4px] text-[13px] sm:text-[14px] font-semibold bg-[#1A1714] text-white hover:bg-[#8C7339] transition-colors shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] group"
+              >
+                Ver área completa
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </a>
               <a
                 href="#cta"
                 className="inline-flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#1A1714] hover:text-[#B4975A] transition-colors group"
               >
-                <span aria-hidden className="text-[#B4975A]">↳</span>
                 <span className="border-b border-[rgba(26,23,20,0.30)] group-hover:border-[#B4975A] pb-0.5 transition-colors">
                   Consultar caso de {areas[active].label.toLowerCase()}
                 </span>
