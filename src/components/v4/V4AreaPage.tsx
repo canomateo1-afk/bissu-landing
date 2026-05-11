@@ -459,7 +459,7 @@ function Team({
               className="text-center"
             >
               <a
-                href={`/v4/equipo/${m.slug}`}
+                href={`/equipo/${m.slug}`}
                 className="block group"
                 aria-label={`Ver perfil de ${m.name}`}
               >
@@ -762,7 +762,7 @@ function RelatedAreas({ areas }: { areas: V4Area[] }) {
           {areas.map((a, i) => (
             <motion.a
               key={a.slug}
-              href={`/v4/areas/${a.slug}`}
+              href={`/areas/${a.slug}`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}

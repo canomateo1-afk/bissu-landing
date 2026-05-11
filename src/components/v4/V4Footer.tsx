@@ -44,7 +44,7 @@ export default function V4Footer() {
               {v4Areas.map((a) => (
                 <li key={a.slug}>
                   <a
-                    href={`/v4/areas/${a.slug}`}
+                    href={`/areas/${a.slug}`}
                     className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
                   >
                     {a.label}
@@ -63,7 +63,7 @@ export default function V4Footer() {
               {v4Team.map((m) => (
                 <li key={m.slug}>
                   <a
-                    href={`/v4/equipo/${m.slug}`}
+                    href={`/equipo/${m.slug}`}
                     className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
                   >
                     {m.name.split(" ").slice(0, 2).join(" ")}

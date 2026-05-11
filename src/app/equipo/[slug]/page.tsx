@@ -1,4 +1,4 @@
-import "../../../v3/v3.css";
+import "../../v3/v3.css";
 import Script from "next/script";
 import V4MemberPage from "@/components/v4/V4MemberPage";
 import {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `${SITE_URL}/v4/equipo/${member.slug}`;
+  const url = `${SITE_URL}/equipo/${member.slug}`;
   const title = `${member.name} — ${member.role}`;
   const description =
     member.metaDescription ??
@@ -104,7 +104,7 @@ export default async function MemberProfilePage({ params }: Props) {
   const member = getMemberBySlug(slug);
   if (!member) notFound();
 
-  const url = `${SITE_URL}/v4/equipo/${member.slug}`;
+  const url = `${SITE_URL}/equipo/${member.slug}`;
   const ORG_ID = `${SITE_URL}#organization`;
   const PERSON_ID = `${url}#person`;
   const yearsOfPractice = getYearsOfPractice(member);

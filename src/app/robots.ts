@@ -5,11 +5,18 @@ const SITE_URL = "https://bissuabogados.com";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Default — todos los crawlers permitidos
+      // Default — todos los crawlers permitidos, excepto rutas legacy/internas
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/static/chunks/private/"],
+        disallow: [
+          "/api/",
+          "/_next/static/chunks/private/",
+          "/v2",
+          "/v3",
+          "/v4",
+          "/design-system",
+        ],
       },
 
       // AI crawlers priority — allow para visibility en AI search

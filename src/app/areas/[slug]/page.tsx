@@ -1,4 +1,4 @@
-import "../../../v3/v3.css";
+import "../../v3/v3.css";
 import Script from "next/script";
 import V4AreaPage from "@/components/v4/V4AreaPage";
 import { v4Areas, getAreaBySlug } from "@/lib/v4-areas";
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `${SITE_URL}/v4/areas/${area.slug}`;
+  const url = `${SITE_URL}/areas/${area.slug}`;
   const title = `${area.title} | Bissu Abogados`;
   const ogImage = "/images/hero-1.jpg";
 
@@ -77,7 +77,7 @@ export default async function AreaPillarPage({ params }: Props) {
   const area = getAreaBySlug(slug);
   if (!area) notFound();
 
-  const url = `${SITE_URL}/v4/areas/${area.slug}`;
+  const url = `${SITE_URL}/areas/${area.slug}`;
   const ORG_ID = `${SITE_URL}#organization`;
   const SERVICE_ID = `${url}#service`;
 
@@ -130,7 +130,7 @@ export default async function AreaPillarPage({ params }: Props) {
                 "@type": ["Person", "Attorney"],
                 name: m.name,
                 jobTitle: m.role,
-                url: `${SITE_URL}/v4/equipo/${m.slug}`,
+                url: `${SITE_URL}/equipo/${m.slug}`,
               })),
             }
           : {}),

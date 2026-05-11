@@ -101,7 +101,7 @@ export default function V4AreasDropdown({
                 {v4Areas.map((a, i) => (
                   <li key={a.slug}>
                     <a
-                      href={`/v4/areas/${a.slug}`}
+                      href={`/areas/${a.slug}`}
                       className="flex items-baseline gap-4 px-5 py-3.5 hover:bg-[#FBF7EE] transition-colors group border-b border-[rgba(26,23,20,0.06)] last:border-b-0"
                       role="menuitem"
                     >

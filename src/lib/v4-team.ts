@@ -57,7 +57,7 @@ export const v4Team: V4TeamMember[] = [
     practiceAreas: [
       { area: "Litigio Mercantil y Corporativo", year: "2006", slug: "litigio-mercantil" },
       { area: "Concurso Mercantil y Reestructura", year: "2010", slug: "litigio-concursal" },
-      { area: "Arbitraje Comercial Internacional · CCI", year: "2014", slug: "arbitraje-y-masc" },
+      { area: "Arbitraje Comercial Internacional · CCI", year: "2014", slug: "arbitraje-comercial-internacional" },
       { area: "Conflictos entre Accionistas", year: "2017", slug: "litigio-mercantil" },
     ],
     education: [

@@ -383,7 +383,7 @@ function Quote({ member }: { member: V4TeamMember }) {
 }
 
 // ============================================================
-// Experience — practice areas linked to /v4/areas/<slug>
+// Experience — practice areas linked to /areas/<slug>
 // ============================================================
 function Experience({ member }: { member: V4TeamMember }) {
   return (
@@ -432,7 +432,7 @@ function Experience({ member }: { member: V4TeamMember }) {
               >
                 {p.slug ? (
                   <a
-                    href={`/v4/areas/${p.slug}`}
+                    href={`/areas/${p.slug}`}
                     className={`${baseClass} hover:bg-[#FBF7EE]`}
                   >
                     {inner}
@@ -669,7 +669,7 @@ function OtherMembers({ currentSlug }: { currentSlug: string }) {
               className="text-center"
             >
               <a
-                href={`/v4/equipo/${o.slug}`}
+                href={`/equipo/${o.slug}`}
                 className="block group"
                 aria-label={`Ver perfil de ${o.name}`}
               >

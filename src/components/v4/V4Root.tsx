@@ -517,7 +517,7 @@ function V4AreasTabbed() {
     },
     {
       key: "arbitraje",
-      slug: "arbitraje-y-masc",
+      slug: "arbitraje-comercial-internacional",
       label: "Arbitraje",
       title: "Arbitraje Internacional y MASC",
       tagline: "CCI, mediación, ejecución de laudos.",
@@ -688,7 +688,7 @@ function V4AreasTabbed() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a
-                href={`/v4/areas/${areas[active].slug}`}
+                href={`/areas/${areas[active].slug}`}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-[4px] text-[13px] sm:text-[14px] font-semibold bg-[#1A1714] text-white hover:bg-[#8C7339] transition-colors shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] group"
               >
                 Ver área completa
@@ -1348,7 +1348,7 @@ function V4Team() {
           {v4Team.map((m, i) => (
             <motion.a
               key={m.slug}
-              href={`/v4/equipo/${m.slug}`}
+              href={`/equipo/${m.slug}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}

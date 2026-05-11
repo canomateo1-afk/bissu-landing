@@ -12,6 +12,32 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },
+  async redirects() {
+    return [
+      // Legacy /v4/ prefix → clean SEO URLs (308 permanent)
+      {
+        source: "/v4/equipo/:slug",
+        destination: "/equipo/:slug",
+        permanent: true,
+      },
+      {
+        source: "/v4/areas/:slug",
+        destination: "/areas/:slug",
+        permanent: true,
+      },
+      // Renamed slug — old "arbitraje-y-masc" → keyword-rich slug
+      {
+        source: "/areas/arbitraje-y-masc",
+        destination: "/areas/arbitraje-comercial-internacional",
+        permanent: true,
+      },
+      {
+        source: "/v4/areas/arbitraje-y-masc",
+        destination: "/areas/arbitraje-comercial-internacional",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

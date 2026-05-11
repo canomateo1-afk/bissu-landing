@@ -13,7 +13,7 @@ const PILLAR_AREAS = [
   "litigio-concursal",
   "litigio-familiar",
   "litigio-constitucional",
-  "arbitraje-y-masc",
+  "arbitraje-comercial-internacional",
 ] as const;
 
 const SECCIONES_HOME = [
@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Áreas de práctica — pillar pages, máxima prioridad
     ...v4Areas.map((a) => ({
-      url: `${SITE_URL}/v4/areas/${a.slug}`,
+      url: `${SITE_URL}/areas/${a.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Páginas de perfil del equipo — alto valor SEO (Knowledge Graph + Person schema)
     ...v4Team.map((m) => ({
-      url: `${SITE_URL}/v4/equipo/${m.slug}`,
+      url: `${SITE_URL}/equipo/${m.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,

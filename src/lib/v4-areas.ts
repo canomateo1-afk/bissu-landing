@@ -52,7 +52,7 @@ export type V4Area = {
   scenarios: V4AreaScenario[];
   /** Process — 4 steps from contact to outcome. */
   process: { step: string; title: string; body: string }[];
-  /** Slugs of team members specialized in this area (links to /v4/equipo/<slug>). */
+  /** Slugs of team members specialized in this area (links to /equipo/<slug>). */
   teamSlugs: string[];
   /** FAQ — 5-6 Q&A with GEO-optimized answers. */
   faqs: V4AreaFaq[];
@@ -350,7 +350,7 @@ export const v4Areas: V4Area[] = [
           "Sí. Cuando hay riesgo de que la contraparte oculte bienes, destruya documentos o consume un acto irreversible, promovemos medidas cautelares dentro de las primeras 48 a 72 horas: embargo precautorio, providencia precautoria, depósito judicial o aseguramiento. Es crítico actuar antes de que el patrimonio se diluya. Llamar al despacho directamente para casos urgentes.",
       },
     ],
-    relatedSlugs: ["litigio-concursal", "arbitraje-y-masc", "litigio-civil"],
+    relatedSlugs: ["litigio-concursal", "arbitraje-comercial-internacional", "litigio-civil"],
     keywords: [
       "litigio mercantil CDMX",
       "abogado corporativo Ciudad de México",
@@ -492,7 +492,7 @@ export const v4Areas: V4Area[] = [
           "El concurso mercantil es el procedimiento completo, que incluye dos etapas: conciliación (intento de convenio) y, si éste fracasa, quiebra (liquidación). La quiebra propiamente dicha es la fase final donde se venden los activos para pagar a acreedores según la prelación legal. Por eso, entrar a concurso no equivale a entrar a quiebra: muchas empresas salen del concurso con convenio aprobado y siguen operando.",
       },
     ],
-    relatedSlugs: ["litigio-mercantil", "arbitraje-y-masc", "litigio-civil"],
+    relatedSlugs: ["litigio-mercantil", "arbitraje-comercial-internacional", "litigio-civil"],
     keywords: [
       "concurso mercantil México",
       "reestructura empresarial CDMX",
@@ -813,7 +813,7 @@ export const v4Areas: V4Area[] = [
   // 6) ARBITRAJE Y MASC
   // ============================================================
   {
-    slug: "arbitraje-y-masc",
+    slug: "arbitraje-comercial-internacional",
     label: "Arbitraje & MASC",
     title: "Arbitraje Comercial Internacional y MASC en México",
     eyebrow: "Arbitraje · MASC",
