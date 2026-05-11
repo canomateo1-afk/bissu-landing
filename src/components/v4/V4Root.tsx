@@ -1838,18 +1838,16 @@ function V4ConsultCard() {
                 <span>→</span>
               </a>
               <a
-                href="https://walink.co/727927"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:sbissu@bissuabogados.com"
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
-                WhatsApp directo
+                Escribir correo
               </a>
             </div>
 
             <p className="mt-8 pt-6 border-t border-white/10 text-[11px] text-white/50">
               Bissu Abogados, S.C. · Av. Prado Norte 365 · Lomas de Chapultepec
-              · CDMX · +52 55 5545 1308
+              · CDMX
             </p>
           </motion.div>
         </div>
@@ -1899,12 +1897,6 @@ function V4Footer() {
             </p>
             <div className="space-y-1.5 text-[13px]">
               <a
-                href="tel:+525555451308"
-                className="block text-[#1A1714] hover:text-[#8C7339] transition-colors"
-              >
-                +52 55 5545 1308
-              </a>
-              <a
                 href="mailto:sbissu@bissuabogados.com"
                 className="block text-[#1A1714] hover:text-[#8C7339] transition-colors break-all"
               >
@@ -1922,7 +1914,6 @@ function V4Footer() {
                 ["Instagram", "https://www.instagram.com/bissuabogados/"],
                 ["LinkedIn", "https://www.linkedin.com/company/bissu-abogados-s-c-/"],
                 ["Facebook", "https://www.facebook.com/BissuAbogados/"],
-                ["WhatsApp", "https://walink.co/727927"],
               ].map(([label, href]) => (
                 <a
                   key={label}

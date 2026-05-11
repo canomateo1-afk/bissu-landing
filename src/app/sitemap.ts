@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { v4Team } from "@/lib/v4-team";
+import { v4Areas } from "@/lib/v4-areas";
 
 const SITE_URL = "https://bissuabogados.com";
 
@@ -45,6 +47,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.5,
+    })),
+
+    // Áreas de práctica — pillar pages, máxima prioridad
+    ...v4Areas.map((a) => ({
+      url: `${SITE_URL}/v4/areas/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+
+    // Páginas de perfil del equipo — alto valor SEO (Knowledge Graph + Person schema)
+    ...v4Team.map((m) => ({
+      url: `${SITE_URL}/v4/equipo/${m.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
 
     // Pillars futuros — descomentar a medida que se creen.
