@@ -1673,19 +1673,19 @@ function V4ConsultCard() {
               <a
                 href={CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick("consult_card", "Agenda 20 min gratuita")}
+                onClick={() => events.ctaClick("consult_card", "Consulta inicial 20 min")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
-                Agenda 20 min · gratuita
+                Consulta inicial · 20 min
                 <span>→</span>
               </a>
               <a
                 href={CALENDLY_60}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick("consult_card", "Agenda 60 min")}
+                onClick={() => events.ctaClick("consult_card", "Consulta extendida 60 min")}
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
-                Agenda 60 min · más a fondo
+                Consulta extendida · 60 min
               </a>
             </div>
             <div className="mt-3">
