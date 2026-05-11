@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { V4TeamMember } from "@/lib/v4-team";
 import { getOtherMembers, v4Team } from "@/lib/v4-team";
+import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -37,9 +38,23 @@ type Props = {
 };
 
 export default function V4MemberPage({ member, yearsOfPractice }: Props) {
+  const firstName = member.firstName ?? member.name.split(" ")[0];
+  const initials = member.name
+    .split(" ")
+    .map((p) => p[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
   return (
     <div className="v3-root min-h-screen">
       <MemberNav />
+      <V4FloatingCTA
+        photo={member.photo}
+        alt={member.name}
+        initials={initials}
+        headline={`Habla con ${firstName} hoy`}
+      />
       <Header member={member} yearsOfPractice={yearsOfPractice} />
       <Bio member={member} />
       <Quote member={member} />

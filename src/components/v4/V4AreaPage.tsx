@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import type { V4Area } from "@/lib/v4-areas";
 import { getRelatedAreas } from "@/lib/v4-areas";
 import { v4Team, getMemberBySlug } from "@/lib/v4-team";
+import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -31,9 +32,31 @@ export default function V4AreaPage({ area }: { area: V4Area }) {
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
   const relatedAreas = getRelatedAreas(area.slug);
 
+  // Lead member for the floating CTA (first listed teamSlug — typically the area titular).
+  const lead = teamMembers[0];
+  const leadInitials = lead
+    ? lead.name
+        .split(" ")
+        .map((p) => p[0])
+        .filter(Boolean)
+        .slice(0, 2)
+        .join("")
+        .toUpperCase()
+    : undefined;
+  const leadFirst = lead ? lead.firstName ?? lead.name.split(" ")[0] : undefined;
+
   return (
     <div className="v3-root min-h-screen">
       <AreaNav />
+      {lead && (
+        <V4FloatingCTA
+          photo={lead.photo}
+          alt={lead.name}
+          initials={leadInitials}
+          headline={`Habla con ${leadFirst} hoy`}
+          body={`Consulta gratuita, 20 minutos.\nSobre tu caso de ${area.label.toLowerCase()}.`}
+        />
+      )}
       <Hero area={area} />
       <Services area={area} />
       <Scenarios area={area} />
