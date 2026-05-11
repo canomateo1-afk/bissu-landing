@@ -72,7 +72,8 @@ export const v4Team: V4TeamMember[] = [
     contact: {
       email: "sbissu@bissuabogados.com",
       phone: "+52 55 5545 1308",
-      calendly: "https://calendly.com/bissuabogados-marketing/30min",
+      calendly:
+        "https://calendly.com/jvargas-bissuabogados/consulta-de-20-minutos",
     },
     linkedin: "https://www.linkedin.com/company/bissu-abogados-s-c-/",
     sameAs: [

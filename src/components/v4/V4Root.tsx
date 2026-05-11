@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { v4Team } from "@/lib/v4-team";
-import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { CALENDLY_GENERAL, CALENDLY_60, calendlyLinkProps } from "@/lib/calendly";
 import { events } from "@/lib/analytics";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
@@ -1682,23 +1682,34 @@ function V4ConsultCard() {
               ))}
             </ul>
 
-            {/* CTAs */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+            {/* CTAs — 20 min gratuita (primary) + 60 min (secondary, para
+                prospectos que ya quieren ir a fondo) + mailto (tertiary) */}
+            <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3">
               <a
                 href={CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick("consult_card", "Agenda consulta gratuita")}
+                onClick={() => events.ctaClick("consult_card", "Agenda 20 min gratuita")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
-                Agenda consulta gratuita
+                Agenda 20 min · gratuita
                 <span>→</span>
               </a>
               <a
-                href="mailto:sbissu@bissuabogados.com"
-                onClick={() => events.emailClick("consult_card")}
+                href={CALENDLY_60}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick("consult_card", "Agenda 60 min")}
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
-                Escribir correo
+                Agenda 60 min · más a fondo
+              </a>
+            </div>
+            <div className="mt-3">
+              <a
+                href="mailto:sbissu@bissuabogados.com"
+                onClick={() => events.emailClick("consult_card")}
+                className="inline-flex items-center gap-1.5 text-[12px] text-white/55 hover:text-white transition-colors"
+              >
+                · O escribí por correo
               </a>
             </div>
 
