@@ -92,9 +92,14 @@ function MemberNav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="/#cta" className="v3-btn">
+          <a
+            href="/#cta"
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] transition-all"
+          >
             Agenda consulta
-            <span className="v3-btn-arrow">→</span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
           </a>
         </div>
       </div>
