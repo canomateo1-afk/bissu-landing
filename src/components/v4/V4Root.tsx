@@ -1560,12 +1560,11 @@ function V4FAQ() {
 // Consult Card — pricing-style, refined corners + gold accents
 // ============================================================
 function V4ConsultCard() {
+  // 3 promesas únicas — todo lo demás (modalidad, idioma, "sin compromiso")
+  // ya está en la columna izquierda. Eliminada la duplicación.
   const includes = [
-    "Reunión 20 minutos · video o presencial",
-    "Análisis del caso por abogado titular",
-    "Identificación del área aplicable",
-    "Recomendación honesta · Bissu o referencia",
-    "Dictamen escrito post-consulta en 24 hs",
+    "Análisis del caso con abogado titular",
+    "Dictamen escrito en 24 horas",
     "Sin cobro hasta firmar convenio",
   ];
 
@@ -1573,18 +1572,13 @@ function V4ConsultCard() {
     <section id="cta" className="py-24 sm:py-32 bg-[#F4EDDD]">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-start">
-          {/* Left — context */}
+          {/* Left — context + specs (single source of truth) */}
           <div className="lg:col-span-5">
             <p className="v3-eyebrow v3-eyebrow-pleca mb-5">Agenda tu consulta</p>
-            <h2 className="v3-h2 mb-8">
+            <h2 className="v3-h2 mb-10">
               Agenda una <em>consulta con un abogado</em> en CDMX
               <span className="text-[#B4975A]">.</span>
             </h2>
-            <p className="text-[16px] leading-[1.65] text-[#5A4F45] max-w-md mb-10">
-              La consulta inicial es gratuita y sin compromiso. Si Bissu no es
-              el despacho indicado, te referenciamos a uno mejor posicionado
-              para tu caso — sin costo.
-            </p>
 
             <div className="space-y-4">
               {[
@@ -1624,15 +1618,9 @@ function V4ConsultCard() {
             />
 
             <div className="flex items-start justify-between mb-10">
-              <div>
-                <p className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#B4975A] mb-3">
-                  Consulta inicial
-                </p>
-                <p className="text-[14px] text-white/65 max-w-xs">
-                  Una reunión, sin compromiso, para que sepas si Bissu es para
-                  vos.
-                </p>
-              </div>
+              <p className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#B4975A]">
+                Consulta inicial
+              </p>
               <span className="shrink-0 inline-flex items-center gap-1.5 border border-white/20 rounded-full px-3 py-1.5 text-[10px] font-medium tracking-[0.08em] uppercase">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#B4975A] opacity-60" />
@@ -1646,27 +1634,22 @@ function V4ConsultCard() {
             <div>
               <p
                 className="v3-display v3-mono leading-[0.9] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(4rem, 9vw, 7rem)" }}
+                style={{ fontSize: "clamp(3.25rem, 7vw, 5.5rem)" }}
               >
                 Gratuita
                 <span className="text-[#B4975A]">.</span>
               </p>
-              <div className="mt-3 flex items-baseline gap-4 flex-wrap">
-                <p className="v3-display italic text-[20px] sm:text-[24px] text-white/75">
-                  · 20 minutos
-                </p>
-                <p className="text-[12px] text-white/55">
-                  $0 hasta firmar convenio
-                </p>
-              </div>
+              <p className="mt-3 v3-display italic text-[18px] sm:text-[22px] text-white/75">
+                · 20 minutos
+              </p>
             </div>
 
-            {/* Includes */}
-            <ul className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+            {/* Includes — 3 promesas únicas */}
+            <ul className="mt-10 space-y-3">
               {includes.map((it) => (
                 <li
                   key={it}
-                  className="flex items-start gap-3 text-[13px] text-white/85 leading-[1.5]"
+                  className="flex items-start gap-3 text-[14px] text-white/90 leading-[1.5]"
                 >
                   <span className="shrink-0 mt-1 text-[#B4975A]">
                     <svg viewBox="0 0 12 12" className="w-3 h-3" fill="none">
