@@ -114,72 +114,102 @@ export default async function MemberProfilePage({ params }: Props) {
     ...(member.sameAs ?? []),
   ];
 
+  const datePublished = "2026-01-01";
+  const dateModified = member.lastUpdated ?? new Date().toISOString().split("T")[0];
+
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": ["Person", "Attorney"],
+      "@id": PERSON_ID,
+      name: member.name,
+      givenName: member.firstName ?? member.name.split(" ")[0],
+      familyName: member.name.split(" ").slice(-1)[0],
+      jobTitle: member.role,
+      description: member.metaDescription ?? member.bio,
+      image: `${SITE_URL}${member.photo}`,
+      url,
+      email: `mailto:${member.contact.email}`,
+      telephone: member.contact.phone,
+      knowsLanguage: member.languages,
+      knowsAbout: member.practiceAreas.map((p) => p.area),
+      worksFor: { "@id": ORG_ID },
+      alumniOf: (member.alumniOf ?? []).map((a) => ({
+        "@type": "EducationalOrganization",
+        name: a.name,
+        ...(a.url ? { url: a.url } : {}),
+      })),
+      ...(member.awards && member.awards.length > 0
+        ? { award: member.awards }
+        : {}),
+      ...(sameAs.length > 0 ? { sameAs } : {}),
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Av. Prado Norte 365, Int. 6",
+        addressLocality: "Lomas de Chapultepec V Sección, Miguel Hidalgo",
+        postalCode: "11000",
+        addressRegion: "Ciudad de México",
+        addressCountry: "MX",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${url}#webpage`,
+      url,
+      name: `${member.name} — ${member.role} | Bissu Abogados`,
+      about: { "@id": PERSON_ID },
+      mainEntity: { "@id": PERSON_ID },
+      isPartOf: { "@id": `${SITE_URL}#website` },
+      inLanguage: "es-MX",
+      datePublished,
+      dateModified,
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}${member.photo}`,
+      },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", ".intro-paragraph", ".faq-answer"],
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Equipo",
+          item: `${SITE_URL}/#abogados`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: member.name,
+          item: url,
+        },
+      ],
+    },
+  ];
+
+  // FAQPage schema — only if member has FAQs
+  if (member.faqs && member.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: member.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    });
+  }
+
   const personSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Person", "Attorney"],
-        "@id": PERSON_ID,
-        name: member.name,
-        givenName: member.firstName ?? member.name.split(" ")[0],
-        familyName: member.name.split(" ").slice(-1)[0],
-        jobTitle: member.role,
-        description: member.metaDescription ?? member.bio,
-        image: `${SITE_URL}${member.photo}`,
-        url,
-        email: `mailto:${member.contact.email}`,
-        telephone: member.contact.phone,
-        knowsLanguage: member.languages,
-        knowsAbout: member.practiceAreas.map((p) => p.area),
-        worksFor: { "@id": ORG_ID },
-        alumniOf: (member.alumniOf ?? []).map((a) => ({
-          "@type": "EducationalOrganization",
-          name: a.name,
-          ...(a.url ? { url: a.url } : {}),
-        })),
-        ...(sameAs.length > 0 ? { sameAs } : {}),
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Prado Norte 365, Int. 6",
-          addressLocality: "Lomas de Chapultepec V Sección, Miguel Hidalgo",
-          postalCode: "11000",
-          addressRegion: "Ciudad de México",
-          addressCountry: "MX",
-        },
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": `${url}#webpage`,
-        url,
-        name: `${member.name} — ${member.role} | Bissu Abogados`,
-        about: { "@id": PERSON_ID },
-        mainEntity: { "@id": PERSON_ID },
-        isPartOf: { "@id": `${SITE_URL}#website` },
-        inLanguage: "es-MX",
-        primaryImageOfPage: {
-          "@type": "ImageObject",
-          url: `${SITE_URL}${member.photo}`,
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Equipo",
-            item: `${SITE_URL}/#abogados`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: member.name,
-            item: url,
-          },
-        ],
-      },
-    ],
+    "@graph": graph,
   };
 
   return (
