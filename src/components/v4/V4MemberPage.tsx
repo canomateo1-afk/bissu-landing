@@ -15,15 +15,6 @@ const NAV_LINKS = [
   ["Equipo", "/#abogados"],
 ] as const;
 
-const TOC_LINKS = [
-  ["Perfil", "#perfil"],
-  ["Áreas", "#areas"],
-  ["Formación", "#formacion"],
-  ["Testimonios", "#testimonios"],
-  ["FAQ", "#faq"],
-  ["Consulta", "#cta"],
-] as const;
-
 const CONSULT_INCLUDES = [
   "Reunión 20 minutos · video o presencial",
   "Análisis del caso por abogado titular",
@@ -50,7 +41,6 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
     <div className="v3-root min-h-screen">
       <MemberNav />
       <Header member={member} yearsOfPractice={yearsOfPractice} />
-      <TocStrip member={member} />
       <Bio member={member} />
       <Quote member={member} />
       <Experience member={member} />
@@ -292,71 +282,6 @@ function Stat({ value, label }: { value: string; label: string }) {
       <p className="mt-2 text-[10px] tracking-[0.16em] uppercase text-[#5A4F45] font-medium">
         {label}
       </p>
-    </div>
-  );
-}
-
-// ============================================================
-// TocStrip — scroll-spy sticky in-page nav (Function Health pattern)
-// ============================================================
-function TocStrip({ member }: { member: V4TeamMember }) {
-  const [activeId, setActiveId] = useState<string>("perfil");
-
-  // Filter TOC links to only ones that exist on the page for this member.
-  const links = TOC_LINKS.filter(([, href]) => {
-    if (href === "#testimonios") return Boolean(member.testimonials?.length);
-    if (href === "#faq") return Boolean(member.faqs?.length);
-    return true;
-  });
-
-  useEffect(() => {
-    const ids = links.map(([, href]) => href.replace("#", ""));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          // pick the topmost
-          visible.sort(
-            (a, b) =>
-              a.target.getBoundingClientRect().top -
-              b.target.getBoundingClientRect().top
-          );
-          setActiveId(visible[0].target.id);
-        }
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: 0 }
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, [links]);
-
-  return (
-    <div className="sticky top-16 z-30 bg-[#FBF7EE]/90 backdrop-blur-xl border-y border-[rgba(26,23,20,0.08)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 h-12 flex items-center overflow-x-auto">
-        <ul className="flex items-center gap-1 sm:gap-2 text-[12px] font-medium">
-          {links.map(([label, href]) => {
-            const id = href.replace("#", "");
-            const isActive = id === activeId;
-            return (
-              <li key={href}>
-                <a
-                  href={href}
-                  className={`inline-flex items-center px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${
-                    isActive
-                      ? "bg-[#1A1714] text-white"
-                      : "text-[#5A4F45] hover:text-[#1A1714] hover:bg-[rgba(26,23,20,0.04)]"
-                  }`}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
     </div>
   );
 }
