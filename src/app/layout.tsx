@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope, Libre_Baskerville } from "next/font/google";
-import Script from "next/script";
 import Analytics from "@/components/Analytics";
 import "./globals.css";
 
+// Playfair Display — font-display crítico (H1 hero). Preload activo.
+// 500/600 quedan disponibles para H2/H3 below-the-fold sin preload.
 const display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
@@ -12,19 +13,24 @@ const display = Playfair_Display({
   style: ["normal", "italic"],
 });
 
+// Manrope — font-sans para UI (nav, CTAs). 300 no se usa en el código.
 const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
+// Libre Baskerville — font-body para párrafos editoriales (below-the-fold).
+// preload: false → no se inyecta en el <head> inicial, se carga on-demand
+// cuando aparece en pantalla. Acelera el LCP del hero.
 const body = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
   weight: ["400", "700"],
   style: ["normal", "italic"],
+  preload: false,
 });
 
 const SITE_URL = "https://bissuabogados.com";
@@ -281,16 +287,21 @@ export default function RootLayout({
           // @ts-expect-error fetchpriority no está en el typing de React aún
           fetchpriority="high"
         />
+        {/* JSON-LD directo en <head> — server-rendered una sola vez.
+            Antes lo inyectábamos vía <Script> en <body>, lo cual generaba
+            duplicación con el RSC payload. */}
+        <script
+          type="application/ld+json"
+          // El contenido es 100% server-side (constante tipada al top del
+          // archivo), sin inputs de usuario → seguro contra XSS.
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
       </head>
       <body className="font-sans antialiased bg-ink-900 text-bone-50 selection:bg-gold-400/35 selection:text-bone-100">
         <Analytics />
-        <Script
-          id="ld-org-graph"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify(organizationSchema)}
-        </Script>
         {children}
       </body>
     </html>

@@ -1,5 +1,4 @@
 import "../../v3/v3.css";
-import Script from "next/script";
 import V4AreaPage from "@/components/v4/V4AreaPage";
 import { v4Areas, getAreaBySlug } from "@/lib/v4-areas";
 import { getMemberBySlug } from "@/lib/v4-team";
@@ -186,15 +185,17 @@ export default async function AreaPillarPage({ params }: Props) {
     ],
   };
 
+  // JSON-LD server-rendered una sola vez (sin doble serialización vía
+  // <Script> + RSC payload). El contenido se genera 100% server-side a
+  // partir de constantes tipadas; no hay input de usuario.
+  const schemaJson = JSON.stringify(schema);
   return (
     <>
-      <Script
-        id={`ld-area-${area.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(schema)}
-      </Script>
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
       <V4AreaPage area={area} />
     </>
   );

@@ -1,5 +1,4 @@
 import "../../v3/v3.css";
-import Script from "next/script";
 import V4MemberPage from "@/components/v4/V4MemberPage";
 import {
   v4Team,
@@ -212,15 +211,16 @@ export default async function MemberProfilePage({ params }: Props) {
     "@graph": graph,
   };
 
+  // JSON-LD server-rendered una sola vez. Contenido 100% server-side, sin
+  // input de usuario — la regla de XSS no aplica.
+  const schemaJson = JSON.stringify(personSchema);
   return (
     <>
-      <Script
-        id={`ld-person-${member.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(personSchema)}
-      </Script>
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
       <V4MemberPage member={member} yearsOfPractice={yearsOfPractice} />
     </>
   );
