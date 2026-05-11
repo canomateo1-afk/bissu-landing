@@ -10,6 +10,7 @@ import { events } from "@/lib/analytics";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
 import V4Footer from "@/components/v4/V4Footer";
+import CalendlyInterceptor from "@/components/CalendlyInterceptor";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -51,6 +52,7 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
     .toUpperCase();
   return (
     <div className="v3-root min-h-screen">
+      <CalendlyInterceptor />
       <MemberNav member={member} />
       <V4FloatingCTA
         photo={member.photo}
