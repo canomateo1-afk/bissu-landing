@@ -7,11 +7,12 @@ import type { V4Area } from "@/lib/v4-areas";
 import { getRelatedAreas } from "@/lib/v4-areas";
 import { v4Team, getMemberBySlug } from "@/lib/v4-team";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
+import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
+import V4Footer from "@/components/v4/V4Footer";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const NAV_LINKS = [
-  ["Áreas", "/#areas"],
   ["Casos", "/#caso"],
   ["Por qué Bissu", "/#comparison"],
   ["Equipo", "/#abogados"],
@@ -65,7 +66,7 @@ export default function V4AreaPage({ area }: { area: V4Area }) {
       <Faq area={area} />
       <ConsultCard area={area} />
       {relatedAreas.length > 0 && <RelatedAreas areas={relatedAreas} />}
-      <Footer />
+      <V4Footer />
       <StickyMobileCta area={area} />
     </div>
   );
@@ -105,6 +106,7 @@ function AreaNav() {
         </a>
 
         <div className="hidden lg:flex items-center gap-9">
+          <V4AreasDropdown />
           {NAV_LINKS.map(([label, href]) => (
             <a
               key={label}
@@ -836,175 +838,3 @@ function StickyMobileCta({ area }: { area: V4Area }) {
   );
 }
 
-// ============================================================
-// Footer — exact V3Footer pattern
-// ============================================================
-function Footer() {
-  return (
-    <footer className="bg-[#FBF7EE] border-t border-[rgba(26,23,20,0.10)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 sm:py-20">
-        <div className="border-b border-[rgba(26,23,20,0.10)] pb-12 mb-12">
-          <a
-            href="/"
-            className="inline-flex items-baseline gap-4 sm:gap-6 group"
-            aria-label="Bissu Abogados — Inicio"
-          >
-            <p
-              className="v3-display leading-[0.9] transition-colors group-hover:text-[#8C7339]"
-              style={{
-                fontSize: "clamp(4rem, 14vw, 14rem)",
-                letterSpacing: "-0.03em",
-              }}
-            >
-              Bissu<span className="text-[#B4975A]">.</span>
-            </p>
-            <p className="text-[12px] sm:text-[14px] tracking-[0.32em] uppercase text-[#5A4F45] font-medium pb-2 sm:pb-4">
-              Abogados
-            </p>
-          </a>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 lg:gap-x-10">
-          <div>
-            <p className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium mb-3">
-              Áreas
-            </p>
-            <ul className="space-y-1.5 text-[13px]">
-              <li>
-                <a
-                  href="/v4/areas/litigio-civil"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Litigio civil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/v4/areas/litigio-mercantil"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Litigio mercantil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/v4/areas/litigio-concursal"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Concurso mercantil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/v4/areas/litigio-familiar"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Familiar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/v4/areas/litigio-constitucional"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Amparo
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/v4/areas/arbitraje-y-masc"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  Arbitraje
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium mb-3">
-              Equipo
-            </p>
-            <ul className="space-y-1.5 text-[13px]">
-              {v4Team.map((m) => (
-                <li key={m.slug}>
-                  <a
-                    href={`/v4/equipo/${m.slug}`}
-                    className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                  >
-                    {m.name.split(" ").slice(0, 2).join(" ")}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="/#abogados"
-                  className="text-[#5A4F45] hover:text-[#8C7339] transition-colors"
-                >
-                  Ver equipo →
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium mb-3">
-              Contacto
-            </p>
-            <div className="space-y-1.5 text-[13px]">
-              <a
-                href="mailto:sbissu@bissuabogados.com"
-                className="block text-[#1A1714] hover:text-[#8C7339] transition-colors break-all"
-              >
-                sbissu@bissuabogados.com
-              </a>
-            </div>
-            <p className="mt-4 text-[12px] leading-[1.5] text-[#5A4F45]">
-              Av. Prado Norte 365, Int. 6
-              <br />
-              Lomas de Chapultepec, CDMX
-            </p>
-          </div>
-
-          <div>
-            <p className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium mb-3">
-              Reconocimientos
-            </p>
-            <div className="space-y-1.5 text-[12px] text-[#1A1714]">
-              <p>Best Lawyers in Mexico 2026</p>
-              <p>Leaders League 2025</p>
-              <p>Tops · Diamante 2025</p>
-            </div>
-            <div className="mt-5 flex flex-col gap-1.5 text-[12px] tracking-[0.12em] uppercase font-medium">
-              {[
-                ["Instagram", "https://www.instagram.com/bissuabogados/"],
-                [
-                  "LinkedIn",
-                  "https://www.linkedin.com/company/bissu-abogados-s-c-/",
-                ],
-                ["Facebook", "https://www.facebook.com/BissuAbogados/"],
-              ].map(([label, href]) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
-                >
-                  {label} ↗
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-6 border-t border-[rgba(26,23,20,0.08)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-[10px] tracking-[0.18em] uppercase text-[#5A4F45] font-medium">
-          <p>© {new Date().getFullYear()} Bissu Abogados, S.C. · Est. 2017</p>
-          <p>
-            Información de carácter informativo · No constituye asesoría legal
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
