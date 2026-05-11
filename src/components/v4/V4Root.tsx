@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { v4Team } from "@/lib/v4-team";
+import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { events } from "@/lib/analytics";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
 import V4Footer from "@/components/v4/V4Footer";
@@ -101,7 +103,9 @@ function V4Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#cta"
+            href={CALENDLY_GENERAL}
+            {...calendlyLinkProps}
+            onClick={() => events.ctaClick("nav", "Agenda consulta")}
             className={`group inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] text-[13px] font-semibold transition-all whitespace-nowrap ${
               scrolled
                 ? "bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)]"
@@ -269,7 +273,12 @@ function V4Hero() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.8 }}
             className="mt-9 sm:mt-11"
           >
-            <a href="#cta" className="v3-btn v3-btn-on-dark group">
+            <a
+              href={CALENDLY_GENERAL}
+              {...calendlyLinkProps}
+              onClick={() => events.ctaClick("hero", "Agenda consulta gratuita")}
+              className="v3-btn v3-btn-on-dark group"
+            >
               Agenda consulta gratuita
               <span className="v3-btn-arrow">→</span>
             </a>
@@ -296,9 +305,9 @@ function V4Hero() {
                 ))}
               </div>
               <p className="text-[12px] sm:text-[13px] font-medium opacity-95">
-                <span className="text-[#D4B97A] font-semibold">100% de casos ganados</span>
+                <span className="text-[#D4B97A] font-semibold">500+ casos</span>
                 <span className="opacity-80 mx-1.5">·</span>
-                <span className="opacity-80">500+ casos atendidos desde 2017</span>
+                <span className="opacity-80">dictamen escrito en 24 horas</span>
               </p>
             </motion.div>
           </motion.div>
@@ -324,8 +333,8 @@ function V4HeroStats() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[rgba(26,23,20,0.10)] border border-[rgba(26,23,20,0.10)] rounded-[8px] overflow-hidden"
         >
           {[
-            { stat: "08+", unit: "años", label: "Defendiendo casos en México" },
-            { stat: "06", unit: "áreas", label: "De práctica activa" },
+            { stat: "8+", unit: "años", label: "Defendiendo casos en México" },
+            { stat: "6", unit: "áreas", label: "De práctica activa" },
             { stat: "<24h", unit: "respuesta", label: "Tiempo de respuesta inicial" },
           ].map((s) => (
             <div
@@ -700,7 +709,14 @@ function V4AreasTabbed() {
                 </span>
               </a>
               <a
-                href="#cta"
+                href={CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() =>
+                  events.ctaClick(
+                    `areas_${areas[active].key}`,
+                    `Consultar caso de ${areas[active].label.toLowerCase()}`,
+                  )
+                }
                 className="inline-flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#1A1714] hover:text-[#B4975A] transition-colors group"
               >
                 <span className="border-b border-[rgba(26,23,20,0.30)] group-hover:border-[#B4975A] pb-0.5 transition-colors">
@@ -763,7 +779,11 @@ function V4FeaturedCase() {
               liquidación.
             </p>
             <a
-              href="#cta"
+              href={CALENDLY_GENERAL}
+              {...calendlyLinkProps}
+              onClick={() =>
+                events.ctaClick("featured_case", "Tu caso encaja con esto")
+              }
               className="mt-7 inline-flex items-center gap-2 text-[13px] font-medium text-[#1A1714] hover:text-[#8C7339] transition-colors"
             >
               Tu caso encaja con esto
@@ -936,7 +956,9 @@ function V4Comparison() {
             <div className="col-span-3 relative z-10">
               <div className="bg-[#1A1714] text-white text-center py-5 sm:py-6 rounded-b-[8px]">
                 <a
-                  href="#cta"
+                  href={CALENDLY_GENERAL}
+                  {...calendlyLinkProps}
+                  onClick={() => events.ctaClick("comparison", "Agenda consulta")}
                   className="inline-flex items-center gap-1.5 text-[11px] sm:text-[12px] font-medium text-white hover:text-[#B4975A] transition-colors"
                 >
                   Agenda consulta
@@ -1071,7 +1093,9 @@ function V4CredentialsGrid() {
               return (
                 <motion.a
                   key={i}
-                  href="#cta"
+                  href={CALENDLY_GENERAL}
+                  {...calendlyLinkProps}
+                  onClick={() => events.ctaClick("credentials_more", "Agenda consulta gratuita")}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-10% 0px" }}
@@ -1244,8 +1268,15 @@ function V4Testimonials() {
           ))}
         </div>
 
+        {/* Confidentiality note — explica por qué los testimonios van con iniciales */}
+        <p className="mt-8 text-[12px] sm:text-[13px] italic leading-[1.55] text-[#5A4F45] max-w-2xl">
+          Identidades reservadas por secreto profesional (art. 36 del Código
+          Penal Federal). Nombres, sectores y fechas verificables bajo
+          convenio de confidencialidad recíproco.
+        </p>
+
         {/* Verification strip */}
-        <div className="mt-14 pt-8 border-t border-[rgba(26,23,20,0.10)] flex flex-wrap items-center gap-x-10 gap-y-4">
+        <div className="mt-10 pt-8 border-t border-[rgba(26,23,20,0.10)] flex flex-wrap items-center gap-x-10 gap-y-4">
           <p className="text-[11px] tracking-[0.06em] uppercase text-[#5A4F45] font-medium">
             Verificado por
           </p>
@@ -1654,7 +1685,9 @@ function V4ConsultCard() {
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a
-                href="#"
+                href={CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick("consult_card", "Agenda consulta gratuita")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
                 Agenda consulta gratuita
@@ -1662,6 +1695,7 @@ function V4ConsultCard() {
               </a>
               <a
                 href="mailto:sbissu@bissuabogados.com"
+                onClick={() => events.emailClick("consult_card")}
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
                 Escribir correo

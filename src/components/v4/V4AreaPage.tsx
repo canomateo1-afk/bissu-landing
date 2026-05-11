@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import type { V4Area } from "@/lib/v4-areas";
 import { getRelatedAreas } from "@/lib/v4-areas";
 import { v4Team, getMemberBySlug } from "@/lib/v4-team";
+import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { events } from "@/lib/analytics";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
 import V4Footer from "@/components/v4/V4Footer";
@@ -120,7 +122,9 @@ function AreaNav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/#cta"
+            href={CALENDLY_GENERAL}
+            {...calendlyLinkProps}
+            onClick={() => events.ctaClick("area_nav", "Agenda consulta")}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] text-[13px] font-semibold whitespace-nowrap bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] transition-all"
           >
             Agenda consulta
@@ -212,12 +216,18 @@ function Hero({ area }: { area: V4Area }) {
               transition={{ duration: 0.7, ease: EASE, delay: 0.5 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
-              <a href="#cta" className="v3-btn">
+              <a
+                href={CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick("area_hero", "Agenda consulta gratuita")}
+                className="v3-btn"
+              >
                 Agenda consulta gratuita
                 <span className="v3-btn-arrow">→</span>
               </a>
               <a
                 href="mailto:sbissu@bissuabogados.com"
+                onClick={() => events.emailClick("area_hero")}
                 className="text-[13px] font-medium text-[#1A1714] hover:text-[#8C7339] transition-colors inline-flex items-center gap-1.5"
               >
                 Escribir correo <span aria-hidden>→</span>
@@ -527,6 +537,7 @@ function Faq({ area }: { area: V4Area }) {
             </p>
             <a
               href="mailto:sbissu@bissuabogados.com"
+              onClick={() => events.emailClick("area_inline")}
               className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#1A1714] hover:text-[#8C7339] transition-colors"
             >
               sbissu@bissuabogados.com <span aria-hidden>→</span>
@@ -704,7 +715,9 @@ function ConsultCard({ area }: { area: V4Area }) {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a
-                href="/#cta"
+                href={CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick("area_consult_card", "Agenda consulta gratuita")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
                 Agenda consulta gratuita
@@ -712,6 +725,7 @@ function ConsultCard({ area }: { area: V4Area }) {
               </a>
               <a
                 href="mailto:sbissu@bissuabogados.com"
+                onClick={() => events.emailClick("area_consult_card")}
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
                 Escribir correo
@@ -828,7 +842,9 @@ function StickyMobileCta({ area }: { area: V4Area }) {
           </p>
         </div>
         <a
-          href="/#cta"
+          href={CALENDLY_GENERAL}
+          {...calendlyLinkProps}
+          onClick={() => events.ctaClick("area_mobile_sticky", "Agendar")}
           className="shrink-0 inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-5 py-2.5 text-[13px] font-medium rounded-[4px]"
         >
           Agendar →

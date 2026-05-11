@@ -72,6 +72,7 @@ export const v4Team: V4TeamMember[] = [
     contact: {
       email: "sbissu@bissuabogados.com",
       phone: "+52 55 5545 1308",
+      calendly: "https://calendly.com/bissuabogados-marketing/30min",
     },
     linkedin: "https://www.linkedin.com/company/bissu-abogados-s-c-/",
     sameAs: [
@@ -165,6 +166,8 @@ export const v4Team: V4TeamMember[] = [
     contact: {
       email: "jvargas@bissuabogados.com",
       phone: "+52 55 5545 1308",
+      calendly:
+        "https://calendly.com/jvargas-bissuabogados/consulta-de-20-minutos",
     },
     alumniOf: [
       { name: "Universidad Panamericana", url: "https://www.up.edu.mx" },

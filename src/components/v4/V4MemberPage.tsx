@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { V4TeamMember } from "@/lib/v4-team";
 import { getOtherMembers, v4Team } from "@/lib/v4-team";
+import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { events } from "@/lib/analytics";
 import V4FloatingCTA from "@/components/v4/V4FloatingCTA";
 import V4AreasDropdown from "@/components/v4/V4AreasDropdown";
 import V4Footer from "@/components/v4/V4Footer";
@@ -49,7 +51,7 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
     .toUpperCase();
   return (
     <div className="v3-root min-h-screen">
-      <MemberNav />
+      <MemberNav member={member} />
       <V4FloatingCTA
         photo={member.photo}
         alt={member.name}
@@ -70,7 +72,7 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
       )}
       <OtherMembers currentSlug={member.slug} />
       {member.faqs && member.faqs.length > 0 && (
-        <Faq faqs={member.faqs} firstName={member.firstName ?? member.name.split(" ")[0]} />
+        <Faq member={member} faqs={member.faqs} firstName={member.firstName ?? member.name.split(" ")[0]} />
       )}
       <ConsultCard member={member} />
       <V4Footer />
@@ -82,7 +84,7 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
 // ============================================================
 // Nav — V4Nav pattern (matches home exactly)
 // ============================================================
-function MemberNav() {
+function MemberNav({ member }: { member: V4TeamMember }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -122,7 +124,9 @@ function MemberNav() {
         </div>
 
         <a
-          href="#cta"
+          href={member.contact.calendly ?? CALENDLY_GENERAL}
+          {...calendlyLinkProps}
+          onClick={() => events.ctaClick(`member_${member.slug}_nav`, "Agenda consulta")}
           className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] text-[13px] font-semibold whitespace-nowrap bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] transition-all"
         >
           Agenda consulta
@@ -257,7 +261,12 @@ function Header({ member, yearsOfPractice }: Props) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.6 }}
             >
-              <a href={member.contact.calendly ?? "#cta"} className="v3-btn">
+              <a
+                href={member.contact.calendly ?? CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick(`member_${member.slug}_hero`, "Agenda consulta gratuita")}
+                className="v3-btn"
+              >
                 Agenda consulta gratuita
                 <span className="v3-btn-arrow">→</span>
               </a>
@@ -575,7 +584,9 @@ function MidCta({ member }: { member: V4TeamMember }) {
             </p>
           </div>
           <a
-            href="#cta"
+            href={member.contact.calendly ?? CALENDLY_GENERAL}
+            {...calendlyLinkProps}
+            onClick={() => events.ctaClick(`member_${member.slug}_mid`, `Agenda con ${firstName}`)}
             className="shrink-0 v3-btn"
           >
             Agenda con {firstName}
@@ -714,9 +725,11 @@ function OtherMembers({ currentSlug }: { currentSlug: string }) {
 // FAQ — accordion with FAQPage schema-friendly markup
 // ============================================================
 function Faq({
+  member,
   faqs,
   firstName,
 }: {
+  member: V4TeamMember;
   faqs: NonNullable<V4TeamMember["faqs"]>;
   firstName: string;
 }) {
@@ -736,7 +749,9 @@ function Faq({
               Si tu duda no está acá, agendá una consulta inicial gratuita de 20 minutos con {firstName}.
             </p>
             <a
-              href="#cta"
+              href={member.contact.calendly ?? CALENDLY_GENERAL}
+              {...calendlyLinkProps}
+              onClick={() => events.ctaClick(`member_${member.slug}_inline`, `Agenda con ${firstName}`)}
               className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#1A1714] hover:text-[#8C7339] transition-colors"
             >
               Agenda con {firstName} <span aria-hidden>→</span>
@@ -918,7 +933,9 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a
-                href={member.contact.calendly ?? "/#cta"}
+                href={member.contact.calendly ?? CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick(`member_${member.slug}_consult_card`, "Agenda consulta gratuita")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
                 Agenda consulta gratuita
@@ -926,6 +943,7 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
               </a>
               <a
                 href={`mailto:${member.contact.email}`}
+                onClick={() => events.emailClick(`member_${member.slug}_consult_card`)}
                 className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-white hover:text-[#1A1714] transition-colors"
               >
                 Escribir a {firstName}
@@ -975,7 +993,9 @@ function StickyMobileCta({ member }: { member: V4TeamMember }) {
           </p>
         </div>
         <a
-          href="#cta"
+          href={member.contact.calendly ?? CALENDLY_GENERAL}
+          {...calendlyLinkProps}
+          onClick={() => events.ctaClick(`member_${member.slug}_mobile_sticky`, "Agendar")}
           className="shrink-0 inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-5 py-2.5 text-[13px] font-medium rounded-[4px]"
         >
           Agendar →

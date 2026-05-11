@@ -2,6 +2,8 @@
 
 import { v4Areas } from "@/lib/v4-areas";
 import { v4Team } from "@/lib/v4-team";
+import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { events } from "@/lib/analytics";
 
 /**
  * Shared rich footer used on every V4 surface (home, team profiles, area
@@ -103,12 +105,15 @@ export default function V4Footer() {
             <div className="space-y-1.5 text-[13px]">
               <a
                 href="mailto:sbissu@bissuabogados.com"
+                onClick={() => events.emailClick("footer")}
                 className="block text-[#1A1714] hover:text-[#8C7339] transition-colors break-all"
               >
                 sbissu@bissuabogados.com
               </a>
               <a
-                href="/#cta"
+                href={CALENDLY_GENERAL}
+                {...calendlyLinkProps}
+                onClick={() => events.ctaClick("footer", "Agenda consulta gratuita")}
                 className="block text-[#5A4F45] hover:text-[#8C7339] transition-colors"
               >
                 Agenda consulta gratuita →
@@ -132,6 +137,7 @@ export default function V4Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => events.socialClick(String(label).toLowerCase(), "footer")}
                     className="text-[#1A1714] hover:text-[#8C7339] transition-colors"
                   >
                     {label} ↗

@@ -5,6 +5,11 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   images: {
     formats: ["image/avif", "image/webp"],
+    // Sizes acotados — el set default de Next genera srcsets hasta 3840px y
+    // por imagen mete ~10 entries en el HTML. Para una landing con thumbs
+    // chicos + heros responsivos alcanza con estos breakpoints.
+    deviceSizes: [640, 750, 828, 1080, 1280, 1920],
+    imageSizes: [16, 32, 64, 96, 128, 256],
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
     ],

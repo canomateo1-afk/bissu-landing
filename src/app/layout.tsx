@@ -42,32 +42,6 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: "Samuel Bissu Bazbaz" }],
   generator: "Next.js",
-  keywords: [
-    "Bissu Abogados",
-    "despacho de abogados CDMX",
-    "despacho jurídico Ciudad de México",
-    "abogados Polanco",
-    "abogados Lomas de Chapultepec",
-    "abogados litigantes México",
-    "abogado civil CDMX",
-    "abogado mercantil CDMX",
-    "abogado corporativo Ciudad de México",
-    "abogado concurso mercantil México",
-    "abogado de quiebra",
-    "abogado familiar CDMX",
-    "abogado de divorcios CDMX",
-    "abogado custodia compartida",
-    "abogado pensión alimenticia",
-    "restitución internacional de menores",
-    "abogado de amparo CDMX",
-    "juicio de amparo México",
-    "arbitraje comercial internacional",
-    "arbitraje CCI México",
-    "mediación comercial México",
-    "Samuel Bissu",
-    "Best Lawyers Mexico 2026",
-    "Leaders League 2025",
-  ],
   alternates: {
     canonical: "/",
     languages: {
@@ -75,7 +49,14 @@ export const metadata: Metadata = {
       "x-default": "/",
     },
   },
-  icons: { icon: "/icon.svg" },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     type: "website",
     locale: "es_MX",
@@ -123,6 +104,7 @@ export const metadata: Metadata = {
 const ORG_ID = `${SITE_URL}#organization`;
 const SITE_ID = `${SITE_URL}#website`;
 const FOUNDER_ID = `${SITE_URL}#samuel-bissu`;
+const PARTNER_JR_ID = `${SITE_URL}#adolfo-vargas`;
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -157,7 +139,7 @@ const organizationSchema = {
       },
       areaServed: { "@type": "Country", name: "Mexico" },
       founder: { "@id": FOUNDER_ID },
-      employee: [{ "@id": FOUNDER_ID }],
+      employee: [{ "@id": FOUNDER_ID }, { "@id": PARTNER_JR_ID }],
       award: [
         "The Best Lawyers in Mexico 2026",
         "Leaders League 2025 — Resolución de Conflictos",
@@ -243,6 +225,32 @@ const organizationSchema = {
       ],
     },
     {
+      "@type": "Person",
+      "@id": PARTNER_JR_ID,
+      name: "Adolfo Julián Vargas Alvarado",
+      jobTitle: "Socio Jr.",
+      worksFor: { "@id": ORG_ID },
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Universidad Panamericana",
+          url: "https://www.up.edu.mx",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Universidad Tres Culturas",
+        },
+      ],
+      knowsAbout: [
+        "Litigio civil",
+        "Litigio familiar",
+        "Litigio constitucional",
+        "Derecho procesal constitucional",
+        "Juicio de amparo",
+        "Restitución internacional de menores",
+      ],
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         {
@@ -264,6 +272,16 @@ export default function RootLayout({
       lang="es-MX"
       className={`${display.variable} ${sans.variable} ${body.variable}`}
     >
+      <head>
+        {/* Preload del hero LCP — poster del <video> que ocupa el viewport inicial */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-1.jpg"
+          // @ts-expect-error fetchpriority no está en el typing de React aún
+          fetchpriority="high"
+        />
+      </head>
       <body className="font-sans antialiased bg-ink-900 text-bone-50 selection:bg-gold-400/35 selection:text-bone-100">
         <Analytics />
         <Script

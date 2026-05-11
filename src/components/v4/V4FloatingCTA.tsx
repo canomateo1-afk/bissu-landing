@@ -2,6 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { CALENDLY_GENERAL, calendlyLinkProps } from "@/lib/calendly";
+import { events } from "@/lib/analytics";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -16,8 +18,10 @@ type Props = {
   headline?: string;
   /** Body text shown in expanded mode (use \n for a manual line break). */
   body?: string;
-  /** Hash target — defaults to "#cta" (also used to detect approach and hide the FAB). */
+  /** Calendly URL (defaults to the general intake link). */
   href?: string;
+  /** Analytics location label (defaults to "floating_cta"). */
+  trackingLocation?: string;
 };
 
 /**
@@ -33,16 +37,19 @@ export default function V4FloatingCTA({
   initials = "SB",
   headline = "Habla con un abogado hoy",
   body = "Consulta gratuita, 20 minutos.\nSin compromiso, sin presión.",
-  href = "#cta",
+  href = CALENDLY_GENERAL,
+  trackingLocation = "floating_cta",
 }: Props = {}) {
   const [hidden, setHidden] = useState(false);
   const [compact, setCompact] = useState(false);
 
+  // Ocultar la pill cuando el usuario llega a la sección de agendado
+  // (#cta) — el link es a Calendly pero el detect sigue funcionando
+  // sobre el anchor del bloque dentro de la home.
   useEffect(() => {
     const onScroll = () => {
       setCompact(window.scrollY > window.innerHeight * 0.6);
-      const targetId = href.replace(/^#/, "");
-      const target = document.getElementById(targetId);
+      const target = document.getElementById("cta");
       if (!target) return;
       const rect = target.getBoundingClientRect();
       setHidden(rect.top < window.innerHeight * 0.85);
@@ -50,7 +57,7 @@ export default function V4FloatingCTA({
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [href]);
+  }, []);
 
   return (
     <motion.div
@@ -77,6 +84,8 @@ export default function V4FloatingCTA({
     >
       <motion.a
         href={href}
+        {...calendlyLinkProps}
+        onClick={() => events.ctaClick(trackingLocation, headline)}
         whileHover={{ scale: 1.03 }}
         animate={{
           padding: compact ? "10px 16px 10px 10px" : "24px",
@@ -110,6 +119,10 @@ export default function V4FloatingCTA({
           <img
             src={photo}
             alt={alt}
+            loading="lazy"
+            decoding="async"
+            // @ts-expect-error fetchpriority no está en typing de React aún
+            fetchpriority="low"
             className="w-full h-full rounded-full object-cover ring-2 ring-white/15 bg-[#1A1714]"
             onError={(e) => {
               const img = e.currentTarget;

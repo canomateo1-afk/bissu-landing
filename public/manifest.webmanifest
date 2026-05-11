@@ -1,0 +1,14 @@
+{
+  "name": "Bissu Abogados",
+  "short_name": "Bissu",
+  "description": "Despacho de abogados en CDMX especializado en litigio civil, mercantil, concursal, familiar, constitucional y arbitraje internacional.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1714",
+  "theme_color": "#1A1714",
+  "lang": "es-MX",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.ico", "sizes": "16x16 32x32", "type": "image/x-icon" }
+  ]
+}
