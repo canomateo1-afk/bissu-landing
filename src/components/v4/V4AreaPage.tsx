@@ -26,7 +26,7 @@ const CONSULT_INCLUDES = [
   "Análisis del caso por abogado titular",
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
-  "Dictamen escrito post-consulta en 24 hs",
+  "Diagnóstico legal post-consulta en 72 hs",
   "Sin cobro hasta firmar convenio",
 ];
 
@@ -67,6 +67,7 @@ export default function V4AreaPage({ area }: { area: V4Area }) {
       <Scenarios area={area} />
       <Process area={area} />
       {teamMembers.length > 0 && <Team area={area} teamMembers={teamMembers} />}
+      <Testimonials teamMembers={teamMembers} />
       <Faq area={area} />
       <ConsultCard area={area} />
       {relatedAreas.length > 0 && <RelatedAreas areas={relatedAreas} />}
@@ -298,7 +299,7 @@ function Services({ area }: { area: V4Area }) {
             Qué entra en esta área
           </p>
           <h2 className="v3-h2">
-            Servicios <em className="text-[#B4975A]">concretos</em>
+            {area.servicesH2}
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="intro-paragraph mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
@@ -516,6 +517,87 @@ function Team({
 }
 
 // ============================================================
+// Testimonials — combina testimonios del titular del área (de v4-team) con
+// fallback a 3 testimonios genéricos del despacho. Misma estética que la home
+// pero sin avatar (los testimonios son anónimos por confidencialidad).
+// ============================================================
+const GENERIC_TESTIMONIALS: { quote: string; attribution: string }[] = [
+  {
+    quote:
+      "Negociaron una reestructura concursal que mantuvo operando una empresa con tres generaciones. El diagnóstico legal desde el día 1 cambió completamente cómo vivimos el proceso.",
+    attribution: "Directora · Empresa industrial · Reestructura concursal · 2024",
+  },
+  {
+    quote:
+      "Lo que diferencia a Bissu es la honestidad inicial. En la primera reunión nos dijeron qué escenarios tenían riesgo y cuáles no. Sin esa transparencia no hubiéramos avanzado.",
+    attribution: "CFO · Multinacional · Litigio mercantil · 2024",
+  },
+  {
+    quote:
+      "Custodia compartida internacional con régimen y pensión asegurados en moneda dura. Once meses de proceso pero con un titular que respondió cada mensaje.",
+    attribution: "Persona física · Litigio familiar · 2025",
+  },
+];
+
+function Testimonials({
+  teamMembers,
+}: {
+  teamMembers: ReturnType<typeof getMemberBySlug>[];
+}) {
+  const fromTeam = teamMembers.flatMap((m) =>
+    (m?.testimonials ?? []).map((t) => ({
+      quote: t.quote,
+      attribution: t.context,
+    }))
+  );
+  const items = [...fromTeam, ...GENERIC_TESTIMONIALS].slice(0, 3);
+
+  return (
+    <section className="py-24 sm:py-32 bg-[#FBF7EE]">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mb-14">
+          <p className="v3-eyebrow v3-eyebrow-pleca mb-5">
+            Lo que dicen los clientes
+          </p>
+          <h2 className="v3-h2">
+            Testimonios de clientes de{" "}
+            <em className="text-[#B4975A]">Bissu Abogados, S.C.</em>
+            <span className="text-[#B4975A]">.</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+          {items.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10% 0px" }}
+              transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
+              className="v3-card p-7 sm:p-8 flex flex-col bg-white"
+            >
+              <span
+                className="v3-display text-[#B4975A] leading-[0.6] mb-4"
+                style={{ fontSize: "3.5rem" }}
+                aria-hidden
+              >
+                &ldquo;
+              </span>
+              <p className="text-[15px] leading-[1.6] text-[#1A1714] mb-8 flex-1">
+                {t.quote}
+              </p>
+              <p className="pt-6 border-t border-[rgba(26,23,20,0.10)] text-[12px] tracking-[0.06em] text-[#5A4F45] leading-[1.5]">
+                {t.attribution}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ============================================================
 // FAQ — accordion with FAQPage schema-friendly markup
 // ============================================================
 function Faq({ area }: { area: V4Area }) {
@@ -620,7 +702,7 @@ function ConsultCard({ area }: { area: V4Area }) {
             <div className="space-y-4">
               {[
                 ["Disponibilidad", "Esta semana"],
-                ["Modalidad", "Video o presencial · Polanco, CDMX"],
+                ["Modalidad", "Video o presencial · Lomas de Chapultepec, CDMX"],
                 ["Idioma", "Español · Inglés"],
                 [
                   "Confidencialidad",
@@ -740,7 +822,7 @@ function ConsultCard({ area }: { area: V4Area }) {
                 onClick={() => events.emailClick("area_consult_card")}
                 className="inline-flex items-center gap-1.5 text-[12px] text-white/55 hover:text-white transition-colors"
               >
-                · O escribí por correo
+                · O escríbenos por correo
               </a>
             </div>
 

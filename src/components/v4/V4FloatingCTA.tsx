@@ -8,11 +8,11 @@ import { events } from "@/lib/analytics";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 type Props = {
-  /** Avatar photo path (defaults to Samuel — the founder, public face of the firm). */
+  /** @deprecated — kept for backwards compat. The CTA now uses a phone icon. */
   photo?: string;
-  /** Image alt + fallback display name. */
+  /** @deprecated — kept for backwards compat. */
   alt?: string;
-  /** Fallback initials shown if the avatar image fails to load. */
+  /** @deprecated — kept for backwards compat. */
   initials?: string;
   /** Headline shown in expanded mode. */
   headline?: string;
@@ -26,15 +26,12 @@ type Props = {
 
 /**
  * Floating, scroll-aware CTA card.
- *  - Expanded card on entry (avatar + headline + body + link).
+ *  - Expanded card on entry (phone icon + headline + body + link).
  *  - Morphs to a compact pill after scrolling past the hero.
  *  - Hides as the in-page #cta section approaches.
  *  - Desktop+ only (hidden on mobile, where the page already has a sticky bottom CTA).
  */
 export default function V4FloatingCTA({
-  photo = "/images/team/samuel.jpg",
-  alt = "Samuel Bissu Bazbaz",
-  initials = "SB",
   headline = "Habla con un abogado hoy",
   body = "Consulta gratuita, 20 minutos.\nSin compromiso, sin presión.",
   href = CALENDLY_GENERAL,
@@ -114,76 +111,42 @@ export default function V4FloatingCTA({
         <motion.div
           animate={{ width: compact ? 40 : 72, height: compact ? 40 : 72 }}
           transition={{ duration: 0.45, ease: EASE }}
-          className="relative shrink-0"
+          className="relative shrink-0 rounded-full bg-gradient-to-br from-[#D4B97A] to-[#8C7339] flex items-center justify-center ring-2 ring-white/15"
         >
-          <img
-            src={photo}
-            alt={alt}
-            loading="lazy"
-            decoding="async"
-            // @ts-expect-error fetchpriority no está en typing de React aún
-            fetchpriority="low"
-            className="w-full h-full rounded-full object-cover ring-2 ring-white/15 bg-[#1A1714]"
-            onError={(e) => {
-              const img = e.currentTarget;
-              if (img.dataset.fallback) return;
-              img.dataset.fallback = "1";
-              img.style.display = "none";
-              const sib = img.nextElementSibling as HTMLElement | null;
-              if (sib) sib.style.display = "flex";
+          {/* Pulsing halo around phone icon */}
+          <motion.span
+            aria-hidden
+            className="absolute inset-0 rounded-full bg-[#D4B97A]"
+            animate={{ scale: [1, 1.4], opacity: [0.45, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeOut",
             }}
           />
-          <span
-            aria-hidden
-            className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4B97A] to-[#8C7339] text-[#1A1714] items-center justify-center font-semibold ring-2 ring-white/15"
-            style={{ display: "none", fontSize: "calc(100% * 0.32)" }}
-          >
-            {initials}
-          </span>
 
-          <AnimatePresence>
-            {!compact && (
-              <motion.span
-                key="phone-badge"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0, opacity: 0 }}
-                transition={{ duration: 0.25, ease: EASE }}
-                className="absolute -top-1.5 -right-1.5 w-8 h-8 rounded-full bg-[#D4B97A] text-[#1A1714] flex items-center justify-center shadow-lg"
-              >
-                <motion.span
-                  aria-hidden
-                  className="absolute inset-0 rounded-full bg-[#D4B97A]"
-                  animate={{ scale: [1, 1.7], opacity: [0.55, 0] }}
-                  transition={{
-                    duration: 1.8,
-                    repeat: Infinity,
-                    ease: "easeOut",
-                  }}
-                />
-                <motion.svg
-                  viewBox="0 0 14 14"
-                  className="w-3.5 h-3.5 relative"
-                  fill="none"
-                  animate={{ rotate: [0, -10, 0, 10, 0] }}
-                  transition={{
-                    duration: 1.4,
-                    repeat: Infinity,
-                    repeatDelay: 2.5,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <path
-                    d="M3 2 C 3 2 3.5 4 5 5.5 C 6.5 7 8 7.5 8 7.5 L 9 6.5 L 12 7 L 12 10.5 C 12 11 11.5 11.5 11 11.5 C 6.5 11.5 2.5 7.5 2.5 3 C 2.5 2.5 3 2 3.5 2 L 7 2 L 7.5 5 L 6.5 6"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </motion.svg>
-              </motion.span>
-            )}
-          </AnimatePresence>
+          <motion.svg
+            viewBox="0 0 24 24"
+            className="relative text-[#1A1714]"
+            style={{ width: "55%", height: "55%" }}
+            fill="none"
+            animate={{ rotate: [0, -12, 0, 12, 0] }}
+            transition={{
+              duration: 1.4,
+              repeat: Infinity,
+              repeatDelay: 2.5,
+              ease: "easeInOut",
+            }}
+            aria-label="Teléfono"
+          >
+            <path
+              d="M5 4 C 5 4 5.8 7.5 8.5 10 C 11.2 12.5 14.5 13.5 14.5 13.5 L 16.5 11.5 L 21 12 L 21 18 C 21 19 20 20 19 20 C 11 20 4 13 4 5 C 4 4 5 3 6 3 L 12 3 L 13 8 L 11 10"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </motion.svg>
         </motion.div>
 
         <AnimatePresence mode="wait">

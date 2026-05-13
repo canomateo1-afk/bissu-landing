@@ -25,14 +25,14 @@ const CONSULT_INCLUDES = [
   "Análisis del caso por abogado titular",
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
-  "Dictamen escrito post-consulta en 24 hs",
+  "Diagnóstico legal post-consulta en 72 hs",
   "Sin cobro hasta firmar convenio",
 ];
 
 const PROCESS_STEPS = [
   { step: "01", title: "Reservás 20 minutos" },
   { step: "02", title: "Reunión con el titular" },
-  { step: "03", title: "Dictamen escrito · 24 hs" },
+  { step: "03", title: "Diagnóstico legal · 72 hs" },
   { step: "04", title: "$0 hasta firmar convenio" },
 ] as const;
 
@@ -844,7 +844,7 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
             <div className="space-y-4">
               {[
                 ["Disponibilidad", "Esta semana"],
-                ["Modalidad", "Video o presencial · Polanco, CDMX"],
+                ["Modalidad", "Video o presencial · Lomas de Chapultepec, CDMX"],
                 ["Idiomas", member.languages.join(" · ")],
                 ["Confidencialidad", "Secreto profesional desde el primer contacto"],
               ].map(([label, value]) => (

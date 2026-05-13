@@ -105,7 +105,7 @@ export default async function AreaPillarPage({ params }: Props) {
           "@type": "Offer",
           name: "Consulta inicial gratuita",
           description:
-            "Reunión de 20 minutos con abogado titular. Dictamen escrito en 24 horas. Sin cobro hasta firmar convenio.",
+            "Reunión de 20 minutos con abogado titular. Diagnóstico legal en 72 horas hábiles. Sin cobro hasta firmar convenio.",
           price: "0",
           priceCurrency: "MXN",
           availability: "https://schema.org/InStock",

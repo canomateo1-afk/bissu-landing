@@ -32,6 +32,8 @@ export type V4Area = {
   label: string;
   /** Long heading title — used as H1 and meta title. */
   title: string;
+  /** SEO-focused H2 used on the Services section. Should reinforce the commercial keyword (e.g. "Servicios de abogado mercantil en CDMX"). */
+  servicesH2: string;
   /** One-sentence tagline below the eyebrow. */
   tagline: string;
   /** SEO description — 150-160 chars. */
@@ -69,7 +71,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-civil",
     label: "Civil",
-    title: "Litigio Civil en CDMX",
+    title: "Abogado Civil en CDMX",
+    servicesH2: "Servicios de abogado civil en CDMX",
     eyebrow: "Litigio civil · Bissu",
     tagline: "Cuando un contrato se rompe o un derecho personal se vulnera.",
     metaDescription:
@@ -79,7 +82,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El litigio civil resuelve disputas entre particulares cuando un contrato se rompe, una propiedad se invade o un acto produce un daño. En Bissu Abogados llevamos casos civiles complejos para empresas, familias y particulares en Ciudad de México y a nivel federal. Cada caso lo lleva un abogado titular de principio a fin, sin derivaciones a juniors anónimos. Antes de iniciar una demanda entregamos un dictamen escrito con la viabilidad real del caso, los riesgos y el costo estimado. La consulta inicial es gratuita y sin compromiso.",
     image:
-      "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Incumplimiento de contratos",
@@ -152,8 +155,8 @@ export const v4Areas: V4Area[] = [
       },
       {
         step: "02",
-        title: "Dictamen escrito en 24 horas",
-        body: "Entregamos un análisis por escrito con: viabilidad real, vía procesal recomendada, riesgos identificados, honorarios estimados y plazo aproximado. Antes de firmar convenio.",
+        title: "Diagnóstico legal en 72 horas",
+        body: "A partir de contar con todos los elementos para el estudio del caso, entregamos un análisis por escrito con: viabilidad real, vía procesal recomendada, riesgos identificados, honorarios estimados y plazo aproximado. Antes de firmar convenio.",
       },
       {
         step: "03",
@@ -220,7 +223,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-mercantil",
     label: "Mercantil",
-    title: "Litigio Mercantil y Corporativo en CDMX",
+    title: "Abogado Mercantil en CDMX",
+    servicesH2: "Servicios de abogado mercantil en CDMX",
     eyebrow: "Mercantil & Corporativo",
     tagline: "Sociedades, accionistas, contratos comerciales complejos.",
     metaDescription:
@@ -230,7 +234,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El litigio mercantil es el terreno propio de Bissu Abogados. Llevamos conflictos comerciales complejos para empresas mexicanas y multinacionales con presencia en México: disputas accionarias, contratos incumplidos, ejecución de pagarés y letras de cambio, fideicomisos contenciosos, competencia desleal. Samuel Bissu Bazbaz, nuestro socio titular, está reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos. El cliente trata siempre con el titular, no con un equipo rotativo. Dictamen escrito antes de iniciar, honorarios transparentes.",
     image:
-      "https://images.unsplash.com/photo-1568667256549-094345857637?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Conflictos entre accionistas",
@@ -303,8 +307,8 @@ export const v4Areas: V4Area[] = [
       },
       {
         step: "02",
-        title: "Dictamen escrito en 24 horas",
-        body: "Memorando con: vía procesal recomendada (mercantil ejecutivo, ordinario, arbitraje), riesgos, plazos, honorarios estimados y estrategia probatoria.",
+        title: "Diagnóstico legal en 72 horas",
+        body: "Memorando con: vía procesal recomendada (mercantil ejecutivo, ordinario, arbitraje), riesgos, plazos, honorarios estimados y estrategia probatoria. Entregado en 72 horas hábiles a partir de contar con todos los elementos para el estudio del caso.",
       },
       {
         step: "03",
@@ -317,7 +321,7 @@ export const v4Areas: V4Area[] = [
         body: "Ejecución de sentencia, transacción judicial o convenio extra-procesal. Si conviene continuar a tribunal colegiado o amparo directo, lo evaluamos antes.",
       },
     ],
-    teamSlugs: ["samuel-bissu"],
+    teamSlugs: ["samuel-bissu", "adolfo-vargas"],
     faqs: [
       {
         question: "¿Qué es un juicio ejecutivo mercantil y cuándo procede?",
@@ -371,7 +375,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-concursal",
     label: "Concursal",
-    title: "Concurso Mercantil y Reestructura en México",
+    title: "Abogado de Concurso Mercantil en CDMX",
+    servicesH2: "Servicios de abogado en concurso mercantil y reestructura",
     eyebrow: "Concurso mercantil",
     tagline: "Operación que continúa, no que se liquida.",
     metaDescription:
@@ -381,7 +386,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El concurso mercantil bien manejado salva la operación; mal manejado, la liquida. Bissu Abogados lleva concursos mercantiles del lado del comerciante (deudor) y del lado del acreedor en todo México. Diseñamos planes de reestructura realistas, negociamos quitas y esperas con acreedores reconocidos, y representamos en concursos transfronterizos (Capítulo 15 EE.UU., Chapter 11 paralelo). Casos representativos con 60% de quita aprobada manteniendo operación. Samuel Bissu Bazbaz, titular del área, opera concurso mercantil desde 2010.",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1400&q=88&auto=format&fit=crop",
     stat: { value: "60%", label: "Quita promedio aprobada" },
     services: [
       {
@@ -459,7 +464,7 @@ export const v4Areas: V4Area[] = [
         body: "Aprobación de convenio concursal con quita y espera, o ejecución de garantías y reparto en caso de quiebra. Acompañamiento post-convenio durante 12 a 18 meses.",
       },
     ],
-    teamSlugs: ["samuel-bissu"],
+    teamSlugs: ["samuel-bissu", "adolfo-vargas"],
     faqs: [
       {
         question: "¿Qué es un concurso mercantil en México?",
@@ -513,7 +518,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-familiar",
     label: "Familiar",
-    title: "Derecho Familiar en CDMX",
+    title: "Abogado Familiar en CDMX",
+    servicesH2: "Servicios de abogado familiar en CDMX",
     eyebrow: "Familiar",
     tagline: "Custodia, divorcio, pensión y sucesiones con sensibilidad y rigor.",
     metaDescription:
@@ -523,7 +529,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El derecho familiar exige rigor jurídico y sensibilidad humana al mismo tiempo. En Bissu Abogados llevamos divorcios, custodia, pensión alimenticia, sucesiones y restitución internacional de menores con un solo objetivo: proteger al cliente y, sobre todo, a los hijos. Cada caso lo lleva un abogado titular sin derivaciones. Damos una primera lectura honesta: a veces el caso conviene resolverlo por convenio antes de litigarlo. Cuando hay que litigar, lo hacemos con la estrategia más rápida y menos costosa para la familia.",
     image:
-      "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Divorcio incausado y contencioso",
@@ -610,7 +616,7 @@ export const v4Areas: V4Area[] = [
         body: "Sentencia ejecutoriada, divorcio inscrito en Registro Civil, pensión garantizada, custodia formalizada. Acompañamiento posterior para modificaciones o incumplimientos.",
       },
     ],
-    teamSlugs: ["adolfo-vargas"],
+    teamSlugs: ["adolfo-vargas", "samuel-bissu"],
     faqs: [
       {
         question: "¿Cuánto tarda un divorcio incausado en CDMX?",
@@ -653,7 +659,7 @@ export const v4Areas: V4Area[] = [
       "Convenio La Haya menores",
       "sucesión testamentaria CDMX",
       "patria potestad",
-      "abogado divorcio Polanco",
+      "abogado divorcio Lomas de Chapultepec",
       "reconocimiento paternidad",
     ],
   },
@@ -664,7 +670,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-constitucional",
     label: "Constitucional",
-    title: "Litigio Constitucional y Amparo en México",
+    title: "Abogado de Amparo en CDMX",
+    servicesH2: "Servicios de abogado de amparo en CDMX",
     eyebrow: "Constitucional · Amparo",
     tagline: "Cuando el Estado se equivoca, el amparo es la última herramienta.",
     metaDescription:
@@ -674,7 +681,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El juicio de amparo es la última y más poderosa herramienta del individuo frente al Estado. En Bissu Abogados promovemos amparos directos e indirectos contra leyes, actos de autoridad y sentencias que vulneran derechos humanos o garantías constitucionales. Adolfo Julián Vargas Alvarado, titular del área, tiene maestría en Derecho Procesal Constitucional por la Universidad Panamericana y formación previa como Secretario del Poder Judicial Federal. Cada amparo se escribe con la seriedad técnica que exige llegar a la Suprema Corte si fuera necesario.",
     image:
-      "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Amparo directo",
@@ -761,7 +768,7 @@ export const v4Areas: V4Area[] = [
         body: "Sentencia de fondo. Si es a favor, supervisamos cumplimiento por la autoridad. Si es desfavorable, evaluamos revisión ante Tribunal Colegiado o Suprema Corte.",
       },
     ],
-    teamSlugs: ["adolfo-vargas"],
+    teamSlugs: ["adolfo-vargas", "samuel-bissu"],
     faqs: [
       {
         question: "¿Qué es el juicio de amparo y para qué sirve?",
@@ -815,7 +822,8 @@ export const v4Areas: V4Area[] = [
   {
     slug: "arbitraje-comercial-internacional",
     label: "Arbitraje & MASC",
-    title: "Arbitraje Comercial Internacional y MASC en México",
+    title: "Abogado de Arbitraje en CDMX",
+    servicesH2: "Servicios de abogado de arbitraje en CDMX",
     eyebrow: "Arbitraje · MASC",
     tagline: "CCI, UNCITRAL, mediación y ejecución de laudos internacionales.",
     metaDescription:
@@ -825,7 +833,7 @@ export const v4Areas: V4Area[] = [
     intro:
       "El arbitraje comercial internacional es la vía preferida para disputas cross-border cuando las partes no quieren depender de tribunales locales de una sola jurisdicción. Bissu Abogados representa empresas mexicanas y multinacionales en arbitrajes bajo Cámara de Comercio Internacional (CCI/ICC), CANACO, reglas UNCITRAL y bajo cláusulas ad hoc. También llevamos ejecución y reconocimiento de laudos extranjeros en México bajo la Convención de Nueva York. Samuel Bissu Bazbaz, titular del área, opera arbitraje internacional desde 2014. La práctica complementa nuestros mecanismos alternativos de solución de controversias (MASC): mediación y conciliación.",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=88&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Arbitraje CCI (Cámara de Comercio Internacional)",
@@ -912,7 +920,7 @@ export const v4Areas: V4Area[] = [
         body: "Análisis del laudo, ejecución voluntaria o forzosa, reconocimiento en jurisdicciones donde el deudor tenga activos. Si conviene anular, promovemos acción correspondiente.",
       },
     ],
-    teamSlugs: ["samuel-bissu"],
+    teamSlugs: ["samuel-bissu", "adolfo-vargas"],
     faqs: [
       {
         question: "¿Qué es el arbitraje comercial internacional?",

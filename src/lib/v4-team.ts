@@ -110,7 +110,7 @@ export const v4Team: V4TeamMember[] = [
       {
         question: "¿Cuánto cuesta una consulta inicial con Samuel Bissu?",
         answer:
-          "La consulta inicial con Samuel Bissu es gratuita y sin compromiso. Dura aproximadamente 20 minutos, se realiza por video o presencial en Polanco, CDMX, y al finalizar se entrega dictamen escrito en 24 horas con la viabilidad del caso y los honorarios cerrados. No se cobra nada hasta firmar convenio.",
+          "La consulta inicial con Samuel Bissu es gratuita y sin compromiso. Dura aproximadamente 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX, y al finalizar se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con la viabilidad del caso y los honorarios cerrados. No se cobra nada hasta firmar convenio.",
       },
       {
         question: "¿En qué tipo de casos especializa Samuel Bissu?",
@@ -143,7 +143,7 @@ export const v4Team: V4TeamMember[] = [
     subtitle: "Litigio civil · Constitucional · Familiar",
     metaDescription:
       "Adolfo Julián Vargas Alvarado — socio junior de Bissu Abogados, CDMX. Especialista en derecho procesal constitucional, litigio civil y familiar.",
-    photo: "/images/team/adolfo.jpg",
+    photo: "/images/team/adolfo.png",
     photoFocusY: "78%",
     bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados con especialización en derecho procesal constitucional. Trayectoria previa en el Poder Judicial Federal y firmas mexicanas de práctica civil y familiar.",
     quote:
@@ -196,7 +196,7 @@ export const v4Team: V4TeamMember[] = [
       {
         question: "¿Cuánto cuesta una consulta inicial con Adolfo Vargas?",
         answer:
-          "La consulta inicial con Adolfo Vargas es gratuita y sin compromiso. Dura 20 minutos, se realiza por video o presencial en Polanco, CDMX. Al finalizar se entrega dictamen escrito en 24 horas con viabilidad, vía procesal recomendada y honorarios cerrados. No se cobra nada hasta firmar convenio.",
+          "La consulta inicial con Adolfo Vargas es gratuita y sin compromiso. Dura 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX. Al finalizar se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con viabilidad, vía procesal recomendada y honorarios cerrados. No se cobra nada hasta firmar convenio.",
       },
       {
         question: "¿En qué tipo de casos especializa Adolfo Vargas?",
