@@ -2,7 +2,7 @@ import Script from "next/script";
 
 export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "782788801432460";
   if (!gaId && !metaPixelId) return null;
   return (
     <>
