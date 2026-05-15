@@ -23,7 +23,7 @@ const NAV_LINKS = [
 
 const CONSULT_INCLUDES = [
   "Reunión 20 minutos · video o presencial",
-  "Análisis del caso por abogado titular",
+  "Análisis del caso por abogado especialista",
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
   "Diagnóstico legal post-consulta en 72 hs",
@@ -452,8 +452,8 @@ function Team({
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
-            En materia {area.label}, el caso lo conduce un abogado titular de
-            principio a fin.
+            En materia {area.label}, el caso lo conduce un abogado especialista
+            de principio a fin.
           </p>
         </div>
 
@@ -561,7 +561,7 @@ function Testimonials({
           </p>
           <h2 className="v3-h2">
             Testimonios de clientes de{" "}
-            <em className="text-[#B4975A]">Bissu Abogados, S.C.</em>
+            <em className="text-[#B4975A]">Bissu Abogados, S.C</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -616,7 +616,7 @@ function Faq({ area }: { area: V4Area }) {
               <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.65] text-[#5A4F45] max-w-sm">
-              Si tu duda no ha sido resuelta, agenda una consulta.
+              Si su pregunta no está aquí, contáctenos por correo o agende una consulta gratuita.
             </p>
             <a
               href="mailto:sbissu@bissuabogados.com"

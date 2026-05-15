@@ -22,7 +22,7 @@ const NAV_LINKS = [
 
 const CONSULT_INCLUDES = [
   "Reunión 20 minutos · video o presencial",
-  "Análisis del caso por abogado titular",
+  "Análisis del caso por abogado especialista",
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
   "Diagnóstico legal post-consulta en 72 hs",
@@ -407,7 +407,7 @@ function Experience({ member }: { member: V4TeamMember }) {
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
-            Cada área lo lleva el titular de principio a fin. Haga clic para ver el alcance completo de cada práctica.
+            Cada área lo lleva el especialista de principio a fin. Haga clic para ver el alcance completo de cada práctica.
           </p>
         </div>
 
@@ -667,7 +667,7 @@ function OtherMembers({ currentSlug }: { currentSlug: string }) {
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
             Sin derivaciones. Sin equipo de juniors anónimos. Cada caso lo
-            maneja un titular responsable de principio a fin.
+            maneja un especialista responsable de principio a fin.
           </p>
         </div>
 
@@ -748,7 +748,7 @@ function Faq({
               <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.65] text-[#5A4F45] max-w-sm">
-              Si tu duda no ha sido resuelta, agenda una consulta.
+              Si su pregunta no está aquí, contáctenos por correo o agende una consulta gratuita.
             </p>
             <a
               href={member.contact.calendly ?? CALENDLY_GENERAL}

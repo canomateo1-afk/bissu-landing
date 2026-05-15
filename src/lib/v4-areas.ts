@@ -80,7 +80,7 @@ export const v4Areas: V4Area[] = [
     heroBlurb:
       "Conflictos entre particulares por incumplimiento de obligaciones, daños patrimoniales o lesión a derechos individuales.",
     intro:
-      "El litigio civil resuelve disputas entre particulares cuando un contrato se incumple, una propiedad se invade o una conducta causa un daño. En Bissu Abogados, S.C., llevamos casos civiles complejos para empresas, particulares y familias en Ciudad de México y a nivel federal. Cada caso lo lleva un abogado titular de principio a fin. Antes de iniciar una demanda entregamos un diagnóstico legal escrito con la viabilidad real del caso, los riesgos y el costo estimado.",
+      "El litigio civil resuelve disputas entre particulares cuando un contrato se incumple, una propiedad se invade o una conducta causa un daño. En Bissu Abogados, S.C., llevamos casos civiles complejos para empresas, particulares y familias en Ciudad de México y a nivel federal. Cada caso lo lleva un abogado especialista de principio a fin. Antes de iniciar una demanda entregamos un diagnóstico legal escrito con la viabilidad real del caso, los riesgos y el costo estimado.",
     image:
       "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1400&q=88&auto=format&fit=crop",
     services: [
@@ -151,17 +151,17 @@ export const v4Areas: V4Area[] = [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Reunión de 20 minutos con abogado titular. Escuchamos el caso, identificamos el área aplicable y damos una primera lectura de viabilidad.",
+        body: "Reunión de 20 minutos con abogado especialista. Escuchamos el caso, identificamos el área aplicable y damos una primera lectura de viabilidad.",
       },
       {
         step: "02",
         title: "Diagnóstico legal en 72 horas",
-        body: "A partir de contar con todos los elementos para el estudio del caso, entregamos un análisis por escrito con: viabilidad real, vía procesal recomendada, riesgos identificados, honorarios estimados y plazo aproximado. Antes de firmar convenio.",
+        body: "A partir de contar con todos los elementos para el estudio del caso, entregamos un análisis por escrito con: viabilidad real, vía procesal recomendada, riesgos identificados, honorarios estimados y plazo aproximado.",
       },
       {
         step: "03",
         title: "Estrategia y seguimiento",
-        body: "Si decide avanzar, preparamos demanda, contestación o medios preparatorios. Comunicación directa con el titular del caso, no con un becario. Reportes mensuales por medio de nuestra plataforma.",
+        body: "Si decide avanzar, preparamos demanda, contestación o medios preparatorios. Comunicación directa con el especialista del caso, no con un becario. Reportes mensuales por medio de nuestra plataforma.",
       },
       {
         step: "04",
@@ -232,7 +232,7 @@ export const v4Areas: V4Area[] = [
     heroBlurb:
       "Disputas entre socios y accionistas, contratos mercantiles, títulos de crédito y fideicomisos. Defensa rigurosa para empresas familiares y multinacionales.",
     intro:
-      "El litigio mercantil es el terreno propio de Bissu Abogados, S.C. Llevamos conflictos comerciales complejos para empresas mexicanas y multinacionales con presencia en México: disputas accionarias, cumplimiento de contratos de crédito, ejecución de títulos y operaciones de crédito y constitución de fideicomisos. Samuel Bissu Bazbaz, nuestro socio titular, está reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
+      "El litigio mercantil es el terreno propio de Bissu Abogados, S.C. Llevamos conflictos comerciales complejos para empresas mexicanas y multinacionales con presencia en México: disputas accionarias, cumplimiento de contratos de crédito, ejecución de títulos y operaciones de crédito y constitución de fideicomisos. Samuel Bissu Bazbaz, nuestro socio especialista, está reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
     image:
       "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1400&q=88&auto=format&fit=crop",
     services: [
@@ -289,7 +289,7 @@ export const v4Areas: V4Area[] = [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Reunión de 20 minutos con Samuel Bissu o titular asignado. Análisis de la operación, identificación de cláusulas relevantes y lectura de viabilidad.",
+        body: "Reunión de 20 minutos con Samuel Bissu o especialista asignado. Análisis de la operación, identificación de cláusulas relevantes y lectura de viabilidad.",
       },
       {
         step: "02",
@@ -564,7 +564,7 @@ export const v4Areas: V4Area[] = [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Reunión inicial con el abogado titular del área familiar. Lectura honesta: a veces conviene convenio extra-judicial antes que juicio contencioso.",
+        body: "Reunión inicial con el abogado especialista del área familiar. Lectura honesta: a veces conviene convenio extra-judicial antes que juicio contencioso.",
       },
       {
         step: "02",
@@ -640,7 +640,7 @@ export const v4Areas: V4Area[] = [
     heroBlurb:
       "Conocimiento técnico para el juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales, para la defensa de empresas y particulares afectados por actos de autoridad.",
     intro:
-      "El juicio de amparo es la última y más poderosa herramienta del individuo frente al Estado. En Bissu Abogados, S.C., promovemos amparos directos e indirectos contra leyes, actos de autoridad y sentencias que vulneran derechos humanos o garantías constitucionales. Adolfo Julián Vargas Alvarado, titular del área, tiene maestría en Derecho Procesal Constitucional por la Universidad Panamericana. Cada amparo se escribe con la seriedad técnica que exige llegar a la Suprema Corte si fuera necesario.",
+      "El juicio de amparo es la última y más poderosa herramienta del individuo frente al Estado. En Bissu Abogados, S.C., promovemos amparos directos e indirectos contra leyes, actos de autoridad y sentencias que vulneran derechos humanos o garantías constitucionales. Adolfo Julián Vargas Alvarado, especialista del área, tiene maestría en Derecho Procesal Constitucional por la Universidad Panamericana. Cada amparo se escribe con la seriedad técnica que exige llegar a la Suprema Corte si fuera necesario.",
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=88&auto=format&fit=crop",
     services: [

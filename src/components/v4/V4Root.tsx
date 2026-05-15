@@ -804,7 +804,7 @@ function V4FeaturedCase() {
 // ============================================================
 function V4Comparison() {
   const rows: Array<{ label: string; bissu: boolean | string; others: boolean | string }> = [
-    { label: "Atención directa con abogado titular", bissu: true, others: false },
+    { label: "Atención directa con abogado especialista", bissu: true, others: false },
     { label: "Diagnóstico legal en 72 hs", bissu: true, others: false },
     { label: "Honorarios transparentes desde día 1", bissu: true, others: false },
     { label: "Un solo punto de contacto", bissu: true, others: false },
@@ -1185,7 +1185,7 @@ function V4Testimonials() {
           <p className="v3-eyebrow v3-eyebrow-pleca mb-5">Lo que dicen los clientes</p>
           <h2 className="v3-h2">
             Testimonios de clientes de{" "}
-            <em>Bissu Abogados, S.C.</em>
+            <em>Bissu Abogados, S.C</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
         </div>
@@ -1514,7 +1514,7 @@ function V4ConsultCard() {
   // 3 promesas únicas — todo lo demás (modalidad, idioma, "sin compromiso")
   // ya está en la columna izquierda. Eliminada la duplicación.
   const includes = [
-    "Análisis del caso con abogado titular",
+    "Análisis del caso con abogado especialista",
     "Diagnóstico legal en 72 horas",
     "Honorarios transparentes durante el proceso.",
   ];
