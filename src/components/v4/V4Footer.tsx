@@ -113,10 +113,10 @@ export default function V4Footer() {
               <a
                 href={CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick("footer", "Agenda consulta gratuita")}
+                onClick={() => events.ctaClick("footer", "Agenda una consulta gratuita")}
                 className="block text-[#5A4F45] hover:text-[#8C7339] transition-colors"
               >
-                Agenda consulta gratuita →
+                Agenda una consulta gratuita. →
               </a>
             </div>
             <div className="mt-5">

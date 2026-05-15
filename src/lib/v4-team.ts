@@ -46,14 +46,14 @@ export const v4Team: V4TeamMember[] = [
     name: "Samuel Bissu Bazbaz",
     firstName: "Samuel",
     role: "Socio fundador y Director",
-    subtitle: "Litigio de fondo · Reestructura · Arbitraje",
+    subtitle: "Concursos Mercantiles, Mediación y Arbitraje.",
     metaDescription:
-      "Samuel Bissu Bazbaz — socio fundador de Bissu Abogados, CDMX. Litigio mercantil, concursal y arbitraje internacional. Best Lawyers in Mexico 2026.",
+      "Samuel Bissu Bazbaz — socio fundador de Bissu Abogados, S.C., CDMX. Litigio mercantil, procedimientos concursales y arbitraje internacional. Best Lawyers in Mexico 2026.",
     photo: "/images/team/samuel.jpg",
     photoFocusY: "50%",
-    bio: "Samuel Bissu Bazbaz es socio fundador de Bissu Abogados, S.C., despacho boutique en Ciudad de México especializado en litigio mercantil, concursal y arbitraje internacional. Reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
+    bio: "Samuel Bissu Bazbaz es socio fundador de Bissu Abogados, S.C., en la Ciudad de México especializado en Litigio Mercantil, Procedimientos Concursales, y Arbitraje Internacional. Reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
     quote:
-      "Un caso jurídico no se resuelve con volumen ni con jerga. Se resuelve con análisis de fondo, criterio y un titular que responde por su trabajo.",
+      "El asunto jurídico se resuelve con análisis de fondo, criterio y un titular que responde por su trabajo, dando el mejor resultado en el menor tiempo posible.",
     practiceAreas: [
       { area: "Litigio Mercantil y Corporativo", year: "2006", slug: "litigio-mercantil" },
       { area: "Concurso Mercantil y Reestructura", year: "2010", slug: "litigio-concursal" },
@@ -91,8 +91,8 @@ export const v4Team: V4TeamMember[] = [
     keyCredentials: [
       "20+ años de práctica jurídica",
       "Maestría · Universidad Panamericana",
+      "Egresado · Universidad Iberoamericana",
       "Best Lawyers in Mexico 2026",
-      "Arbitraje CCI desde 2014",
     ],
     testimonials: [
       {
@@ -110,12 +110,12 @@ export const v4Team: V4TeamMember[] = [
       {
         question: "¿Cuánto cuesta una consulta inicial con Samuel Bissu?",
         answer:
-          "La consulta inicial con Samuel Bissu es gratuita y sin compromiso. Dura aproximadamente 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX, y al finalizar se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con la viabilidad del caso y los honorarios cerrados. No se cobra nada hasta firmar convenio.",
+          "La consulta inicial con Samuel Bissu dura aproximadamente 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX, y en caso de cubrir los honorarios del estudio, se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con la viabilidad del caso y los honorarios del procedimiento o litigio según corresponda.",
       },
       {
         question: "¿En qué tipo de casos especializa Samuel Bissu?",
         answer:
-          "Samuel Bissu Bazbaz se especializa en litigio mercantil de fondo, concurso mercantil y reestructura, arbitraje comercial internacional bajo Cámara de Comercio Internacional (CCI) y CANACO, y conflictos entre accionistas. Sus casos suelen involucrar empresas familiares mexicanas, multinacionales con operación en México y disputas cross-border México↔EE.UU.",
+          "Samuel Bissu Bazbaz se especializa en litigio mercantil, procedimientos concursales y reestructura, arbitraje comercial internacional bajo Cámara de Comercio Internacional (CCI) y CANACO, y conflictos entre accionistas. Sus casos suelen involucrar empresas familiares mexicanas y multinacionales con operación en México.",
       },
       {
         question: "¿Atiende casos fuera de Ciudad de México?",
@@ -140,12 +140,12 @@ export const v4Team: V4TeamMember[] = [
     name: "Adolfo Julián Vargas Alvarado",
     firstName: "Adolfo",
     role: "Socio Jr.",
-    subtitle: "Litigio civil · Constitucional · Familiar",
+    subtitle: "Litigio Civil, Constitucional y Familiar.",
     metaDescription:
-      "Adolfo Julián Vargas Alvarado — socio junior de Bissu Abogados, CDMX. Especialista en derecho procesal constitucional, litigio civil y familiar.",
+      "Adolfo Julián Vargas Alvarado — socio junior de Bissu Abogados, S.C., CDMX. Especialista en derecho procesal constitucional, litigio civil y familiar.",
     photo: "/images/team/adolfo.png",
     photoFocusY: "78%",
-    bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados con especialización en derecho procesal constitucional. Trayectoria previa en el Poder Judicial Federal y firmas mexicanas de práctica civil y familiar.",
+    bio: "Adolfo Julián Vargas Alvarado es socio junior de Bissu Abogados, S.C., con especialización en derecho procesal constitucional. Egresado de la Universidad Tres Culturas con Maestría en Derecho Procesal Constitucional por la Universidad Panamericana.",
     quote:
       "El amparo no es solo un recurso técnico. Es la última herramienta del individuo frente al poder. Hay que escribirlo con esa seriedad.",
     practiceAreas: [
@@ -156,7 +156,6 @@ export const v4Team: V4TeamMember[] = [
     ],
     education: [
       "Maestría en Derecho Procesal Constitucional, Universidad Panamericana — 2023",
-      "Curso Básico de Formación de Secretarios del PJF — 2016",
       "Licenciatura en Derecho, Universidad Tres Culturas — 2012",
     ],
     background: [
@@ -177,8 +176,8 @@ export const v4Team: V4TeamMember[] = [
     keyCredentials: [
       "14+ años de práctica jurídica",
       "Maestría · Procesal Constitucional · UP",
-      "Ex Secretario · Poder Judicial Federal",
-      "Bissu Abogados desde 2017",
+      "Egresado · Universidad Tres Culturas",
+      "Bissu Abogados, S.C., desde 2016",
     ],
     testimonials: [
       {
@@ -196,7 +195,7 @@ export const v4Team: V4TeamMember[] = [
       {
         question: "¿Cuánto cuesta una consulta inicial con Adolfo Vargas?",
         answer:
-          "La consulta inicial con Adolfo Vargas es gratuita y sin compromiso. Dura 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX. Al finalizar se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con viabilidad, vía procesal recomendada y honorarios cerrados. No se cobra nada hasta firmar convenio.",
+          "La consulta inicial con Adolfo Vargas dura aproximadamente 20 minutos, se realiza por video o presencial en Lomas de Chapultepec, CDMX, y en caso de cubrir los honorarios del estudio, se entrega un diagnóstico legal en 72 horas hábiles —una vez contamos con todos los elementos para el estudio del caso— con la viabilidad del caso y los honorarios del procedimiento o litigio según corresponda.",
       },
       {
         question: "¿En qué tipo de casos especializa Adolfo Vargas?",
@@ -216,7 +215,7 @@ export const v4Team: V4TeamMember[] = [
       {
         question: "¿Qué formación tiene en derecho de amparo?",
         answer:
-          "Adolfo cursó Maestría en Derecho Procesal Constitucional en la Universidad Panamericana (titulación 2023) y aprobó el Curso Básico de Formación de Secretarios del Poder Judicial Federal en 2016. Su práctica de amparo arrancó dentro del PJF, lo que da una perspectiva técnica desde el lado del juzgador antes de litigar como abogado de parte.",
+          "Adolfo cursó Maestría en Derecho Procesal Constitucional en la Universidad Panamericana (titulación 2023). Es egresado de la Universidad Tres Culturas (2012) y forma parte de Bissu Abogados, S.C., desde 2016.",
       },
     ],
     lastUpdated: "2026-05-11",

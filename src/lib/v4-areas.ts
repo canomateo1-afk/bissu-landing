@@ -74,35 +74,35 @@ export const v4Areas: V4Area[] = [
     title: "Abogado Civil en CDMX",
     servicesH2: "Servicios de abogado civil en CDMX",
     eyebrow: "Litigio civil · Bissu",
-    tagline: "Cuando un contrato se rompe o un derecho personal se vulnera.",
+    tagline: "Cuando un contrato se incumple o un derecho personal se vulnera.",
     metaDescription:
       "Despacho de litigio civil en CDMX. Incumplimiento de contratos, daños y perjuicios, posesión y propiedad, responsabilidad civil. Consulta inicial gratuita.",
     heroBlurb:
-      "Conflictos entre particulares por incumplimiento de obligaciones, daños patrimoniales o lesión a derechos individuales. Análisis de fondo con dictamen escrito antes de iniciar la demanda.",
+      "Conflictos entre particulares por incumplimiento de obligaciones, daños patrimoniales o lesión a derechos individuales.",
     intro:
-      "El litigio civil resuelve disputas entre particulares cuando un contrato se rompe, una propiedad se invade o un acto produce un daño. En Bissu Abogados llevamos casos civiles complejos para empresas, familias y particulares en Ciudad de México y a nivel federal. Cada caso lo lleva un abogado titular de principio a fin, sin derivaciones a juniors anónimos. Antes de iniciar una demanda entregamos un dictamen escrito con la viabilidad real del caso, los riesgos y el costo estimado. La consulta inicial es gratuita y sin compromiso.",
+      "El litigio civil resuelve disputas entre particulares cuando un contrato se incumple, una propiedad se invade o una conducta causa un daño. En Bissu Abogados, S.C., llevamos casos civiles complejos para empresas, particulares y familias en Ciudad de México y a nivel federal. Cada caso lo lleva un abogado titular de principio a fin. Antes de iniciar una demanda entregamos un diagnóstico legal escrito con la viabilidad real del caso, los riesgos y el costo estimado.",
     image:
       "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Incumplimiento de contratos",
         description:
-          "Reclamación de obligaciones de dar, hacer o no hacer derivadas de contratos privados o mercantiles con efectos civiles.",
+          "Reclamación de obligaciones de dar, hacer o no hacer derivadas de contratos privados.",
       },
       {
         title: "Daños y perjuicios",
         description:
-          "Cuantificación y reclamación de daño emergente, lucro cesante y daño moral derivado de actos u omisiones imputables.",
+          "Cuantificación y reclamación del daño, lucro cesante y daño moral derivado de actos u omisiones imputables.",
       },
       {
         title: "Acciones reales y de posesión",
         description:
-          "Reivindicación, posesoria, plenaria de posesión y prescripción adquisitiva (usucapión) sobre inmuebles en CDMX.",
+          "Reivindicación, plenaria de posesión y prescripción adquisitiva (usucapión) sobre inmuebles en CDMX.",
       },
       {
         title: "Responsabilidad civil objetiva y subjetiva",
         description:
-          "Accidentes, defectos de construcción, productos defectuosos y daños causados por terceros bajo cuya guarda están las cosas.",
+          "Accidentes, defectos de construcción, productos defectuosos y daños causados por terceros.",
       },
       {
         title: "Nulidad y rescisión",
@@ -110,29 +110,29 @@ export const v4Areas: V4Area[] = [
           "Acciones para anular o rescindir contratos por vicios del consentimiento, lesión, error, dolo o causa ilícita.",
       },
       {
-        title: "Arrendamiento contencioso",
+        title: "Controversias de arrendamiento",
         description:
-          "Desocupación, terminación anticipada, pago de rentas vencidas, fianzas y daños al inmueble bajo el régimen civil del DF/CDMX.",
+          "Desocupación, terminación anticipada, pago de rentas vencidas, fianzas y daños al inmueble bajo el Código Nacional de Procedimientos Civiles y Familiares.",
       },
       {
-        title: "Sucesiones contenciosas",
+        title: "Medidas cautelares",
         description:
-          "Conflictos entre herederos, impugnación de testamento, juicio sucesorio intestamentario o testamentario disputado.",
+          "Solicitud y ejecución de medidas cautelares para asegurar el cumplimiento de la sentencia en los juicios civiles.",
       },
       {
-        title: "Medios preparatorios y diligencias",
+        title: "Medios preparatorios",
         description:
           "Confesión judicial, exhibición de documentos, reconocimiento de firma y demás medios preparatorios antes de juicio.",
       },
     ],
     scenarios: [
       {
-        headline: "Un contrato firmado no se cumple",
+        headline: "Un contrato firmado que no se cumple",
         body: "La contraparte dejó de pagar, no entregó el bien o incumplió un servicio, y la negociación amistosa se agotó. Antes de demandar revisamos el contrato, el daño documentable y la viabilidad de probarlo en juicio.",
       },
       {
         headline: "Un tercero causó un daño material o moral",
-        body: "Un accidente, un acto negligente o una conducta dolosa generó pérdida económica o afectación personal. Cuantificamos daño emergente, lucro cesante y daño moral, y diseñamos la estrategia probatoria.",
+        body: "Un accidente, un acto negligente o una conducta dolosa generó pérdida económica o afectación personal. Cuantificamos daño, lucro cesante, daño moral, y diseñamos la estrategia.",
       },
       {
         headline: "Una propiedad está en disputa",
@@ -140,18 +140,18 @@ export const v4Areas: V4Area[] = [
       },
       {
         headline: "Un arrendamiento se complicó",
-        body: "Inquilino en mora, daños al inmueble, terminación contenciosa o subarriendo no autorizado. Definimos si conviene rescisión, desocupación o cobro y la vía más eficiente en CDMX.",
+        body: "Arrendatario en mora, daños al inmueble, terminación contenciosa o subarriendo no autorizado. Definimos si conviene rescisión, desocupación o cobro y la vía más eficiente en CDMX.",
       },
       {
-        headline: "Una sucesión generó conflicto",
-        body: "Impugnación de testamento, exclusión injustificada de herederos o juicio sucesorio bloqueado. Diseñamos la estrategia procesal sin romper el patrimonio familiar.",
+        headline: "Cómo se asegura el cumplimiento de una sentencia",
+        body: "Al inicio de un juicio se pueden solicitar medidas para garantizar el cumplimiento de una sentencia civil, como el aseguramiento de bienes, acciones, prohibición de pagos, cualquier medida idónea para conservar la materia del litigio.",
       },
     ],
     process: [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Reunión de 20 minutos con abogado titular. Escuchamos el caso, identificamos el área aplicable y damos una primera lectura de viabilidad. Sin costo, sin compromiso.",
+        body: "Reunión de 20 minutos con abogado titular. Escuchamos el caso, identificamos el área aplicable y damos una primera lectura de viabilidad.",
       },
       {
         step: "02",
@@ -160,8 +160,8 @@ export const v4Areas: V4Area[] = [
       },
       {
         step: "03",
-        title: "Estrategia y trámite",
-        body: "Si decide avanzar, preparamos demanda, contestación o medios preparatorios. Comunicación directa con el titular del caso, no con un becario. Reportes periódicos por escrito.",
+        title: "Estrategia y seguimiento",
+        body: "Si decide avanzar, preparamos demanda, contestación o medios preparatorios. Comunicación directa con el titular del caso, no con un becario. Reportes mensuales por medio de nuestra plataforma.",
       },
       {
         step: "04",
@@ -174,7 +174,7 @@ export const v4Areas: V4Area[] = [
       {
         question: "¿Cuánto cuesta iniciar un juicio civil en CDMX?",
         answer:
-          "La consulta inicial en Bissu es gratuita y sin compromiso. Los honorarios formales se cotizan después del dictamen escrito y dependen de la cuantía del asunto, la complejidad de la prueba y la vía procesal. Trabajamos bajo esquema de iguala fija, cuota litis (porcentaje sobre el resultado) o cuota mixta, según convenga al caso. No se cobra nada hasta firmar convenio.",
+          "La consulta inicial en Bissu Abogados, S.C., es gratuita en un primer momento. Los honorarios formales se cotizan después del diagnóstico escrito y dependen de la cuantía del asunto, la complejidad de la prueba y la vía procesal. Trabajamos bajo esquema de iguala fija, cuota litis (porcentaje sobre el resultado) o cuota mixta, según convenga al caso.",
       },
       {
         question: "¿Cuánto tarda un juicio civil ordinario en México?",
@@ -184,7 +184,7 @@ export const v4Areas: V4Area[] = [
       {
         question: "¿Qué diferencia hay entre litigio civil y mercantil?",
         answer:
-          "El litigio civil resuelve conflictos entre particulares por contratos privados, propiedad, sucesiones, responsabilidad por daños y arrendamientos no comerciales. El litigio mercantil aplica cuando una de las partes actúa como comerciante o cuando el acto es un acto de comercio (compraventa mercantil, títulos de crédito, contratos entre empresas). La vía procesal, los plazos y la prueba son distintos. En Bissu evaluamos cuál corresponde antes de admitir el caso.",
+          "El litigio civil resuelve conflictos entre particulares por contratos privados, propiedad, responsabilidad por daños y arrendamientos no comerciales. El litigio mercantil aplica cuando una de las partes actúa como comerciante o cuando el acto es un acto de comercio (compraventa mercantil, títulos de crédito, contratos entre empresas). La vía procesal, los plazos y la prueba son distintos. En Bissu Abogados, S.C., evaluamos cuál corresponde antes de comenzar el juicio.",
       },
       {
         question: "¿Es necesario agotar la negociación antes de demandar?",
@@ -194,7 +194,7 @@ export const v4Areas: V4Area[] = [
       {
         question: "¿Bissu acepta casos civiles fuera de CDMX?",
         answer:
-          "Bissu Abogados litiga civilmente en todo México. La oficina está en Lomas de Chapultepec, CDMX, pero comparecemos ante tribunales federales y de cualquier entidad federativa cuando el cliente o el bien en disputa lo requiere. En casos foráneos coordinamos con corresponsales locales bajo nuestra dirección estratégica.",
+          "Bissu Abogados, S.C., litiga civilmente en todo México. La oficina está en Lomas de Chapultepec, CDMX, pero comparecemos ante tribunales federales y de cualquier entidad federativa cuando el cliente o el bien en disputa lo requiere. En casos foráneos coordinamos con corresponsales locales bajo nuestra dirección estratégica.",
       },
       {
         question: "¿Qué documentos llevar a la consulta inicial?",
@@ -226,45 +226,35 @@ export const v4Areas: V4Area[] = [
     title: "Abogado Mercantil en CDMX",
     servicesH2: "Servicios de abogado mercantil en CDMX",
     eyebrow: "Mercantil & Corporativo",
-    tagline: "Sociedades, accionistas, contratos comerciales complejos.",
+    tagline: "Sociedades, accionistas y contratos mercantiles.",
     metaDescription:
       "Despacho de litigio mercantil y corporativo en CDMX. Conflictos entre accionistas, contratos mercantiles, títulos de crédito, fideicomisos. Reconocidos por Best Lawyers in Mexico 2026.",
     heroBlurb:
-      "Disputas entre socios y accionistas, contratos mercantiles complejos, títulos de crédito y fideicomisos. Defensa rigurosa para empresas familiares y multinacionales con interlocutor único de nivel socio.",
+      "Disputas entre socios y accionistas, contratos mercantiles, títulos de crédito y fideicomisos. Defensa rigurosa para empresas familiares y multinacionales.",
     intro:
-      "El litigio mercantil es el terreno propio de Bissu Abogados. Llevamos conflictos comerciales complejos para empresas mexicanas y multinacionales con presencia en México: disputas accionarias, contratos incumplidos, ejecución de pagarés y letras de cambio, fideicomisos contenciosos, competencia desleal. Samuel Bissu Bazbaz, nuestro socio titular, está reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos. El cliente trata siempre con el titular, no con un equipo rotativo. Dictamen escrito antes de iniciar, honorarios transparentes.",
+      "El litigio mercantil es el terreno propio de Bissu Abogados, S.C. Llevamos conflictos comerciales complejos para empresas mexicanas y multinacionales con presencia en México: disputas accionarias, cumplimiento de contratos de crédito, ejecución de títulos y operaciones de crédito y constitución de fideicomisos. Samuel Bissu Bazbaz, nuestro socio titular, está reconocido por Best Lawyers in Mexico 2026 y Leaders League 2025 en Resolución de Conflictos.",
     image:
       "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Conflictos entre accionistas",
         description:
-          "Acciones de responsabilidad contra administradores, dilución indebida, exclusión de socio, oposición a acuerdos asamblearios, derecho de minorías.",
+          "Acciones de responsabilidad contra administradores, dilución indebida, exclusión de socios, y oposición a acuerdos asamblearios.",
       },
       {
         title: "Contratos mercantiles",
         description:
-          "Suministro, distribución, agencia, franquicia, joint venture, compraventa internacional. Negociación, redacción y litigio contencioso.",
+          "Suministro, distribución, agencia, franquicia, joint venture, y compraventa internacional. Negociación, redacción y litigio contencioso.",
       },
       {
         title: "Títulos de crédito",
         description:
-          "Juicio ejecutivo mercantil por pagaré, letra de cambio, cheque o factura. Defensa contra ejecución indebida y suspensión cautelar.",
+          "Juicio ejecutivo mercantil oral y escrito. Defensa contra ejecución indebida y adopción de providencias precautorias.",
       },
       {
         title: "Fideicomisos contenciosos",
         description:
-          "Disputas sobre patrimonio fideicomitido, remoción del fiduciario, rendición de cuentas, fideicomisos de garantía e inmobiliarios.",
-      },
-      {
-        title: "Competencia desleal y secretos industriales",
-        description:
-          "Defensa contra uso indebido de información confidencial, violación de NDA, captura de clientela y conducta desleal de ex empleados.",
-      },
-      {
-        title: "Concurso mercantil y reestructura",
-        description:
-          "Cuando el conflicto deriva en insolvencia, ver área de concurso mercantil. Coordinación con el equipo concursal.",
+          "Disputas sobre patrimonio fideicomitido, remoción del fiduciario, rendición de cuentas, y fideicomisos de garantía e inmobiliarios.",
       },
       {
         title: "Compraventa de empresas",
@@ -274,7 +264,7 @@ export const v4Areas: V4Area[] = [
       {
         title: "Recuperación de cartera",
         description:
-          "Cobro judicial y extrajudicial de cartera empresarial. Embargo precautorio, ejecución de garantías, defensa contra concursos abusivos.",
+          "Cobro judicial y extrajudicial de cartera empresarial. Embargo precautorio y ejecución de garantías.",
       },
     ],
     scenarios: [
@@ -283,8 +273,8 @@ export const v4Areas: V4Area[] = [
         body: "Voto de calidad mal ejercido, dilución sin causa, asamblea convocada sin formalidades, o administrador que actúa fuera de sus facultades. Iniciamos acción de responsabilidad o nulidad de acuerdos.",
       },
       {
-        headline: "Un contrato comercial se rompió",
-        body: "Distribuidor que rompió exclusividad, proveedor que dejó de surtir, cliente que dejó de pagar facturas firmadas. Cuantificamos el daño y diseñamos la vía: juicio ejecutivo, ordinario o arbitraje según contrato.",
+        headline: "Un contrato comercial se incumplió",
+        body: "Distribuidor que incumplió con la exclusividad, proveedor que dejó de surtir, cliente que dejó de pagar facturas firmadas.",
       },
       {
         headline: "Cobra un pagaré pero la contraparte se opone",
@@ -293,10 +283,6 @@ export const v4Areas: V4Area[] = [
       {
         headline: "Compró una empresa y aparecieron pasivos ocultos",
         body: "Declaraciones falsas en el SPA, pasivos no revelados, ajuste de precio mal calculado, earn-out manipulado. Activamos las cláusulas de indemnización y, si conviene, arbitraje internacional.",
-      },
-      {
-        headline: "Un ex empleado se llevó información confidencial",
-        body: "Captura de cartera, violación de NDA, competencia desleal, uso indebido de secreto industrial. Solicitamos medidas cautelares y acción civil paralela por daños.",
       },
     ],
     process: [
@@ -312,13 +298,13 @@ export const v4Areas: V4Area[] = [
       },
       {
         step: "03",
-        title: "Litigio estratégico",
-        body: "Demanda, contestación, medidas cautelares, embargos precautorios, pruebas periciales y testimoniales. Reportes ejecutivos para el cliente o su consejo.",
+        title: "Litigio efectivo",
+        body: "Demanda, contestación, medidas cautelares, embargos precautorios, pruebas periciales y testimoniales. Reportes ejecutivos mensuales para el cliente o su consejo.",
       },
       {
         step: "04",
         title: "Cobro o cierre",
-        body: "Ejecución de sentencia, transacción judicial o convenio extra-procesal. Si conviene continuar a tribunal colegiado o amparo directo, lo evaluamos antes.",
+        body: "Ejecución de sentencia, transacción judicial o convenio extra-procesal. Evaluación de cada etapa, recursos ordinarios y juicio de Amparo.",
       },
     ],
     teamSlugs: ["samuel-bissu", "adolfo-vargas"],
@@ -331,17 +317,12 @@ export const v4Areas: V4Area[] = [
       {
         question: "¿Cómo se resuelve un conflicto entre accionistas en México?",
         answer:
-          "Un conflicto entre accionistas se resuelve por la vía estatutaria primero (asamblea, junta de socios), por mediación o conciliación si hay cláusula, y por litigio mercantil o arbitraje si no se llega a acuerdo. Las acciones más comunes son: nulidad de acuerdo asambleario, responsabilidad civil contra administradores, separación o exclusión de socio, y oposición al ejercicio de derechos minoritarios. Bissu evalúa antes la fuerza probatoria y la estrategia más eficiente.",
-      },
-      {
-        question: "¿Bissu lleva casos de competencia desleal?",
-        answer:
-          "Sí. Litigamos por uso indebido de información confidencial, violación de cláusulas de no competencia, captura de cartera y conducta desleal de ex empleados o ex socios. La estrategia combina medidas cautelares civiles, acción mercantil principal y, según el caso, queja ante la COFECE o el IMPI. Es esencial actuar rápido: cuanto más tarde se denuncia, más se debilita la prueba.",
+          "Un conflicto entre accionistas se resuelve por la vía estatutaria primero (asamblea, junta de socios), por mediación o conciliación si hay cláusula, y por litigio mercantil o arbitraje si no se llega a acuerdo. Las acciones más comunes son: nulidad de asamblea, responsabilidad contra administradores, separación o exclusión de socio, y oposición al ejercicio de derechos minoritarios.",
       },
       {
         question: "¿Cuánto cuesta un juicio mercantil complejo?",
         answer:
-          "Los honorarios en litigio mercantil dependen de la cuantía, la complejidad probatoria y la duración estimada. Bissu trabaja bajo tres esquemas: iguala fija (cobro mensual), cuota litis (porcentaje del resultado) o esquema mixto. No se cobra nada hasta firmar convenio, después del dictamen escrito. La consulta inicial es gratuita y sin compromiso.",
+          "Los honorarios en litigio mercantil dependen de la cuantía, la complejidad probatoria y la duración estimada. Bissu Abogados, S.C., trabaja bajo tres esquemas: iguala fija (cobro mensual), cuota litis (porcentaje del resultado) o esquema mixto.",
       },
       {
         question: "¿Qué pasa si el contrato tiene cláusula de arbitraje?",
@@ -349,9 +330,9 @@ export const v4Areas: V4Area[] = [
           "Si el contrato mercantil tiene cláusula compromisoria válida, la disputa debe resolverse en arbitraje, no en tribunales ordinarios. Bissu litiga arbitrajes bajo Cámara de Comercio Internacional (CCI), CANACO y reglas UNCITRAL. Si la contraparte demanda en tribunal pese a la cláusula, promovemos excepción de incompetencia. Ver también nuestra área de Arbitraje y MASC.",
       },
       {
-        question: "¿Aceptan casos urgentes con medidas cautelares?",
+        question: "¿Aceptan casos urgentes que ameriten Providencias Precautorias?",
         answer:
-          "Sí. Cuando hay riesgo de que la contraparte oculte bienes, destruya documentos o consume un acto irreversible, promovemos medidas cautelares dentro de las primeras 48 a 72 horas: embargo precautorio, providencia precautoria, depósito judicial o aseguramiento. Es crítico actuar antes de que el patrimonio se diluya. Llamar al despacho directamente para casos urgentes.",
+          "Sí. Cuando hay riesgo de que la contraparte oculte bienes, destruya documentos o consume un acto irreversible, se promueven Providencias Precautorias dentro de las primeras 48 a 72 horas: embargo de bienes, radicación de persona y aseguramiento de cuentas bancarias. Es importante actuar antes de que el patrimonio se diluya.",
       },
     ],
     relatedSlugs: ["litigio-concursal", "arbitraje-comercial-internacional", "litigio-civil"],
@@ -375,19 +356,18 @@ export const v4Areas: V4Area[] = [
   {
     slug: "litigio-concursal",
     label: "Concursal",
-    title: "Abogado de Concurso Mercantil en CDMX",
+    title: "Abogado especialista en Concursos Mercantiles en CDMX",
     servicesH2: "Servicios de abogado en concurso mercantil y reestructura",
-    eyebrow: "Concurso mercantil",
+    eyebrow: "Procedimientos Concursales",
     tagline: "Operación que continúa, no que se liquida.",
     metaDescription:
-      "Despacho especializado en concurso mercantil y reestructura empresarial en México. Convenios concursales, recuperación de créditos, insolvencia transfronteriza. Casos con 60% de quita aprobada.",
+      "Despacho especializado en concurso mercantil y reestructura empresarial en México. Convenios concursales, recuperación de créditos.",
     heroBlurb:
       "Reestructura de deuda con acreedores, convenios concursales y recuperación de créditos. Operaciones que siguen en marcha gracias a una estrategia concursal bien diseñada.",
     intro:
-      "El concurso mercantil bien manejado salva la operación; mal manejado, la liquida. Bissu Abogados lleva concursos mercantiles del lado del comerciante (deudor) y del lado del acreedor en todo México. Diseñamos planes de reestructura realistas, negociamos quitas y esperas con acreedores reconocidos, y representamos en concursos transfronterizos (Capítulo 15 EE.UU., Chapter 11 paralelo). Casos representativos con 60% de quita aprobada manteniendo operación. Samuel Bissu Bazbaz, titular del área, opera concurso mercantil desde 2010.",
+      "El concurso mercantil bien manejado conserva la operación de la empresa; un mal manejo, la liquida. Bissu Abogados, S.C., lleva concursos mercantiles en representación del comerciante (deudor) y en algunos casos por parte del acreedor en todo México. Diseñamos planes de reestructura realistas, negociamos quitas y convenios con acreedores reconocidos.",
     image:
       "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1400&q=88&auto=format&fit=crop",
-    stat: { value: "60%", label: "Quita promedio aprobada" },
     services: [
       {
         title: "Concurso mercantil como deudor",
@@ -397,17 +377,12 @@ export const v4Areas: V4Area[] = [
       {
         title: "Concurso mercantil como acreedor",
         description:
-          "Reconocimiento de crédito, oposición a la sentencia de reconocimiento, ejecución de garantías reales, defensa contra concursos abusivos del deudor.",
+          "Reconocimiento de crédito, oposición a la sentencia de reconocimiento, ejecución de garantías reales y exclusión de la masa concursal.",
       },
       {
         title: "Reestructura extra-concursal",
         description:
-          "Negociación directa con acreedores antes de entrar a concurso. Standstill agreement, refinanciamiento, dación en pago, capitalización de pasivos.",
-      },
-      {
-        title: "Insolvencia transfronteriza",
-        description:
-          "Coordinación con Chapter 11 / Chapter 15 en EE.UU., insolvencia europea y latinoamericana. Reconocimiento de procedimientos extranjeros en México.",
+          "Negociación directa con acreedores antes de entrar a concurso. Standstill agreement, refinanciamiento, dación en pago y capitalización de pasivos.",
       },
       {
         title: "Defensa contra concurso simulado",
@@ -422,46 +397,42 @@ export const v4Areas: V4Area[] = [
     ],
     scenarios: [
       {
-        headline: "La empresa no puede pagar y los acreedores apuran",
-        body: "Vencimientos generalizados, cartera vencida superior al 35% de pasivos, presión bancaria simultánea. Antes de entrar a concurso, evaluamos si una reestructura extra-judicial puede evitarlo.",
+        headline: "La empresa no puede pagar y los acreedores presionan",
+        body: "Vencimientos generalizados, cartera vencida superior al 35% de pasivos, presión bancaria simultánea. Antes de iniciar el concurso, evaluamos si una reestructura extra-judicial puede evitarlo.",
       },
       {
         headline: "Un cliente importante entró a concurso",
-        body: "Su contraparte se acogió al concurso y debe presentar reconocimiento de crédito. Diseñamos la estrategia para maximizar recuperación: garantías, prelación, oposiciones, alianzas con otros acreedores.",
+        body: "Su contraparte se acogió al concurso y debe presentar el reconocimiento del crédito. Diseñamos la estrategia para maximizar recuperación: garantías, prelación, oposiciones y alianzas con otros acreedores.",
       },
       {
         headline: "Hay un concurso simulado en contra",
         body: "El deudor promovió concurso para escapar de pagos legítimos. Demostramos mala fe, falta de presupuestos objetivos del concurso o uso fraudulento de la figura concursal.",
       },
       {
-        headline: "La operación cruza fronteras",
-        body: "Activos, acreedores o subsidiarias en EE.UU. y México. Coordinamos Chapter 11 paralelo, Capítulo 15 de reconocimiento, y la estrategia consolidada bajo principios de UNCITRAL.",
-      },
-      {
         headline: "La reestructura voluntaria se trabó",
-        body: "Acreedores se niegan a firmar standstill, hay holdouts que bloquean. Diseñamos el concurso pre-paquete (prepack) para imponer el convenio con la mayoría legal.",
+        body: "Acreedores se niegan a firmar el convenio. Diseñamos la estrategia correcta para consensuar el convenio con la mayoría legal.",
       },
     ],
     process: [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Diagnóstico financiero y legal preliminar. Identificamos si conviene reestructura extra-judicial, concurso voluntario o defensa como acreedor.",
+        body: "Diagnóstico legal preliminar. Identificamos si conviene reestructura extra-judicial, concurso voluntario o defensa como acreedor.",
       },
       {
         step: "02",
-        title: "Dictamen y plan",
-        body: "Dictamen escrito con: viabilidad de cada vía, plan de reestructura propuesto, cronograma, honorarios y costos del concurso (IFECOM, conciliador, peritos).",
+        title: "Diagnóstico y estrategia por seguir",
+        body: "Dictamen escrito con viabilidad del concurso, plan de reestructura propuesto, cronograma, honorarios y costos del concurso (IFECOM, conciliador, peritos).",
       },
       {
         step: "03",
         title: "Demanda o defensa",
-        body: "Demanda de concurso, contestación, reconocimiento de crédito o impugnaciones. Coordinación con conciliador, visitador y juez de distrito.",
+        body: "Solicitud de concurso, contestación, reconocimiento de crédito o impugnaciones.",
       },
       {
         step: "04",
         title: "Convenio o ejecución",
-        body: "Aprobación de convenio concursal con quita y espera, o ejecución de garantías y reparto en caso de quiebra. Acompañamiento post-convenio durante 12 a 18 meses.",
+        body: "Aprobación de convenio concursal con quita y espera, o ejecución de garantías y reparto en caso de quiebra.",
       },
     ],
     teamSlugs: ["samuel-bissu", "adolfo-vargas"],
@@ -469,7 +440,7 @@ export const v4Areas: V4Area[] = [
       {
         question: "¿Qué es un concurso mercantil en México?",
         answer:
-          "El concurso mercantil es el procedimiento judicial federal que regula la insolvencia empresarial en México, bajo la Ley de Concursos Mercantiles. Tiene dos etapas: conciliación (donde se busca un convenio entre deudor y acreedores) y quiebra (liquidación ordenada de activos). Su objetivo es mantener la empresa en operación cuando es viable, o liquidarla con orden cuando no lo es. Lo conoce un juez de distrito en materia mercantil.",
+          "El concurso mercantil es el procedimiento judicial federal que regula la insolvencia empresarial en México, bajo la Ley de Concursos Mercantiles. Tiene dos etapas: conciliación (donde se busca un convenio entre deudor y acreedores) y quiebra (liquidación ordenada de activos). Su objetivo es mantener la empresa en operación cuando es viable, o liquidarla con orden cuando no lo es.",
       },
       {
         question: "¿Cuándo conviene entrar a concurso mercantil voluntario?",
@@ -485,11 +456,6 @@ export const v4Areas: V4Area[] = [
         question: "¿Qué pasa con los empleados durante un concurso mercantil?",
         answer:
           "Los créditos laborales tienen prelación sobre otros acreedores (singularmente privilegiados). Salarios devengados de los últimos dos años, indemnizaciones y prestaciones se pagan antes que créditos comunes y, en muchos casos, antes que garantías reales. La empresa puede seguir operando bajo supervisión, lo que en concursos exitosos preserva la planta laboral.",
-      },
-      {
-        question: "¿Bissu lleva concursos transfronterizos con EE.UU.?",
-        answer:
-          "Sí. Litigamos concursos con activos o acreedores en México y Estados Unidos coordinando Chapter 11 (EE.UU.) y concurso mexicano paralelo, o Chapter 15 (reconocimiento del concurso mexicano en EE.UU.). Trabajamos con counsel estadounidense bajo dirección estratégica única para evitar resoluciones contradictorias. También con jurisdicciones europeas bajo principios UNCITRAL.",
       },
       {
         question: "¿Cuál es la diferencia entre concurso y quiebra?",
@@ -521,30 +487,30 @@ export const v4Areas: V4Area[] = [
     title: "Abogado Familiar en CDMX",
     servicesH2: "Servicios de abogado familiar en CDMX",
     eyebrow: "Familiar",
-    tagline: "Custodia, divorcio, pensión y sucesiones con sensibilidad y rigor.",
+    tagline: "Guarda y custodia, divorcio, pensión y sucesiones testamentarias e intestamentaria.",
     metaDescription:
-      "Despacho de derecho familiar en CDMX. Divorcio, custodia compartida, pensión alimenticia, restitución internacional de menores (Convenio de la Haya), sucesiones testamentarias.",
+      "Despacho de derecho familiar en CDMX. Divorcio, guarda y custodia, pensión alimenticia, restitución internacional de menores (Convenio de la Haya), sucesiones testamentarias.",
     heroBlurb:
-      "Divorcios contenciosos y de mutuo acuerdo, custodia compartida, pensión alimenticia, restitución internacional de menores y sucesiones. Sensibilidad humana, rigor técnico, titular único.",
+      "Divorcios contenciosos y de mutuo acuerdo, guarda y custodia, pensión alimenticia, restitución internacional de menores y sucesiones. Sensibilidad humana con rigor técnico.",
     intro:
-      "El derecho familiar exige rigor jurídico y sensibilidad humana al mismo tiempo. En Bissu Abogados llevamos divorcios, custodia, pensión alimenticia, sucesiones y restitución internacional de menores con un solo objetivo: proteger al cliente y, sobre todo, a los hijos. Cada caso lo lleva un abogado titular sin derivaciones. Damos una primera lectura honesta: a veces el caso conviene resolverlo por convenio antes de litigarlo. Cuando hay que litigar, lo hacemos con la estrategia más rápida y menos costosa para la familia.",
+      "El derecho familiar exige rigor jurídico y sensibilidad humana al mismo tiempo. En Bissu Abogados, S.C., atendemos casos de divorcio, guarda y custodia, pensión alimenticia, sucesiones y restitución internacional de menores con un solo objetivo: proteger al cliente y, sobre todo, a los hijos. Damos una primera lectura honesta: a veces el caso conviene resolverlo por convenio antes de litigarlo. Cuando hay que litigar, lo hacemos con la estrategia más rápida y práctica para la familia.",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
-        title: "Divorcio incausado y contencioso",
+        title: "Divorcio incausado",
         description:
-          "Divorcio sin causa (incausado) en CDMX, divorcio voluntario administrativo, divorcio contencioso por violencia o incumplimiento. Convenio de separación y liquidación de bienes.",
+          "Divorcio sin causa (incausado) en CDMX, divorcio voluntario administrativo. Convenio de separación y liquidación de sociedad conyugal.",
       },
       {
         title: "Custodia y régimen de visitas",
         description:
-          "Custodia compartida, custodia exclusiva, régimen amplio de visitas, autorización para viajar, cambio de domicilio. Interés superior del menor como eje.",
+          "Custodia compartida, custodia exclusiva, régimen amplio de visitas, autorización para viajar y cambio de domicilio. Interés superior del menor como principio.",
       },
       {
         title: "Pensión alimenticia",
         description:
-          "Fijación, aumento y reducción de pensión alimenticia para hijos, cónyuge o ex cónyuge. Embargo de salario, garantía hipotecaria, alimentos atrasados.",
+          "Fijación, aumento y reducción de pensión alimenticia para hijos, ex cónyuge o ex concubina en caso de existir hijos.",
       },
       {
         title: "Restitución internacional de menores",
@@ -564,7 +530,7 @@ export const v4Areas: V4Area[] = [
       {
         title: "Sociedad conyugal y separación de bienes",
         description:
-          "Liquidación de sociedad conyugal, capitulaciones matrimoniales, separación de bienes pos-matrimonio, reclamación por gananciales no liquidados.",
+          "Liquidación de sociedad conyugal, capitulaciones matrimoniales, separación de bienes y reclamación por gananciales no liquidados.",
       },
       {
         title: "Reconocimiento de paternidad",
@@ -574,16 +540,16 @@ export const v4Areas: V4Area[] = [
     ],
     scenarios: [
       {
-        headline: "Está iniciando un divorcio y hay hijos menores",
-        body: "Quiere proteger la custodia, fijar pensión alimenticia justa y evitar desgaste innecesario para los hijos. Evaluamos si conviene divorcio incausado rápido o estrategia contenciosa según patrimonio y conducta de la contraparte.",
+        headline: "Está iniciando un divorcio y menores de por medio",
+        body: "Quiere proteger la custodia, fijar pensión alimenticia justa y evitar desgaste innecesario. Evaluamos si conviene divorcio incausado rápido o estrategia contenciosa según el caso.",
       },
       {
         headline: "El otro progenitor se llevó al menor al extranjero",
-        body: "Sustracción internacional sin autorización. Activamos el Convenio de La Haya 1980 a través de la Autoridad Central (SRE) y coordinamos con counsel del país de retención.",
+        body: "Sustracción internacional sin autorización. Activamos el Convenio de La Haya 1980 a través de la Autoridad Central (SRE) y coordinamos con el Consulado del país involucrado.",
       },
       {
         headline: "La pensión alimenticia no se está pagando",
-        body: "Mora prolongada en pensión judicial fijada por sentencia o convenio. Solicitamos embargo de salario, garantía sobre bienes y, si corresponde, acción penal por abandono.",
+        body: "Mora prolongada en pensión judicial fijada por sentencia o convenio. Solicitamos embargo de salario, garantía sobre bienes y, si corresponde, acción penal por incumplimiento.",
       },
       {
         headline: "Hay un testamento que parece inválido",
@@ -591,24 +557,24 @@ export const v4Areas: V4Area[] = [
       },
       {
         headline: "Necesita modificar custodia o régimen de visitas",
-        body: "Cambio de circunstancias: mudanza, nuevo trabajo, conducta del otro progenitor. Solicitamos modificación de la sentencia familiar con prueba documental y testimonial robusta.",
+        body: "Cambio de circunstancias: mudanza, nuevo trabajo, conducta del otro progenitor. Solicitamos modificación del convenio o sentencia de acuerdo a la realidad e intereses del menor.",
       },
     ],
     process: [
       {
         step: "01",
         title: "Consulta inicial gratuita",
-        body: "Reunión de 20 minutos con abogado titular del área familiar. Lectura honesta: a veces conviene convenio extra-judicial antes que juicio contencioso.",
+        body: "Reunión inicial con el abogado titular del área familiar. Lectura honesta: a veces conviene convenio extra-judicial antes que juicio contencioso.",
       },
       {
         step: "02",
-        title: "Dictamen escrito",
-        body: "Análisis con: vía recomendada (incausado, voluntario, contencioso), pensión razonable, esquema de custodia, plazos, costos y honorarios.",
+        title: "Diagnóstico escrito",
+        body: "Análisis con: vía recomendada (incausado, voluntario, administrativo), pensión razonable, esquema de custodia, plazos, costos y honorarios.",
       },
       {
         step: "03",
         title: "Trámite y audiencias",
-        body: "Demanda, contestación, audiencias con jueza familiar, periciales psicológicas si aplica, dictamen del Ministerio Público en su carácter de representante de menores.",
+        body: "Demanda, contestación, representación en audiencias, periciales psicológicas si aplica, pláticas con el menor.",
       },
       {
         step: "04",
@@ -629,14 +595,9 @@ export const v4Areas: V4Area[] = [
           "La pensión alimenticia se calcula proporcionalmente a las necesidades del acreedor (hijos o cónyuge) y a las posibilidades del deudor. No hay porcentaje fijo en ley federal, pero los tribunales suelen fijarla entre el 15% y el 40% del ingreso neto del deudor, dependiendo del número de hijos, edad, gastos especiales (educación privada, salud) y nivel de vida previo. La pensión es modificable cuando cambian las circunstancias.",
       },
       {
-        question: "¿Qué hacer si el otro padre se lleva al menor al extranjero?",
-        answer:
-          "Si el menor fue trasladado o retenido en otro país firmante del Convenio de La Haya 1980 sin autorización del otro progenitor con derechos de custodia, hay que actuar dentro de las primeras 6 semanas. Se promueve solicitud de restitución internacional ante la Autoridad Central mexicana (SRE) y se coordina counsel local en el país de retención. El procedimiento típicamente resuelve en 6 a 12 meses, no decide la custodia: decide el retorno al país de residencia habitual.",
-      },
-      {
         question: "¿Es obligatoria la mediación familiar antes del juicio?",
         answer:
-          "En CDMX y en varios estados existe mediación familiar pública gratuita ante el Centro de Justicia Alternativa del Tribunal Superior. No es siempre obligatoria, pero algunos asuntos (divorcio voluntario, convenios de custodia) sí pueden tramitarse ahí con efectos vinculantes. Cuando hay violencia o desequilibrio de poder, la mediación no se recomienda. Bissu evalúa caso por caso.",
+          "En CDMX y en varios estados de la República mexicana, existe mediación familiar pública gratuita ante el Centro de Justicia Alternativa del Tribunal Superior. No es siempre obligatoria, pero algunos asuntos (divorcio voluntario, convenios de custodia) sí pueden tramitarse ahí con efectos vinculantes.",
       },
       {
         question: "¿Se puede modificar la custodia después de la sentencia?",
@@ -644,9 +605,9 @@ export const v4Areas: V4Area[] = [
           "Sí. La custodia y el régimen de visitas son modificables cuando cambian las circunstancias que motivaron la sentencia original: mudanza, conducta nociva del progenitor custodio, nuevas necesidades del menor, edad. Se promueve incidente de modificación ante el mismo juzgado familiar que dictó la sentencia. Requiere prueba documental, periciales y, en algunos casos, escucha directa del menor.",
       },
       {
-        question: "¿Bissu lleva sucesiones contenciosas y testamentarias?",
+        question: "¿Bissu Abogados, S.C., atiende sucesiones contenciosas y testamentarias?",
         answer:
-          "Sí. Llevamos juicios sucesorios testamentarios (con testamento válido), intestamentarios (sin testamento) y contenciosos (cuando hay disputa entre herederos o impugnación de testamento). Incluye declaratoria de herederos, inventario y avalúo, partición y adjudicación. Cuando hay propiedad inmueble involucrada, coordinamos también la escrituración pos-sucesión.",
+          "Sí. Llevamos juicios sucesorios testamentarios (con testamento válido), intestamentarios (sin testamento) y contenciosos (cuando hay disputa entre herederos o impugnación de testamento). Incluye declaratoria de herederos, inventario y avalúo, partición y adjudicación. Cuando hay propiedad inmueble involucrada, coordinamos también la escrituración.",
       },
     ],
     relatedSlugs: ["litigio-civil", "litigio-constitucional", "litigio-mercantil"],
@@ -677,9 +638,9 @@ export const v4Areas: V4Area[] = [
     metaDescription:
       "Despacho de litigio constitucional y amparo en México. Amparo directo, amparo indirecto, suspensión del acto reclamado, controversias constitucionales para empresas y particulares.",
     heroBlurb:
-      "Juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales, suspensión del acto reclamado para empresas, PYMEs y particulares.",
+      "Conocimiento técnico para el juicio de amparo directo e indirecto, acciones de inconstitucionalidad, controversias constitucionales, para la defensa de empresas y particulares afectados por actos de autoridad.",
     intro:
-      "El juicio de amparo es la última y más poderosa herramienta del individuo frente al Estado. En Bissu Abogados promovemos amparos directos e indirectos contra leyes, actos de autoridad y sentencias que vulneran derechos humanos o garantías constitucionales. Adolfo Julián Vargas Alvarado, titular del área, tiene maestría en Derecho Procesal Constitucional por la Universidad Panamericana y formación previa como Secretario del Poder Judicial Federal. Cada amparo se escribe con la seriedad técnica que exige llegar a la Suprema Corte si fuera necesario.",
+      "El juicio de amparo es la última y más poderosa herramienta del individuo frente al Estado. En Bissu Abogados, S.C., promovemos amparos directos e indirectos contra leyes, actos de autoridad y sentencias que vulneran derechos humanos o garantías constitucionales. Adolfo Julián Vargas Alvarado, titular del área, tiene maestría en Derecho Procesal Constitucional por la Universidad Panamericana. Cada amparo se escribe con la seriedad técnica que exige llegar a la Suprema Corte si fuera necesario.",
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=88&auto=format&fit=crop",
     services: [
@@ -822,38 +783,33 @@ export const v4Areas: V4Area[] = [
   {
     slug: "arbitraje-comercial-internacional",
     label: "Arbitraje & MASC",
-    title: "Abogado de Arbitraje en CDMX",
+    title: "Abogado especialista en Arbitraje en CDMX",
     servicesH2: "Servicios de abogado de arbitraje en CDMX",
     eyebrow: "Arbitraje · MASC",
     tagline: "CCI, UNCITRAL, mediación y ejecución de laudos internacionales.",
     metaDescription:
-      "Despacho de arbitraje comercial internacional en México. CCI, CANACO, UNCITRAL, ejecución de laudos, mediación y conciliación para disputas cross-border. Samuel Bissu opera arbitraje desde 2014.",
+      "Despacho de arbitraje comercial internacional en México. CCI, CANACO, UNCITRAL, ejecución de laudos, mediación y conciliación. Samuel Bissu opera arbitraje desde 2014.",
     heroBlurb:
-      "Arbitraje comercial internacional bajo Cámara de Comercio Internacional, CANACO y reglas UNCITRAL. Ejecución y nulidad de laudos, mediación, medidas cautelares para disputas cross-border.",
+      "Arbitraje comercial internacional bajo Cámara de Comercio Internacional, CANACO y reglas UNCITRAL. Ejecución y nulidad de laudos, mediación y medidas cautelares.",
     intro:
-      "El arbitraje comercial internacional es la vía preferida para disputas cross-border cuando las partes no quieren depender de tribunales locales de una sola jurisdicción. Bissu Abogados representa empresas mexicanas y multinacionales en arbitrajes bajo Cámara de Comercio Internacional (CCI/ICC), CANACO, reglas UNCITRAL y bajo cláusulas ad hoc. También llevamos ejecución y reconocimiento de laudos extranjeros en México bajo la Convención de Nueva York. Samuel Bissu Bazbaz, titular del área, opera arbitraje internacional desde 2014. La práctica complementa nuestros mecanismos alternativos de solución de controversias (MASC): mediación y conciliación.",
+      "El arbitraje comercial internacional es la vía preferida para disputas cuando las partes no quieren depender de tribunales locales de una sola jurisdicción. Bissu Abogados, S.C., representa empresas mexicanas y multinacionales en arbitrajes bajo Cámara de Comercio Internacional (CCI/ICC), CANACO, y reglas UNCITRAL.",
     image:
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=88&auto=format&fit=crop",
     services: [
       {
         title: "Arbitraje CCI (Cámara de Comercio Internacional)",
         description:
-          "Representación bajo Reglas de Arbitraje CCI 2021, desde solicitud de arbitraje hasta laudo final. Sede en Ciudad de México, EE.UU., Europa o Asia.",
+          "Representación bajo Reglas de Arbitraje CCI 2021, desde solicitud de arbitraje hasta laudo final.",
       },
       {
         title: "Arbitraje CANACO",
         description:
-          "Arbitraje bajo Reglas de la Cámara Nacional de Comercio de la Ciudad de México, para disputas comerciales nacionales o transfronterizas.",
+          "Arbitraje bajo Reglas de la Cámara Nacional de Comercio, para disputas comerciales nacionales e internacionales.",
       },
       {
-        title: "Arbitraje UNCITRAL ad hoc",
+        title: "Arbitraje UNCITRAL",
         description:
           "Arbitraje sin administración institucional bajo Reglas UNCITRAL. Designación de árbitros, secretaría administrativa, manejo procesal completo.",
-      },
-      {
-        title: "Ejecución y reconocimiento de laudos",
-        description:
-          "Reconocimiento de laudos extranjeros en México bajo Convención de Nueva York 1958, y ejecución de laudos mexicanos en jurisdicciones extranjeras.",
       },
       {
         title: "Nulidad y oposición a laudos",
@@ -868,12 +824,12 @@ export const v4Areas: V4Area[] = [
       {
         title: "Medidas cautelares en arbitraje",
         description:
-          "Solicitud de medidas cautelares ante tribunal arbitral o ante juez de apoyo: embargo, depósito, prohibición de actos, congelamiento de activos.",
+          "Solicitud de medidas cautelares ante tribunal arbitral o ante juez de apoyo: embargo, depósito, prohibición de actos y congelamiento de activos.",
       },
       {
         title: "Cláusula compromisoria y redacción",
         description:
-          "Diseño de cláusulas arbitrales para contratos internacionales: institución, reglas, sede, idioma, número de árbitros, derecho aplicable.",
+          "Diseño de cláusulas arbitrales para contratos internacionales: institución, reglas, sede, idioma, número de árbitros y derecho aplicable.",
       },
     ],
     scenarios: [
@@ -888,10 +844,6 @@ export const v4Areas: V4Area[] = [
       {
         headline: "Quiere anular un laudo dictado en su contra",
         body: "Laudo desfavorable con causales de nulidad (violación al debido proceso, exceso de jurisdicción del tribunal, contrariedad al orden público). Promovemos acción de nulidad en sede mexicana.",
-      },
-      {
-        headline: "Hay una disputa transfronteriza compleja",
-        body: "Operación M&A con partes en México y EE.UU., contratos de distribución internacional, joint venture con socio extranjero. El arbitraje es la vía neutral preferida.",
       },
       {
         headline: "Necesita mediación previa al litigio",
@@ -926,11 +878,6 @@ export const v4Areas: V4Area[] = [
         question: "¿Qué es el arbitraje comercial internacional?",
         answer:
           "El arbitraje comercial internacional es un método privado de resolución de disputas en el que las partes acuerdan someter su conflicto a uno o tres árbitros, en lugar de tribunales estatales. Las decisiones (laudos) son vinculantes, ejecutables internacionalmente bajo la Convención de Nueva York 1958, y suelen ser confidenciales. Se utiliza en disputas cross-border, M&A, energía, construcción, inversión extranjera y contratos de gran cuantía donde las partes buscan neutralidad.",
-      },
-      {
-        question: "¿Cuál es la diferencia entre arbitraje CCI, CANACO y UNCITRAL?",
-        answer:
-          "CCI (Cámara de Comercio Internacional) es la institución arbitral más usada globalmente, con sede en París, y se prefiere para disputas internacionales de alta cuantía. CANACO (Cámara Nacional de Comercio de la Ciudad de México) administra arbitrajes nacionales y regionales con menor costo y reglas similares. UNCITRAL es un cuerpo de reglas, no una institución: permite arbitraje ad hoc sin administración, requiere mayor coordinación procesal por las partes. Bissu litiga bajo los tres regímenes.",
       },
       {
         question: "¿Cuánto cuesta un arbitraje internacional?",

@@ -26,14 +26,14 @@ const CONSULT_INCLUDES = [
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
   "Diagnóstico legal post-consulta en 72 hs",
-  "Sin cobro hasta firmar convenio",
+  "Honorarios transparentes durante el proceso.",
 ];
 
 const PROCESS_STEPS = [
   { step: "01", title: "Reservás 20 minutos" },
   { step: "02", title: "Reunión con el titular" },
   { step: "03", title: "Diagnóstico legal · 72 hs" },
-  { step: "04", title: "$0 hasta firmar convenio" },
+  { step: "04", title: "Honorarios transparentes" },
 ] as const;
 
 type Props = {
@@ -58,7 +58,7 @@ export default function V4MemberPage({ member, yearsOfPractice }: Props) {
         photo={member.photo}
         alt={member.name}
         initials={initials}
-        headline={`Habla con ${firstName} hoy`}
+        headline={"Habla con nosotros hoy."}
       />
       <Header member={member} yearsOfPractice={yearsOfPractice} />
       <Bio member={member} />
@@ -128,10 +128,10 @@ function MemberNav({ member }: { member: V4TeamMember }) {
         <a
           href={member.contact.calendly ?? CALENDLY_GENERAL}
           {...calendlyLinkProps}
-          onClick={() => events.ctaClick(`member_${member.slug}_nav`, "Agenda consulta")}
+          onClick={() => events.ctaClick(`member_${member.slug}_nav`, "Agenda una consulta")}
           className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] text-[13px] font-semibold whitespace-nowrap bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] transition-all"
         >
-          Agenda consulta
+          Agenda una consulta.
           <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
       </div>
@@ -266,10 +266,10 @@ function Header({ member, yearsOfPractice }: Props) {
               <a
                 href={member.contact.calendly ?? CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick(`member_${member.slug}_hero`, "Agenda consulta gratuita")}
+                onClick={() => events.ctaClick(`member_${member.slug}_hero`, "Agenda una consulta gratuita.")}
                 className="v3-btn"
               >
-                Agenda consulta gratuita
+                Agenda una consulta gratuita.
                 <span className="v3-btn-arrow">→</span>
               </a>
             </motion.div>
@@ -407,7 +407,7 @@ function Experience({ member }: { member: V4TeamMember }) {
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
-            Cada área lo lleva el titular de principio a fin. Hacé clic para ver el alcance completo de cada práctica.
+            Cada área lo lleva el titular de principio a fin. Haga clic para ver el alcance completo de cada práctica.
           </p>
         </div>
 
@@ -582,7 +582,7 @@ function MidCta({ member }: { member: V4TeamMember }) {
               Consulta inicial gratuita
             </p>
             <p className="v3-display text-[20px] sm:text-[24px] leading-[1.3] text-[#1A1714]">
-              ¿Tu caso es de los que lleva {firstName}? Hablalo en 20 minutos, sin compromiso.
+              ¿Tu caso es de los que lleva {firstName}? Hablalo en 20 minutos.
             </p>
           </div>
           <a
@@ -660,7 +660,7 @@ function OtherMembers({ currentSlug }: { currentSlug: string }) {
     <section className="py-24 sm:py-32" id="equipo">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <p className="v3-eyebrow v3-eyebrow-pleca mb-5 inline-flex">El equipo</p>
+          <p className="v3-eyebrow v3-eyebrow-pleca mb-5 inline-flex">Nuestro equipo</p>
           <h2 className="v3-h2">
             Otros abogados <em className="text-[#B4975A]">del despacho</em>
             <span className="text-[#B4975A]">.</span>
@@ -748,7 +748,7 @@ function Faq({
               <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.65] text-[#5A4F45] max-w-sm">
-              Si tu duda no está acá, agendá una consulta inicial gratuita de 20 minutos con {firstName}.
+              Si tu duda no ha sido resuelta, agenda una consulta.
             </p>
             <a
               href={member.contact.calendly ?? CALENDLY_GENERAL}
@@ -838,7 +838,8 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
               Hablemos de tu caso<span className="text-[#B4975A]">.</span>
             </h2>
             <p className="text-[16px] leading-[1.65] text-[#5A4F45] max-w-md mb-10">
-              La consulta inicial es gratuita y sin compromiso. Si {firstName} no es el abogado indicado dentro de Bissu, te referenciamos al titular adecuado — o a otro despacho si conviene.
+              Consulta inicial gratuita. Agenda una reunión para conversar
+              sobre tu caso.
             </p>
 
             <div className="space-y-4">
@@ -883,7 +884,7 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
                   Consulta inicial
                 </p>
                 <p className="text-[14px] text-white/65 max-w-xs">
-                  Una reunión, sin compromiso, para que sepas si {firstName} es el abogado indicado.
+                  Agenda una reunión para evaluar tu caso con {firstName}.
                 </p>
               </div>
               <span className="shrink-0 inline-flex items-center gap-1.5 border border-white/20 rounded-full px-3 py-1.5 text-[10px] font-medium tracking-[0.08em] uppercase">
@@ -907,7 +908,6 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
                 <p className="v3-display italic text-[20px] sm:text-[24px] text-white/75">
                   · 20 minutos
                 </p>
-                <p className="text-[12px] text-white/55">$0 hasta firmar convenio</p>
               </div>
             </div>
 
@@ -937,10 +937,10 @@ function ConsultCard({ member }: { member: V4TeamMember }) {
               <a
                 href={member.contact.calendly ?? CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick(`member_${member.slug}_consult_card`, "Agenda consulta gratuita")}
+                onClick={() => events.ctaClick(`member_${member.slug}_consult_card`, "Agenda una consulta gratuita.")}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1A1714] px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#B4975A] hover:text-white transition-colors"
               >
-                Agenda consulta gratuita
+                Agenda una consulta gratuita.
                 <span>→</span>
               </a>
               <a

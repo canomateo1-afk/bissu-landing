@@ -27,7 +27,7 @@ const CONSULT_INCLUDES = [
   "Identificación del área aplicable",
   "Recomendación honesta · Bissu o referencia",
   "Diagnóstico legal post-consulta en 72 hs",
-  "Sin cobro hasta firmar convenio",
+  "Honorarios transparentes durante el proceso.",
 ];
 
 export default function V4AreaPage({ area }: { area: V4Area }) {
@@ -58,8 +58,8 @@ export default function V4AreaPage({ area }: { area: V4Area }) {
           photo={lead.photo}
           alt={lead.name}
           initials={leadInitials}
-          headline={`Habla con ${leadFirst} hoy`}
-          body={`Consulta gratuita, 20 minutos.\nSobre tu caso de ${area.label.toLowerCase()}.`}
+          headline={"Habla con nosotros hoy."}
+          body={"Consulta gratuita 20 minutos.\nAsesoría especializada."}
         />
       )}
       <Hero area={area} />
@@ -127,10 +127,10 @@ function AreaNav() {
           <a
             href={CALENDLY_GENERAL}
             {...calendlyLinkProps}
-            onClick={() => events.ctaClick("area_nav", "Agenda consulta")}
+            onClick={() => events.ctaClick("area_nav", "Agenda una consulta")}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] text-[13px] font-semibold whitespace-nowrap bg-[#1A1714] text-white hover:bg-[#8C7339] shadow-[0_6px_18px_-8px_rgba(26,23,20,0.45)] transition-all"
           >
-            Agenda consulta
+            Agenda una consulta.
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
@@ -222,10 +222,10 @@ function Hero({ area }: { area: V4Area }) {
               <a
                 href={CALENDLY_GENERAL}
                 {...calendlyLinkProps}
-                onClick={() => events.ctaClick("area_hero", "Agenda consulta gratuita")}
+                onClick={() => events.ctaClick("area_hero", "Agenda una consulta gratuita.")}
                 className="v3-btn"
               >
-                Agenda consulta gratuita
+                Agenda una consulta gratuita.
                 <span className="v3-btn-arrow">→</span>
               </a>
               <a
@@ -445,15 +445,15 @@ function Team({
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <p className="v3-eyebrow v3-eyebrow-pleca mb-5 inline-flex">
-            Equipo del área
+            Nuestro equipo
           </p>
           <h2 className="v3-h2">
             Quién lleva tu <em className="text-[#B4975A]">caso</em>
             <span className="text-[#B4975A]">.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.65] text-[#5A4F45] max-w-xl mx-auto">
-            En {area.label}, el caso lo conduce un abogado titular de principio
-            a fin. Sin derivaciones, sin juniors anónimos.
+            En materia {area.label}, el caso lo conduce un abogado titular de
+            principio a fin.
           </p>
         </div>
 
@@ -616,8 +616,7 @@ function Faq({ area }: { area: V4Area }) {
               <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.65] text-[#5A4F45] max-w-sm">
-              Si su pregunta no está aquí, escríbanos por correo o agende una
-              consulta gratuita.
+              Si tu duda no ha sido resuelta, agenda una consulta.
             </p>
             <a
               href="mailto:sbissu@bissuabogados.com"
@@ -694,9 +693,8 @@ function ConsultCard({ area }: { area: V4Area }) {
               <span className="text-[#B4975A]">.</span>
             </h2>
             <p className="text-[16px] leading-[1.65] text-[#5A4F45] max-w-md mb-10">
-              Consulta inicial gratuita y sin compromiso. Si Bissu no es el
-              despacho indicado para tu caso de {area.label.toLowerCase()}, te
-              referenciamos a uno mejor posicionado.
+              Consulta inicial gratuita. Bissu Abogados, S.C., es el despacho
+              indicado para tu caso en materia {area.label}.
             </p>
 
             <div className="space-y-4">
@@ -744,8 +742,8 @@ function ConsultCard({ area }: { area: V4Area }) {
                   Consulta inicial
                 </p>
                 <p className="text-[14px] text-white/65 max-w-xs">
-                  Una reunión, sin compromiso, para evaluar si tu caso de{" "}
-                  {area.label.toLowerCase()} es para Bissu.
+                  Agenda una reunión, para evaluar si tu caso de materia{" "}
+                  {area.label} es para Bissu Abogados, S.C.
                 </p>
               </div>
               <span className="shrink-0 inline-flex items-center gap-1.5 border border-white/20 rounded-full px-3 py-1.5 text-[10px] font-medium tracking-[0.08em] uppercase">
@@ -768,9 +766,6 @@ function ConsultCard({ area }: { area: V4Area }) {
               <div className="mt-3 flex items-baseline gap-4 flex-wrap">
                 <p className="v3-display italic text-[20px] sm:text-[24px] text-white/75">
                   · 20 minutos
-                </p>
-                <p className="text-[12px] text-white/55">
-                  $0 hasta firmar convenio
                 </p>
               </div>
             </div>

@@ -32,8 +32,8 @@ type Props = {
  *  - Desktop+ only (hidden on mobile, where the page already has a sticky bottom CTA).
  */
 export default function V4FloatingCTA({
-  headline = "Habla con un abogado hoy",
-  body = "Consulta gratuita, 20 minutos.\nSin compromiso, sin presión.",
+  headline = "Habla con un abogado hoy.",
+  body = "Consulta gratuita 20 minutos.\nAsesoría especializada.",
   href = CALENDLY_GENERAL,
   trackingLocation = "floating_cta",
 }: Props = {}) {
@@ -159,7 +159,7 @@ export default function V4FloatingCTA({
               transition={{ duration: 0.3, ease: EASE }}
               className="flex items-center gap-2 ml-3 mr-1.5 text-white whitespace-nowrap"
             >
-              <span className="text-[13px] font-semibold">Agenda consulta</span>
+              <span className="text-[13px] font-semibold">Agenda una consulta.</span>
               <span className="text-[14px] leading-none transition-transform duration-300 group-hover:translate-x-1 text-[#D4B97A]">
                 →
               </span>
