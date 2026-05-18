@@ -29,7 +29,6 @@ import CalendlyInterceptor from "@/components/CalendlyInterceptor";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CTA_LABEL = "Agenda tu llamada gratis";
-const WHATSAPP_URL = "https://walink.co/727927";
 
 const CONSULT_INCLUDES = [
   "Reunión de 20 minutos · video o teléfono",
@@ -55,7 +54,6 @@ export default function V4HerenciasLanding({ area }: { area: V4Area }) {
         body={"Consulta gratuita de 20 minutos.\nSin compromiso."}
         trackingLocation="herencias_floating"
       />
-      <WhatsAppFloat />
       <Hero area={area} />
       <TrustStrip />
       <Services area={area} />
@@ -128,41 +126,6 @@ function LandingNav() {
 }
 
 // ============================================================
-// WhatsApp flotante — abajo a la izquierda (la derecha la usa el FloatingCTA)
-// ============================================================
-function WhatsAppFloat() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 500);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <a
-      href={WHATSAPP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Escríbenos por WhatsApp"
-      onClick={() => events.whatsappClick("herencias_floating")}
-      className={`fixed bottom-6 left-6 z-40 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white pl-3 pr-4 py-3 shadow-2xl transition-all duration-500 ${
-        show
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6 pointer-events-none"
-      }`}
-    >
-      <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-      </svg>
-      <span className="text-[13px] font-semibold whitespace-nowrap">
-        Escríbenos por WhatsApp
-      </span>
-    </a>
-  );
-}
-
-// ============================================================
 // Hero — headline de conversión, badge de urgencia, un solo CTA
 // ============================================================
 function Hero({ area }: { area: V4Area }) {
@@ -225,18 +188,6 @@ function Hero({ area }: { area: V4Area }) {
               <p className="mt-3 text-[13px] text-[#5A4F45]">
                 Gratis · 20 minutos · sin compromiso · respuesta en menos de 24 horas
               </p>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => events.whatsappClick("herencias_hero")}
-                className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#1A1714] hover:text-[#1ebe57] transition-colors"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
-                </svg>
-                O escríbenos por WhatsApp
-              </a>
             </motion.div>
           </div>
 
@@ -808,7 +759,7 @@ function ConsultCard({ area }: { area: V4Area }) {
               ))}
             </ul>
 
-            <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3">
+            <div className="mt-10">
               <a
                 href={CALENDLY_GENERAL}
                 {...calendlyLinkProps}
@@ -817,18 +768,6 @@ function ConsultCard({ area }: { area: V4Area }) {
               >
                 {CTA_LABEL}
                 <span>→</span>
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => events.whatsappClick("herencias_consult_card")}
-                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-4 text-[14px] font-medium rounded-[4px] hover:bg-[#25D366] hover:border-[#25D366] transition-colors"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
-                </svg>
-                WhatsApp
               </a>
             </div>
 
