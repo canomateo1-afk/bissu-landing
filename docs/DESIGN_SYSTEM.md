@@ -29,7 +29,8 @@
 17. [Anti-patterns](#17-anti-patterns)
 18. [Excepciones documentadas](#18-excepciones-documentadas)
 19. [Quick reference](#19-quick-reference)
-20. [Backlog / nice-to-have](#20-backlog--nice-to-have)
+20. [Landing pages de conversión (ADS)](#20-landing-pages-de-conversión-ads)
+21. [Backlog / nice-to-have](#21-backlog--nice-to-have)
 
 ---
 
@@ -1029,7 +1030,96 @@ PRINT (Bissu's clientes legales imprimen casos)
 
 ---
 
-## 20. Backlog / nice-to-have
+## 20. Landing pages de conversión (ADS)
+
+> Sección para campañas pagas (Meta Ads, Google Ads). Una **landing de conversión** tiene un objetivo distinto al de una página de área: no informa ni rankea, **convierte tráfico pago en llamadas agendadas**. Implementación de referencia: la ruta `/herencias` (componente `V4HerenciasLanding`).
+
+### 20.1 Página de área vs. landing de conversión
+
+| | Página de área (`/areas/[slug]`) | Landing de conversión (`/herencias`) |
+|---|---|---|
+| Objetivo | SEO — informar, rankear | CRO — clic en el CTA de agendar |
+| Tráfico | Orgánico, alta intención, modo investigación | Pago / frío, decide en segundos |
+| Nav | Completo (menú + dropdown de áreas) | Mínimo: marca + 1 CTA |
+| Links de salida | Sí (cross-links, breadcrumb, footer) | Cero arriba del fold |
+| Componente | `V4AreaPage` | Componente dedicado (`V4HerenciasLanding`) |
+
+> **Regla**: nunca reutilizar `V4AreaPage` como landing de ADS. Crear un componente dedicado para no contaminar las páginas de área con cambios CRO. La data del área puede vivir en su propio archivo (`src/lib/<slug>-area.ts`) sin agregarse a `v4Areas`, así no se genera la ruta duplicada `/areas/<slug>`.
+
+### 20.2 Cero fugas (leak elimination)
+
+Todo elemento que saque al visitante de la página antes de agendar es una fuga. En una landing de ADS:
+
+- **Nav sin menú**: solo la marca (texto, **no** link) + el botón de CTA. Sin "Áreas / Casos / Equipo", sin dropdown.
+- **Sin breadcrumb**: el breadcrumb "Inicio / Áreas" del hero de área se elimina.
+- **Sin `mailto:` en el hero ni en el FAQ**: el correo es un canal de menor intención y una vía de escape. Reservarlo al footer.
+- **Una sola acción**: todos los CTA apuntan al mismo destino (Calendly). No ofrecer canales que compitan (correo, teléfono, WhatsApp) salvo decisión explícita del cliente.
+
+### 20.3 Anatomía del hero de conversión
+
+El hero debe lograr el clic sin necesidad de scroll. Elementos, en orden:
+
+1. **Badge de urgencia / disponibilidad** — pill con ping dot gold: "Citas disponibles esta semana".
+2. **Headline orientado a beneficio** — no el título SEO. Responde al dolor del anuncio. Idealmente espeja el copy del ad (*message match* → más conversión y mejor Quality Score).
+3. **Subcopy corto** — 1–2 oraciones: el qué y para quién.
+4. **CTA primario** — botón `v3-btn`, copy de acción.
+5. **Microcopy de reaseguro** — debajo del botón, reduce fricción: "Gratis · 20 minutos · sin compromiso · respuesta en menos de 24 horas".
+
+### 20.4 Tira de prueba social (trust strip)
+
+Banda inmediatamente bajo el hero — el tráfico pago llega frío y necesita confianza rápida. 4 celdas, fondo `#F4EDDD`, divididas con `divide-x divide-y`:
+
+`18+ años` · `Best Lawyers 2026` · `Leaders League 2025` · `Respuesta < 24 h`
+
+### 20.5 CTAs intermedios (mid-CTA bands)
+
+Una landing larga no puede depender solo del CTA del hero y del cierre. Insertar **bandas de CTA** (`bg-[#1A1714]`, texto + botón) cada 2–3 secciones. Texto orientado a la acción ("No dejes la herencia detenida un mes más").
+
+### 20.6 CTA unificado
+
+- **Un solo copy** en toda la página. En `/herencias`: **"Agenda tu llamada gratis"**. Aparece en nav, hero, bandas intermedias, FAQ, tarjeta de cierre, CTA flotante y sticky de mobile.
+- **Destino único**: `CALENDLY_GENERAL` — abre como modal vía `CalendlyInterceptor`, sin sacar al visitante de la página.
+- **Sin segundas opciones** en la tarjeta de cierre: un solo botón primario. Quitar la opción "60 min" — dos botones generan parálisis de decisión.
+- **Tracking**: cada CTA dispara `events.ctaClick("<surface>", CTA_LABEL)` con un `location` propio (`herencias_hero`, `herencias_nav`, `herencias_mid_*`...) para medir qué punto convierte.
+
+### 20.7 Presencia permanente del CTA
+
+| Elemento | Comportamiento |
+|---|---|
+| CTA en nav | Fijo, siempre visible |
+| `V4FloatingCTA` | Flotante desktop, se oculta al llegar al bloque `#cta` |
+| `StickyMobileCta` | Barra inferior mobile, aparece tras ~480px de scroll |
+
+### 20.8 Disciplina de longitud
+
+- **Sin redundancia**: no repetir el mismo contenido desde dos ángulos (p. ej. una sección de "servicios" y otra de "escenarios" que describen lo mismo). Elegir uno.
+- **Servicios**: 5–6 tarjetas máximo. Ocho es catálogo de despacho, no landing.
+- **Intro corta**: 2–3 oraciones.
+- El visitante debe llegar a la tarjeta de cierre sin fatiga.
+
+### 20.9 Medición (Meta Pixel)
+
+- El Meta Pixel (`782788801432460`) está global en `layout.tsx` vía `<Analytics />` → toda ruta nueva hereda `PageView` automáticamente, sin tocar nada.
+- La conversión real es el agendado en Calendly: `CalendlyInterceptor` escucha el `postMessage` `calendly.event_scheduled` y dispara `lead_submit`.
+- En la campaña de Meta, optimizar por el evento de conversión, **no** por `PageView`.
+
+### 20.10 Checklist de landing de conversión
+
+- [ ] Componente dedicado, no `V4AreaPage`
+- [ ] Nav sin menú ni links de salida; marca sin link
+- [ ] Sin breadcrumb, sin `mailto:` arriba del fold
+- [ ] Hero: badge de urgencia + headline de beneficio + CTA + microcopy de reaseguro
+- [ ] Trust strip bajo el hero
+- [ ] Mid-CTA cada 2–3 secciones
+- [ ] Copy del CTA único en toda la página
+- [ ] Tarjeta de cierre con un solo botón primario
+- [ ] Todos los CTA → Calendly, con `events.ctaClick` etiquetado por surface
+- [ ] Servicios ≤ 6, sin secciones redundantes
+- [ ] Verificado en mobile (la mayoría del tráfico de ADS)
+
+---
+
+## 21. Backlog / nice-to-have
 
 Aún no implementado pero deseable para llevar el sistema a tier "Le Monde Magazine":
 
@@ -1045,4 +1135,4 @@ Aún no implementado pero deseable para llevar el sistema a tier "Le Monde Magaz
 
 ---
 
-**Última actualización**: 2026-05-09 · v2 (post-review). Mantener actualizado al introducir nuevas variantes o patterns.
+**Última actualización**: 2026-05-18 · v3 (+ §20 landing pages de conversión). Mantener actualizado al introducir nuevas variantes o patterns.
