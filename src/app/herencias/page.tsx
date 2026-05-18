@@ -1,5 +1,5 @@
 import "../v3/v3.css";
-import V4AreaPage from "@/components/v4/V4AreaPage";
+import V4HerenciasLanding from "@/components/v4/V4HerenciasLanding";
 import { herenciasArea } from "@/lib/herencias-area";
 import { getMemberBySlug } from "@/lib/v4-team";
 import type { Metadata } from "next";
@@ -166,7 +166,7 @@ export default function HerenciasPage() {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: schemaJson }}
       />
-      <V4AreaPage area={area} />
+      <V4HerenciasLanding area={area} />
     </>
   );
 }
