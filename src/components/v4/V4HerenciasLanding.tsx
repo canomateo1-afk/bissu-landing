@@ -61,7 +61,6 @@ export default function V4HerenciasLanding({ area }: { area: V4Area }) {
         text="¿Tu caso es alguno de estos? Una llamada de 20 minutos lo aclara."
         location="herencias_mid_servicios"
       />
-      <Scenarios area={area} />
       <Process area={area} />
       <MidCta
         text="No dejes la herencia detenida un mes más."
@@ -312,55 +311,6 @@ function Services({ area }: { area: V4Area }) {
               <p className="text-[14px] leading-[1.6] text-[#5A4F45]">
                 {s.description}
               </p>
-            </motion.article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ============================================================
-// Scenarios
-// ============================================================
-function Scenarios({ area }: { area: V4Area }) {
-  return (
-    <section className="py-24 sm:py-28 bg-[#F4EDDD]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <p className="v3-eyebrow v3-eyebrow-pleca mb-5 inline-flex">
-            Cuándo llamarnos
-          </p>
-          <h2 className="v3-h2">
-            Si tu situación es{" "}
-            <em className="text-[#B4975A]">alguna de estas</em>
-            <span className="text-[#B4975A]">.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          {area.scenarios.map((s, i) => (
-            <motion.article
-              key={s.headline}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10% 0px" }}
-              transition={{ duration: 0.6, ease: EASE, delay: i * 0.06 }}
-              className="bg-white border border-[rgba(26,23,20,0.10)] rounded-[6px] p-7 sm:p-8"
-            >
-              <div className="flex items-start gap-4">
-                <span className="shrink-0 v3-display v3-mono text-[#B4975A] leading-none text-[28px] sm:text-[32px] pt-1">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="v3-display text-[20px] sm:text-[22px] leading-[1.25] mb-3">
-                    {s.headline}
-                  </h3>
-                  <p className="text-[14px] leading-[1.6] text-[#5A4F45]">
-                    {s.body}
-                  </p>
-                </div>
-              </div>
             </motion.article>
           ))}
         </div>

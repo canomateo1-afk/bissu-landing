@@ -28,7 +28,7 @@ export const herenciasArea: V4Area = {
   heroBlurb:
     "Sucesiones testamentarias e intestamentarias, juicios sucesorios contenciosos, impugnación de testamento y adjudicación de bienes. Una herencia detenida tiene salida.",
   intro:
-    "Una herencia mal manejada divide familias y congela patrimonios durante años. En Bissu Abogados, S.C., atendemos sucesiones testamentarias e intestamentarias, juicios sucesorios contenciosos e impugnación de testamento con un objetivo claro: que cada heredero reciba lo que le corresponde, con orden y en el menor tiempo posible. Damos una primera lectura honesta del caso: a veces conviene resolver la sucesión por la vía notarial y otras veces el conflicto obliga a litigar. Cuando hay disputa entre herederos, bienes ocupados o un testamento dudoso, llevamos el juicio sucesorio con una estrategia práctica. Acompañamos el proceso hasta la adjudicación y escrituración de los bienes a nombre de los herederos.",
+    "Una herencia mal manejada divide familias y congela patrimonios durante años. En Bissu Abogados, S.C., llevamos sucesiones testamentarias, intestamentarias y juicios sucesorios contenciosos hasta la adjudicación y escrituración de los bienes. Damos una primera lectura honesta: si conviene la vía notarial o el litigio, y cuál es el camino más rápido para tu familia.",
   image: "/images/areas/familiar.jpg",
   stat: {
     value: "18+",
@@ -56,19 +56,9 @@ export const herenciasArea: V4Area = {
         "Testamento otorgado con vicios formales, presunta incapacidad del testador, dolo o fraude familiar. Promovemos la nulidad e impulsamos el juicio intestamentario en paralelo.",
     },
     {
-      title: "Declaratoria de herederos y albaceazgo",
-      description:
-        "Reconocimiento de herederos, designación y representación del albacea, aceptación o repudio de la herencia y rendición de cuentas del albaceazgo.",
-    },
-    {
-      title: "Inventario, avalúo y partición",
-      description:
-        "Formación del inventario y avalúo de la masa hereditaria, proyecto de partición y resolución de desacuerdos sobre el reparto entre coherederos.",
-    },
-    {
       title: "Adjudicación y escrituración de bienes",
       description:
-        "Adjudicación de inmuebles, cuentas y participaciones a nombre de los herederos, con coordinación notarial para la escrituración e inscripción registral.",
+        "Declaratoria de herederos, inventario y avalúo, partición y adjudicación de inmuebles y cuentas a nombre de los herederos, con coordinación notarial para la escrituración.",
     },
     {
       title: "Testamento y planeación patrimonial",
