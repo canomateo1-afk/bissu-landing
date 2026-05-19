@@ -36,32 +36,32 @@ export const herenciasArea: V4Area = {
   },
   services: [
     {
-      title: "Sucesión testamentaria.",
+      title: "Sucesión testamentaria",
       description:
         "Existe testamento válido. Tramitamos el juicio sucesorio testamentario, la declaratoria de herederos y la ejecución de la voluntad del testador hasta la entrega de los bienes.",
     },
     {
-      title: "Sucesión intestamentaria.",
+      title: "Sucesión intestamentaria",
       description:
         "No hay testamento. Determinamos quiénes son los herederos legítimos conforme al Código Civil (cónyuge, hijos, ascendientes) y promovemos el juicio sucesorio intestamentario.",
     },
     {
-      title: "Juicio sucesorio contencioso.",
+      title: "Juicio sucesorio contencioso",
       description:
         "Cuando hay disputa entre herederos, bienes ocupados o intereses opuestos, representamos al cliente en tribunales para solucionar la contingencia en la sucesión y proteger su derecho.",
     },
     {
-      title: "Impugnación y nulidad de testamento.",
+      title: "Impugnación y nulidad de testamento",
       description:
         "Testamento otorgado con vicios formales, presunta incapacidad del testador, dolo o fraude familiar. Promovemos la nulidad e impulsamos el juicio intestamentario en paralelo.",
     },
     {
-      title: "Adjudicación y escrituración de bienes.",
+      title: "Adjudicación y escrituración de bienes",
       description:
         "Declaratoria de herederos, inventario y avalúo, partición y adjudicación de inmuebles y cuentas a nombre de los herederos. Desde el inicio de la sucesión hasta la escrituración ante notario.",
     },
     {
-      title: "Testamento y planeación patrimonial.",
+      title: "Testamento y planeación patrimonial",
       description:
         "Elaboración de testamento y estructuras patrimoniales que previenen a la familia de un conflicto sucesorio durante las siguientes generaciones.",
     },
@@ -91,22 +91,22 @@ export const herenciasArea: V4Area = {
   process: [
     {
       step: "01",
-      title: "Consulta inicial gratuita.",
+      title: "Consulta inicial gratuita",
       body: "Reunión de 20 minutos con un abogado especialista. Lectura honesta del caso: si conviene la vía notarial o el juicio sucesorio, y qué documentos hacen falta.",
     },
     {
       step: "02",
-      title: "Diagnóstico escrito.",
+      title: "Diagnóstico escrito",
       body: "Análisis con la vía recomendada, los herederos a acreditar, los bienes de la masa hereditaria, los plazos estimados y los honorarios del procedimiento.",
     },
     {
       step: "03",
-      title: "Trámite y juicio sucesorio.",
+      title: "Trámite y juicio sucesorio",
       body: "Promoción de la sucesión, declaratoria de herederos, designación de albacea, inventario y avalúo, y representación en audiencias e incidentes.",
     },
     {
       step: "04",
-      title: "Partición y adjudicación.",
+      title: "Partición y adjudicación",
       body: "Proyecto de partición, adjudicación de bienes a los herederos, por conducto de un Notario para la escrituración e inscripción en el Registro Público.",
     },
   ],
