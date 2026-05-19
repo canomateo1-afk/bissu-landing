@@ -26,9 +26,9 @@ export const herenciasArea: V4Area = {
   metaDescription:
     "Abogados de herencias y sucesiones en CDMX. Juicio sucesorio testamentario e intestamentario, impugnación de testamento, adjudicación y escrituración. Consulta gratuita.",
   heroBlurb:
-    "Sucesiones testamentarias e intestamentarias, juicios sucesorios contenciosos, impugnación de testamento y adjudicación de bienes. Una herencia detenida tiene salida.",
+    "Sucesiones testamentarias e intestamentarias, juicios sucesorios contenciosos, impugnación de testamento y adjudicación de bienes. Cualquier herencia tiene una solución.",
   intro:
-    "Una herencia mal manejada divide familias y congela patrimonios durante años. En Bissu Abogados, S.C., llevamos sucesiones testamentarias, intestamentarias y juicios sucesorios contenciosos hasta la adjudicación y escrituración de los bienes. Damos una primera lectura honesta: si conviene la vía notarial o el litigio, y cuál es el camino más rápido para tu familia.",
+    "Una herencia mal manejada divide familias y congela patrimonios durante años. En Bissu Abogados, S.C., llevamos sucesiones testamentarias, intestamentarias y juicios sucesorios contenciosos hasta la adjudicación y escrituración de los bienes. Realizamos un estudio honesto del caso; si es conveniente iniciar la sucesión mediante notario o en un litigio, ello en función de lo más efectivo para tu familia.",
   image: "/images/areas/familiar.jpg",
   stat: {
     value: "18+",
@@ -36,34 +36,34 @@ export const herenciasArea: V4Area = {
   },
   services: [
     {
-      title: "Sucesión testamentaria",
+      title: "Sucesión testamentaria.",
       description:
         "Existe testamento válido. Tramitamos el juicio sucesorio testamentario, la declaratoria de herederos y la ejecución de la voluntad del testador hasta la entrega de los bienes.",
     },
     {
-      title: "Sucesión intestamentaria",
+      title: "Sucesión intestamentaria.",
       description:
         "No hay testamento. Determinamos quiénes son los herederos legítimos conforme al Código Civil (cónyuge, hijos, ascendientes) y promovemos el juicio sucesorio intestamentario.",
     },
     {
-      title: "Juicio sucesorio contencioso",
+      title: "Juicio sucesorio contencioso.",
       description:
-        "Cuando hay disputa entre herederos, bienes ocupados o reclamaciones cruzadas, representamos al cliente en tribunales para destrabar la sucesión y proteger su parte.",
+        "Cuando hay disputa entre herederos, bienes ocupados o intereses opuestos, representamos al cliente en tribunales para solucionar la contingencia en la sucesión y proteger su derecho.",
     },
     {
-      title: "Impugnación y nulidad de testamento",
+      title: "Impugnación y nulidad de testamento.",
       description:
         "Testamento otorgado con vicios formales, presunta incapacidad del testador, dolo o fraude familiar. Promovemos la nulidad e impulsamos el juicio intestamentario en paralelo.",
     },
     {
-      title: "Adjudicación y escrituración de bienes",
+      title: "Adjudicación y escrituración de bienes.",
       description:
-        "Declaratoria de herederos, inventario y avalúo, partición y adjudicación de inmuebles y cuentas a nombre de los herederos, con coordinación notarial para la escrituración.",
+        "Declaratoria de herederos, inventario y avalúo, partición y adjudicación de inmuebles y cuentas a nombre de los herederos. Desde el inicio de la sucesión hasta la escrituración ante notario.",
     },
     {
-      title: "Testamento y planeación patrimonial",
+      title: "Testamento y planeación patrimonial.",
       description:
-        "Elaboración de testamento y estructuras patrimoniales que ordenan la herencia en vida y evitan a la familia un conflicto sucesorio en el futuro.",
+        "Elaboración de testamento y estructuras patrimoniales que previenen a la familia de un conflicto sucesorio durante las siguientes generaciones.",
     },
   ],
   scenarios: [
@@ -91,23 +91,23 @@ export const herenciasArea: V4Area = {
   process: [
     {
       step: "01",
-      title: "Consulta inicial gratuita",
+      title: "Consulta inicial gratuita.",
       body: "Reunión de 20 minutos con un abogado especialista. Lectura honesta del caso: si conviene la vía notarial o el juicio sucesorio, y qué documentos hacen falta.",
     },
     {
       step: "02",
-      title: "Diagnóstico escrito",
+      title: "Diagnóstico escrito.",
       body: "Análisis con la vía recomendada, los herederos a acreditar, los bienes de la masa hereditaria, los plazos estimados y los honorarios del procedimiento.",
     },
     {
       step: "03",
-      title: "Trámite y juicio sucesorio",
+      title: "Trámite y juicio sucesorio.",
       body: "Promoción de la sucesión, declaratoria de herederos, designación de albacea, inventario y avalúo, y representación en audiencias e incidentes.",
     },
     {
       step: "04",
-      title: "Partición y adjudicación",
-      body: "Proyecto de partición, adjudicación de bienes a los herederos y coordinación notarial para la escrituración e inscripción en el Registro Público.",
+      title: "Partición y adjudicación.",
+      body: "Proyecto de partición, adjudicación de bienes a los herederos, por conducto de un Notario para la escrituración e inscripción en el Registro Público.",
     },
   ],
   teamSlugs: ["adolfo-vargas", "samuel-bissu"],
@@ -135,12 +135,12 @@ export const herenciasArea: V4Area = {
     {
       question: "¿Cuánto cuesta un trámite de sucesión?",
       answer:
-        "El costo depende de la vía (notarial o judicial), del número de herederos, del tipo de bienes y de si existe conflicto. La consulta inicial de 20 minutos y el diagnóstico legal posterior no tienen costo. Los honorarios del procedimiento se presentan por escrito en el diagnóstico, antes de que el cliente decida contratar, sin cobros sorpresa durante el proceso.",
+        "El costo depende de la vía (notarial o judicial), del número de herederos, del tipo de bienes y de si existe conflicto. La consulta inicial de 20 minutos no tiene costo. Los honorarios del procedimiento se presentan por escrito antes de que el cliente decida contratar, sin cobros sorpresa durante el proceso.",
     },
     {
       question: "¿Atienden sucesiones con inmuebles o fuera de la Ciudad de México?",
       answer:
-        "Sí. Bissu Abogados, S.C., tramita sucesiones con inmuebles, cuentas bancarias, participaciones societarias y negocios, e incluye la coordinación notarial para la escrituración y la inscripción en el Registro Público de la Propiedad. La oficina central está en Lomas de Chapultepec, CDMX, y la consulta inicial se realiza por video, por lo que es posible atender casos de cualquier entidad de la República.",
+        "Sí. Bissu Abogados, S.C., tramita sucesiones que se encuentren relacionadas con bienes localizados en cualquier parte de la República mexicana. Cuenta con amplia cobertura mediante corresponsales en las entidades en las que se desarrolla el litigio.",
     },
   ],
   relatedSlugs: ["litigio-familiar", "litigio-civil", "litigio-constitucional"],

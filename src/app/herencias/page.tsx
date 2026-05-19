@@ -81,7 +81,7 @@ export default function HerenciasPage() {
           "@type": "Offer",
           name: "Consulta inicial gratuita",
           description:
-            "Reunión de 20 minutos con abogado titular. Diagnóstico legal en 72 horas hábiles. Sin cobro hasta firmar convenio.",
+            "Reunión inicial de 20 minutos con un abogado especialista para evaluar el caso de herencia o sucesión.",
           price: "0",
           priceCurrency: "MXN",
           availability: "https://schema.org/InStock",

@@ -34,7 +34,7 @@ const CONSULT_INCLUDES = [
   "Reunión de 20 minutos · video o teléfono",
   "Análisis del caso con un abogado especialista",
   "Lectura honesta: si tiene salida y cuál es",
-  "Sin cobro hasta firmar convenio",
+  "Estimación de tiempos y honorarios del caso",
 ];
 
 // ============================================================
@@ -51,7 +51,7 @@ export default function V4HerenciasLanding({ area }: { area: V4Area }) {
       <LandingNav />
       <V4FloatingCTA
         headline="Habla con un abogado hoy."
-        body={"Consulta gratuita de 20 minutos.\nSin compromiso."}
+        body={"Consulta gratuita de 20 minutos.\nAsesoría especializada."}
         trackingLocation="herencias_floating"
       />
       <Hero area={area} />
@@ -185,7 +185,7 @@ function Hero({ area }: { area: V4Area }) {
                 <span className="v3-btn-arrow">→</span>
               </a>
               <p className="mt-3 text-[13px] text-[#5A4F45]">
-                Gratis · 20 minutos · sin compromiso · respuesta en menos de 24 horas
+                Gratis · 20 minutos · respuesta en menos de 24 horas
               </p>
             </motion.div>
           </div>
@@ -661,8 +661,7 @@ function ConsultCard({ area }: { area: V4Area }) {
                   Consulta inicial
                 </p>
                 <p className="text-[14px] text-white/65 max-w-xs">
-                  Reserva tu llamada con un abogado de sucesiones. Sin
-                  compromiso.
+                  Reserva tu llamada con un abogado de sucesiones.
                 </p>
               </div>
               <span className="shrink-0 inline-flex items-center gap-1.5 border border-white/20 rounded-full px-3 py-1.5 text-[10px] font-medium tracking-[0.08em] uppercase">
@@ -761,7 +760,7 @@ function StickyMobileCta() {
             Consulta gratuita
           </p>
           <p className="text-[13px] text-white/85 truncate">
-            20 minutos · con un abogado · sin compromiso
+            20 minutos · con un abogado especialista
           </p>
         </div>
         <a
