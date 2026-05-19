@@ -303,11 +303,10 @@ function Services({ area }: { area: V4Area }) {
               className="bg-white p-7 sm:p-9"
             >
               <p className="text-[10px] tracking-[0.18em] uppercase text-[#B4975A] font-medium mb-3">
-                {String(i + 1).padStart(2, "0")}
+                {String(i + 1).padStart(2, "0")}.
               </p>
               <h3 className="v3-display text-[20px] sm:text-[22px] leading-[1.2] mb-3">
                 {s.title}
-                <span className="text-[#B4975A]">.</span>
               </h3>
               <p className="text-[14px] leading-[1.6] text-[#5A4F45]">
                 {s.description}
@@ -351,11 +350,10 @@ function Process({ area }: { area: V4Area }) {
                 className="v3-display v3-mono text-[#B4975A] leading-none mb-5"
                 style={{ fontSize: "clamp(2rem, 3vw, 2.5rem)" }}
               >
-                {p.step}
+                {p.step}.
               </p>
               <h3 className="v3-display text-[18px] sm:text-[20px] leading-[1.25] mb-3">
                 {p.title}
-                <span className="text-[#B4975A]">.</span>
               </h3>
               <p className="text-[13px] sm:text-[14px] leading-[1.6] text-[#5A4F45]">
                 {p.body}
