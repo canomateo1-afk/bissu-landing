@@ -62,20 +62,13 @@ export default function V4FloatingCTA({
       animate={{
         opacity: hidden ? 0 : 1,
         scale: hidden ? 0.92 : 1,
-        y: hidden ? 30 : [0, -8, 0],
+        y: hidden ? 30 : 0,
         pointerEvents: hidden ? "none" : "auto",
       }}
       transition={{
         opacity: { duration: 0.5, ease: EASE, delay: hidden ? 0 : 1.0 },
         scale: { duration: 0.5, ease: EASE, delay: hidden ? 0 : 1.0 },
-        y: hidden
-          ? { duration: 0.4, ease: EASE }
-          : {
-              duration: 4,
-              ease: "easeInOut",
-              repeat: Infinity,
-              delay: 1.85,
-            },
+        y: { duration: 0.5, ease: EASE, delay: hidden ? 0 : 1.0 },
       }}
       className="fixed bottom-6 sm:bottom-8 right-6 lg:right-8 z-40 hidden sm:block"
     >
@@ -111,42 +104,24 @@ export default function V4FloatingCTA({
         <motion.div
           animate={{ width: compact ? 40 : 72, height: compact ? 40 : 72 }}
           transition={{ duration: 0.45, ease: EASE }}
-          className="relative shrink-0 rounded-full bg-gradient-to-br from-[#D4B97A] to-[#8C7339] flex items-center justify-center ring-2 ring-white/15"
+          className="relative shrink-0 rounded-full bg-gradient-to-br from-[#D4B97A] to-[#8C7339] flex items-center justify-center ring-1 ring-white/20"
         >
-          {/* Pulsing halo around phone icon */}
-          <motion.span
-            aria-hidden
-            className="absolute inset-0 rounded-full bg-[#D4B97A]"
-            animate={{ scale: [1, 1.4], opacity: [0.45, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeOut",
-            }}
-          />
-
-          <motion.svg
+          {/* Ícono de teléfono — estático y estilizado (sin rotación ni pulso) */}
+          <svg
             viewBox="0 0 24 24"
             className="relative text-[#1A1714]"
-            style={{ width: "55%", height: "55%" }}
+            style={{ width: "50%", height: "50%" }}
             fill="none"
-            animate={{ rotate: [0, -12, 0, 12, 0] }}
-            transition={{
-              duration: 1.4,
-              repeat: Infinity,
-              repeatDelay: 2.5,
-              ease: "easeInOut",
-            }}
             aria-label="Teléfono"
           >
             <path
-              d="M5 4 C 5 4 5.8 7.5 8.5 10 C 11.2 12.5 14.5 13.5 14.5 13.5 L 16.5 11.5 L 21 12 L 21 18 C 21 19 20 20 19 20 C 11 20 4 13 4 5 C 4 4 5 3 6 3 L 12 3 L 13 8 L 11 10"
+              d="M7.35 4H5.2C4.54 4 4 4.54 4 5.2 4 13.37 10.63 20 18.8 20c.66 0 1.2-.54 1.2-1.2v-2.15c0-.58-.41-1.07-.98-1.18l-2.86-.57c-.5-.1-1.02.06-1.36.44l-.98 1.09c-2.6-1.32-4.72-3.44-6.04-6.04l1.09-.98c.38-.34.54-.85.44-1.36l-.57-2.86C8.42 4.41 7.93 4 7.35 4Z"
               stroke="currentColor"
-              strokeWidth="1.8"
+              strokeWidth="1.6"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-          </motion.svg>
+          </svg>
         </motion.div>
 
         <AnimatePresence mode="wait">

@@ -283,7 +283,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero-1.jpg"
+          href="/images/hero-poster.jpg"
           // @ts-expect-error fetchpriority no está en el typing de React aún
           fetchpriority="high"
         />

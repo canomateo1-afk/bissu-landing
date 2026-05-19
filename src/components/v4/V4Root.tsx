@@ -181,7 +181,7 @@ function V4Hero() {
         loop
         playsInline
         preload="auto"
-        poster="/images/hero-1.jpg"
+        poster="/images/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ filter: "saturate(0.95) contrast(1.04)" }}
       >
@@ -247,12 +247,12 @@ function V4Hero() {
               textWrap: "balance",
             }}
           >
-            <span className="block">Despacho de abogados</span>
-            <span className="block">en CDMX especializado en</span>
-            <span className="block">
-              <em style={{ color: "#FFFFFF" }}>litigio, mediación y arbitraje</em>
-              <span style={{ color: "#D4B97A" }}>.</span>
-            </span>
+            Firma legal especializada en{" "}
+            <em style={{ color: "#FFFFFF" }}>
+              litigio estratégico, mediación y arbitraje
+            </em>{" "}
+            en Ciudad de México
+            <span style={{ color: "#D4B97A" }}>.</span>
           </motion.h1>
 
           {/* Subhead */}
@@ -263,10 +263,10 @@ function V4Hero() {
             className="mt-7 sm:mt-9 text-[16px] sm:text-[18px] leading-[1.6] text-white max-w-xl"
             style={{ textShadow: "0 1px 16px rgba(0,0,0,0.45)" }}
           >
-            Somos un grupo de abogados dedicados a la prestación de servicios
-            de asesoría, consultoría y práctica jurídica en Litigio, Arbitraje,
-            Conciliación y Mediación como herramienta de negociación
-            especializada.
+            Prestamos servicios de asesoría y representación legal en litigio,
+            mediación y arbitraje, combinando estrategia jurídica, experiencia
+            técnica y atención personalizada, dando el mejor resultado en el
+            menor tiempo posible.
           </motion.p>
 
           {/* Single primary CTA + trust microcopy */}
@@ -414,7 +414,7 @@ function V4Pillars() {
     {
       tag: "Honorarios",
       title: "Honorarios transparentes durante el proceso.",
-      body: "Tarifa fija, por hora o por honorario procesal. Sin sorpresas durante el trámite del juicio. Acuerdo de honorarios firmado antes de empezar.",
+      body: "Tarifa fija, por hora o por honorario procesal. Sin sorpresas durante la tramitación del juicio.",
     },
     {
       tag: "Atención",
@@ -483,7 +483,7 @@ function V4AreasTabbed() {
       title: "Litigio Civil.",
       tagline: "Cuando un contrato se incumple o un derecho personal se vulnera.",
       blurb:
-        "Litigio civil para conflictos entre particulares por incumplimiento de contratos, daños y perjuicios, daño moral, créditos, hipotecas, arrendamiento y homologación de sentencias extranjeras.",
+        "El litigio civil resuelve disputas entre particulares cuando un contrato se incumple, una propiedad se invade o una conducta causa un daño. En Bissu Abogados, S.C., llevamos casos civiles complejos para empresas y particulares en Ciudad de México y toda la República. Cada caso lo lleva un abogado especializado. Antes de iniciar cualquier juicio entregamos un diagnóstico legal escrito con la viabilidad real del caso, los riesgos y el costo estimado.",
       image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1400&q=88&auto=format&fit=crop",
     },
     {
@@ -560,8 +560,8 @@ function V4AreasTabbed() {
           </h2>
           <p className="mt-6 text-[15px] sm:text-[16px] leading-[1.6] text-[#5A4F45] max-w-xl mx-auto">
             Bissu Abogados, S.C., opera seis áreas con el mismo método:
-            análisis, atención especializada, diagnóstico jurídico antes de
-            iniciar un proceso.
+            Análisis, atención especializada y un diagnóstico jurídico antes de
+            iniciar cualquier proceso.
           </p>
         </div>
 
